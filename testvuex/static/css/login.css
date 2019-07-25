@@ -1,0 +1,116 @@
+.login-group {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    background: url("../../src/assets/img/login.png") no-repeat;
+    background-size: 100%;
+  }
+  
+  .login-minGroup {
+    width: 520px;
+    height: 559px;
+    margin-left: 56.5%;
+    margin-top: 8%;
+    padding-left: 130px;
+    background: url("../../src/assets/img/loginbg.png") no-repeat;
+    box-sizing: border-box;
+  }
+  
+  .login-topLogo {
+    height: 108px;
+    background: url("../../src/assets/img/loginLogo.png") 50% 0 no-repeat;
+  }
+  
+  .login-box {
+    width: 390px;
+    height: 334px;
+    background: url("../../src/assets/img/enterbgs.png") no-repeat;
+    border-radius: 5px;
+    padding: 44px 30px;
+    box-sizing: border-box;
+    color: #df6e26;
+  }
+  
+  .tip{
+      width: 100%;
+      height: 31px;
+      display: block;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      background: url("../../src/assets/img/tipsIcon.png") 18.5px 50% no-repeat;
+      background-color: #fdfbee;
+      border-radius: 2px;
+      box-shadow: 0 0 0 1px #df6e26;
+      line-height: 31px;
+      color: #666666;
+      font-size: 14px;
+      text-indent: 58px;
+  }
+  
+  
+  .login-box button{
+      width: 100%;
+      height: 43px;
+      border-radius: 2px;
+      color: #2b2c2d;
+      line-height: 43px;
+      font-size: 16px;
+      margin-top: 39px;
+      background-color: #ffffff;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      text-align: center;
+  }
+  
+  
+  .enter-groups{
+      width: 100%;
+      height: 40px;
+      border-radius: 2px;
+      position: relative;
+      margin-top: 24px;
+  }
+  
+  .user-bg{
+      background: url("../../src/assets/img/user.png") no-repeat 50% 50%;
+  }
+  
+  .pwd-bg{
+      background: url("../../src/assets/img/pwd.png") no-repeat 50% 50%;
+  }
+  
+  .enter-groups i{
+      width: 58px;
+      height: 40px;
+      display: block;
+      border-radius: 2px;
+      position: absolute;
+      top: 0px;
+      left: 0px;
+  }
+  
+  .enter-groups input{
+      width: 100%;
+      height: 40px;
+      border-radius: 2px;
+      background-color: #4a4b4c;
+      border: none;
+      text-indent: 59px;
+      color: #ffffff;
+      font-size: 14px;
+  }
+  
+  .el-input{
+      position: unset;
+  }
+  
+  .el-button{
+      padding: 0;
+  }
+  .login-box button:hover , .login-box button:active{
+      background-color: #6aaf4b;
+      color: #ffffff;
+  }
+  
