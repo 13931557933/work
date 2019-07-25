@@ -1,0 +1,327 @@
+@charset "utf-8"; 
+#hostDetails{
+    width: 100%;
+    padding: 0 80px 0 30px;
+    box-sizing: border-box;
+    min-width: 1099px;
+}
+#hostDetails .hostDetailName{
+	font-size: 18px;
+	width: 100%;
+	height:30px;
+	line-height: 30px;
+	color: #3c3c3c;
+	margin-bottom: 10px;
+}
+#hostDetails .comBgs{
+	background-color: #ffffff;
+	box-shadow: 0px 5px 15px 0px rgba(17, 25, 66, 0.1);
+	border-radius: 5px;	
+}
+#hostDetails .hostDetailTxt{
+	width: 100%;
+	height: 359px;
+}
+#hostDetails .hostStatusGroup{
+	width: 211px;
+	height: 100%;
+	margin-left: 83px;
+	overflow: hidden;	
+}
+#hostDetails #fill{
+	width: 270px;
+	height:300px;
+	margin:15px 0 0 50px;
+}
+#hostDetails .hostStatusGroup.ok{
+	background: url('../../images/console/hostOk.png') 0 50% no-repeat;
+}
+#hostDetails .hostStatusGroup.unusual{
+	background: url('../../images/console/hostUnusual.png') 0 50% no-repeat;
+}
+#hostDetails .hostStatusGroup .hostStatusSign{
+	width:65px; 
+	height:25px;
+	margin-left: 86px;
+	margin-top: 280px;
+	text-indent: 21px;
+	font-size: 20px;
+	line-height: 25px;
+}
+#hostDetails .hostStatusGroup .hostStatusSign.ok{
+	background: url('../../images/console/ok.png') 0 50% no-repeat;	
+	color: #61c036;
+}
+#hostDetails .hostStatusGroup .hostStatusSign.unusual{
+	background: url('../../images/console/unusual.png') 0 50% no-repeat;
+	color: #ec1f38;
+}
+#hostDetails .hostStatusContent{
+	margin: 108px 0 0 80px;
+}
+#hostDetails .hostStatusContent .comContentFa{
+	width: 342px;
+	height:45px;
+	font-size: 18px;
+}
+#hostDetails .hostStatusContent .comContentFa .systemBox{
+	width: 255px;
+	height: 45px;
+	overflow: hidden;
+  	text-overflow:ellipsis;
+    white-space:nowrap	
+}
+#hostDetails .hostStatusContent .comContentFa span{
+	height: 100%;
+	display: block;
+	float: left;
+	color: #999999;
+
+}
+#hostDetails .hostStatusContent .comContentFa .comFonts{
+	max-width: 250px;
+	height: 100%;
+	float: left;
+	color: #6aaf4b;
+	overflow: hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;		
+}
+#hostDetails .hsotDetailsAlias input{
+	border:none;
+	max-width: 150px;
+	overflow: hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+    float: left;
+	color: #6aaf4b;
+	font-size: 18px;		
+}
+#hostDetails .hsotDetailsAlias .editorAlias{
+	width: 20px;
+	height: 18px;
+	display: block;
+	float: left;
+	background: url('../../images/console/editor1.png') no-repeat;
+	margin-left: 15px;
+	cursor: pointer;
+}
+#hostDetails .comContentFa .IpBtn{
+	height: 18px;
+	color: #6aaf4b;
+	background: none;
+	font-size: 18px;
+	margin-left: 10px;
+}
+#hostDetails .monitorTypeGroup{
+	width: 100%;
+	height: 60px;
+	margin-top: 20px;
+}
+#hostDetails .monitorTypeGroup>div{
+	width: 25%;
+	height: 60px;
+	line-height: 60px;
+	color: #adadad;
+	font-size: 20px;
+	border-bottom: 2px solid #adadad;
+	cursor: pointer;
+}
+#hostDetails .monitorTypeGroup .monitorBtn.add{
+	color: #6aaf4b;
+	border-bottom: 2px solid #6aaf4b;	
+}
+#hostDetails .monitorListGroup{
+	margin-top: 40px;
+}
+#hostDetails .monitorList .minitorTime{
+	width: 100%;
+	height: 57px;
+	background-color: #ffffff;
+	box-shadow: 0px 5px 15px 0px rgba(17, 25, 66, 0.1);
+	border-radius: 2px;
+	padding-left: 96px;
+	box-sizing: border-box;
+}
+#hostDetails .monitorList .minitorTime .Times{
+	width: 19%;
+	height: 100%;
+	text-align: center;
+	line-height: 57px;
+	color: #333333;
+	cursor: pointer;
+}
+#hostDetails .monitorList .minitorTime .Times.color{
+	color: #ffffff;
+	background-color: #6aaf4b;
+}
+#hostDetails .monitorList .minitorTime .TimeSelectBox{
+	margin-top: 9.5px;
+	margin-right: 120px;
+}
+#hostDetails .monitorList .minitorTime .TimeSelectBox input{
+	border: none;
+	color: #6aaf4b;
+}
+#hostDetails .monitorList .comChartsGroup{
+	width: 100%;
+   	height: 483px;
+	background-color: #ffffff;
+	box-shadow: 0px 5px 15px 0px rgba(17, 25, 66, 0.1);
+	border-radius: 5px;
+	margin-top: 30px;
+	padding-top: 33px;
+	box-sizing: border-box;   	
+}
+#hostDetails  .componentDetailsGroup{
+	display: none
+}
+#hostDetails .mar-40{
+	margin-top: -80px;
+}
+#hostDetails .componentDetailsGroup .componentDetailsList{
+	width: 100%;
+	background-color: #ffffff;
+	box-shadow: 0px 5px 15px 0px rgba(17, 25, 66, 0.1);
+	border-radius: 5px;
+	margin-top: 10px;
+	padding: 45px 60px;
+	box-sizing: border-box;
+}
+#hostDetails .componentDetailsGroup .usunualTipGroup{
+	width: 16%;
+	font-size: 18px;
+	margin-top: 46px;
+}
+#hostDetails .componentDetailsGroup .usunualTipGroup .totalDetails{
+	width: 100%;
+	color: #3c3c3c;
+}
+#hostDetails .componentDetailsGroup .usunualTipGroup .unusualTotal{
+	padding-top: 20px;
+	box-sizing: border-box;
+	color: #ec1f38;
+	text-indent: 19px;	
+}
+#hostDetails .componentDetailsGroup .usunualTipGroup .unusualTotal.error{
+	background: url('../../images/console/unusual.png') 0 23px no-repeat;	
+}
+#hostDetails .componentDetailsListGroup{
+	width: 84%;
+	height: 321px;
+}
+#hostDetails .componentDetailsListGroup .componentDetailsListTitleGroup{
+	width: 100%;
+}
+#hostDetails .componentDetailsListGroup .componentDetailsListTitle{
+	width:48%;
+	height: 46px;
+	color: #666666;
+	font-size: 18px;
+	line-height: 46px;
+	margin-left: 2%;
+}
+#hostDetails .componentDetailsListGroup .wid60{
+	width: 65%;
+	padding-left: 60px;
+	box-sizing: border-box;
+}
+#hostDetails .componentDetailsListGroup .wid40{
+	width: 35%;
+}
+#hostDetails .componentDetailsListGroup .onecomponentDetailGroup{
+	width:48%;
+	height: 46px;
+	background-color: #f6f6f6;
+	border-radius: 5px;
+	margin-top: 9px;
+	margin-left: 2%	
+}
+#hostDetails .componentDetailsListGroup .onecomponentDetailGroup .name{
+	height: 46px;
+	line-height: 46px;
+	color: #999999;
+}
+#hostDetails .componentDetailsListGroup .onecomponentDetailGroup .status{
+	background: url('../../images/console/ok.png') 0 49% no-repeat;
+	height: 46px;
+	line-height: 46px;
+	color: #6aaf4b;
+	text-indent: 20px;
+
+}
+#hostDetails .componentDetailsListGroup .onecomponentDetailGroup .status.error{
+	background: url('../../images/console/unusual.png') 0 49% no-repeat;
+	color: #ec1f38;   	
+}
+#comPopupBox .offset{
+	transform:translate(-174.5px,-221.5px);
+	-ms-transform:translate(-174.5px,-221.5px);
+	-moz-transform:translate(-174.5px,-221.5px);
+	-webkit-transform:translate(-174.5px,-221.5px);
+	-o-transform:translate(-174.5px,-221.5px);
+}
+#hostDetails .popIPWork{
+	padding: 30px 85px;
+    background-color: #FFFFFF;
+    border-radius: 0px 0px 5px 5px;
+    box-sizing: border-box;
+}
+#hostDetails .outNetWork{
+	width: 100%;
+}
+#hostDetails .comOutNet{
+	width: 55px;
+	height: 30px;
+	display: block;
+	color: #999999;
+	line-height: 30px;
+}
+#hostDetails .IPAddress{
+	width: 104px;
+	height: 30px;
+	display: block;
+	line-height: 30px;
+	color: #666666;
+}
+#hostDetails .inNetWork{
+	width: 100%;
+	max-height: 240px;
+	overflow-y: auto;
+	margin-top: 5px;
+}
+#hostDetails .dropFramePosition{
+	position: absolute;
+	top:30px;
+	left: 150px;
+}
+#hostDetails .mars100{
+	margin-right: 100px;
+	margin-top: 7px;
+}
+@media screen and (min-width:1366px)  and (max-width: 1919px){
+	#hostDetails .hostStatusGroup{
+		margin-left: 48px;
+	}
+	#hostDetails .hostStatusContent{
+	    margin: 108px 0 0 17px;	
+	}
+	#hostDetails .hostStatusContent .comContentFa{
+		width:245px;
+		font-size: 13px; 
+	}
+	#hostDetails .hsotDetailsAlias input{
+		max-width: 119px;
+	}
+	#hostDetails .hostStatusContent .comContentFa .systemBox{
+		width: 120px;
+	}
+	#hostDetails #fill{
+		width: 210px;
+		height:240px;
+		margin:66px 0 0 20px;
+	}
+	#hostDetails .mars100{
+		margin-right: 80px;
+	}		
+}

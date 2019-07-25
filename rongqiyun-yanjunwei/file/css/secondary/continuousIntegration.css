@@ -1,0 +1,202 @@
+@charset "utf-8"; 
+#continuousIntegration{
+	width: 100%;
+	padding: 0  80px 0 30px ;
+	box-sizing: border-box;
+	min-width: 1099px; 
+}
+#continuousIntegration .off{
+    display:block !important;
+}
+#continuousIntegration .js_opList.on{
+    display: none
+}
+#continuousIntegration .hostWid{
+	 width: 15%;
+}
+#continuousIntegration .codeWid{
+	width: 19%; 
+}
+#continuousIntegration .oneListDataGroup>li {
+    width: 100%;
+    height: 70px;
+    background-color: #f6f6f6;
+    border-radius: 5px;
+    margin-bottom: 10px;
+ }   
+#continuousIntegration .oneListDataGroup>li>div{
+    height: 100%;
+    line-height: 70px;
+    text-align: center;
+    padding-right: 1%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;	
+}
+#continuousIntegration .oneListDataGroup .normal {
+    width: 60px;
+    height: 17px;
+    line-height: 17px;
+    color: #61c036;
+    margin: 26.5px auto;
+    text-align: right;
+    background: url(../../images/console/ok.png)8px 0 no-repeat;
+}
+#continuousIntegration .oneListDataGroup .normal.error {
+    background: url(../../images/console/unusual.png)8px 0 no-repeat;
+    color: #ec1f38;
+}
+#continuousIntegration .hostWid .times{
+    width: 100%;
+    height:25px;
+    display: block;
+    line-height: 35px; 
+}
+#continuousIntegration .hostWid .recent{
+    width: 103px;
+    height: 27px;
+    background-color: #3c3c3c;
+    box-shadow: 0px 3px 10px 0px rgba(17, 25, 66, 0.1);
+    border-radius: 3px;
+    color: #FFFFFF;
+}
+#continuousIntegration .dropFramePosition{
+    margin: 22px auto;
+}
+#continuousIntegration .hostWid .operaBox{
+    width: 100px;
+    height: 26px;
+    margin: 22px auto;
+    position: relative;
+}
+#continuousIntegration .hostWid .operaBox button{
+    width: 80px;
+    height: 100%;
+    background: none;
+    line-height: 26px;
+    text-align: center;
+    font-size: 16px;
+}
+#continuousIntegration .hostWid .operaBox i{
+    width: 20px;
+    height: 100%;
+    display: block;
+    cursor: pointer;
+    background:url('../../images/console/dropBlue.png') 50% 50% no-repeat;
+}
+#continuousIntegration .hostWid .operaBox ul{
+    position: absolute;
+    top: 26px;
+    width: 100px;
+    background-color: #ffffff;
+    box-shadow: 0px 3px 10px 0px rgba(17, 25, 66, 0.1);
+    border-radius: 3px;
+    z-index: 1;
+    display: none;
+}
+#continuousIntegration .hostWid .operaBox ul li{
+    width: 100%;
+    height: 26px;
+    color: #666666;
+    line-height: 26px;
+    text-align: center;
+    cursor: pointer;
+}
+#continuousIntegration .hostWid .operaBox ul li:hover{
+    background-color: #6baf4c;
+    color: #ffffff;
+}
+#continuousIntegration .webhookTxt{
+    width: 100%;
+    height:20px;
+    line-height: 20px;
+    color: #666666; 
+}
+#continuousIntegration .copyContent{
+    width: 526px;
+    height: 260px;
+    border-radius: 5px;
+    border: solid 1px #999999; 
+    margin-top: 15px;   
+    padding: 22px;
+    box-sizing: border-box;
+    word-break:break-all;  
+    color: #666666;  
+}
+#continuousIntegration .offset{
+    transform:translate(-406px,-230px);
+    -ms-transform:translate(-406px,-230px);     /* IE 9 */
+    -moz-transform:translate(-406px,-230px);    /* Firefox */
+    -webkit-transform:translate(-406px,-230px); /* Safari 和 Chrome */
+    -o-transform:translate(-406px,-230px);  /* Opera */    
+}
+#continuousIntegration #js_copyTxt{
+    height: 0;
+    border: none; 
+}
+#continuousIntegration .recordConnect{
+    width: 100%;
+    padding: 26px 20px;
+    box-sizing: border-box;
+    border-top: 1px solid #555555;
+    border-radius:  0 0 5px 5px;
+    background: url('../../images/console/a.gif')#2d2d2d 50% 50% no-repeat;
+}
+#continuousIntegration .recordTitle{
+    width: 771px;
+    height: 40px;
+    box-shadow: 0px 3px 10px 0px rgba(17, 25, 66, 0.1);
+    border-radius: 5px;
+    border: solid 1px #838383;
+    background-color: #121212;
+    opacity: 0.6;
+}
+#continuousIntegration .recordTitle .nameWid{
+    width: 25%;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap    
+}
+#continuousIntegration .recordTitle .statuWid{
+    width: 15%
+}
+#continuousIntegration .recordTitle .timeWid{
+    width: 25%
+}
+#continuousIntegration .recordTitle .longWid{
+    width: 15%
+}
+#continuousIntegration .recordTitle .iconWid{
+    width: 15%;
+    height: 100%;
+    background: url('../../images/console/downSign.png') 50% 50% no-repeat;
+    cursor: pointer;
+}
+#continuousIntegration .recordTitle .iconWid.add{
+    background: url('../../images/console/upSign.png') 50% 50% no-repeat;    
+}
+#continuousIntegration .recordTitle div{
+    margin-left: 1%;
+    font-size: 18px;
+    color: #fefefe;
+    text-align: center;
+    line-height: 40px;
+}
+#continuousIntegration .recordMessage{
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    line-height: 40px;
+    color:#0faa13;   
+    box-shadow: 0px 3px 10px 0px rgba(17, 25, 66, 0.1);
+    border:1px solid #838383;
+    padding: 15px 35px;
+    box-sizing: border-box;
+    background-color: #121212;
+    opacity: 0.6;    
+}
+#continuousIntegration .recordMessageBox{
+    width: 773px;
+    height: 250px;
+    margin-top: 5px;
+}

@@ -1,0 +1,288 @@
+<div id="useApply"> 
+	<div id="searchButtons" class="clearfix">
+		<div class="searchBtnLeft lt">
+			<button class="btnCols backSize lt" ui-sref='appDetail'>
+				<i class="back"></i>
+			返回</button>
+			<button class="btnCols btnSize lt" ng-click = 'terminalFn()'>
+				<i class="add"></i>
+				登录终端 
+			</button>
+		</div>
+	</div>
+	<div class="appDetailGroup">
+		<div class="firstGroup clearfix">
+			<div class="leftLogo left"></div>
+			<div class="rightGroup left">
+				<div class="comTitBox">
+					<span class="tit left">运行状态</span>
+					<span class="left lins  cols">{{basicInformLIst.status | statuFilter}}</span>
+				</div>
+				<div class="comTitBox">
+					<span class="tit left">更新时间</span>
+					<span class="left lins">{{basicInformLIst.operation_time}}</span>
+				</div>
+				<div class="comTitBox">
+					<span class="tit left">服务地址</span>
+					<span class="left lins" id='js_copy'>{{basicInformLIst.service_name}}</span>
+					<input type="text" name="" id="js_copyTxt">
+					<button class="left copy" ng-click='copyAddressFn()'></button>
+				</div>
+				<div class="comTitBox">
+					<button class="upGrade" ng-click='upGradeModelFn()'>
+						<i class="icon up"></i>
+						升级
+					</button>
+					<button class="upGrade" ng-click='applyLogFn()'>
+						<i class="icon log"></i>	
+						日志
+					</button>
+				</div>				
+			</div>
+		</div>
+		<ul class="switchGroup clearfix">
+			<li class="left add" ng-click='detailTypeFn($event)'>基本信息</li>
+			<li class="left" ng-click='detailTypeFn($event)'>绑定域名</li>
+			<li class="left" ng-click='detailTypeFn($event)'>服务实例</li>
+			<li class="left" ng-click='detailTypeFn($event)'>监控</li>
+		</ul>
+		<div class="switchBox">
+			<div class="js_switch bgColor on">
+				<div class="comMsgBox">
+					<p class="msg">服务信息</p>
+					<ul class="msgTit clearfix">
+						<li class="txt38 wid25">名称</li>
+						<li class="wid25">运行状态</li>
+						<li class="wid25">镜像名称</li>
+						<li class="wid25">创建时间</li>
+					</ul>
+					<ul class="msgContent">
+						<li class="txt38 wid25">{{basicInformLIst.application_name}}</li>
+						<li class="statu wid25">{{basicInformLIst.status | statuFilter}}</li>
+						<li class="wid25">{{basicInformLIst.image_name}}</li>
+						<li class="wid25">{{basicInformLIst.create_time}}</li>
+					</ul>
+				</div>				
+				<div class="comMsgBox">
+					<p class="msg">配置信息</p>
+					<ul class="msgTit clearfix">
+						<li class="txt38 wid25">当前版本</li>
+						<li class="wid25">实例</li>
+						<li class="wid25">CPU</li>
+						<li class="wid25">内存</li>
+					</ul>
+					<ul class="msgContent">
+						<li class="txt38 wid25">{{basicInformLIst.image_version}}</li>
+						<li class="wid25">{{basicInformLIst.replications}}</li>
+						<li class="wid25">{{basicInformLIst.cpu_cores}}CPU</li>
+						<li class="wid25">{{basicInformLIst.memory_capacity}}</li>
+					</ul>
+				</div>
+				<div class="comMsgBox">
+					<p class="msg">环境变量</p>
+					<ul class="msgTit clearfix">
+						<li class="txt38 wid25">变量名</li>
+						<li>变量值</li>
+					</ul>
+					<ul class="comStorageBox">
+						<li class="storageMin clearfix" ng-repeat = 'data in basicInformLIst.env'>
+							<div class="txt38 wid25 left">{{data.name}}</div>
+							<div class="left col">{{data.value}}</div>
+						</li>
+					</ul>
+				</div>
+				<div class="comMsgBox">
+					<p class="msg">存储卷信息</p>
+					<ul class="msgTit clearfix">
+						<li class="txt38 wid25">名称</li>
+						<li>挂载点</li>
+					</ul>
+					<ul class="comStorageBox">
+						<li class="storageMin clearfix" ng-repeat = 'data in basicInformLIst.stateful_load'>
+							<div class="txt38 wid25 left">{{data.mountPath}}</div>
+							<div class="left col">{{data.claimName}}</div>
+						</li>							
+						<li class="storageMin clearfix" ng-if='!basicInformLIst.stateful_load[0]'>
+							<div class="txt38 wid25 left">无</div>
+						</li>					
+					</ul>
+				</div>
+			</div>
+			<div class="js_switch bgColor">
+				<div class="clearfix thirdTips">
+					<span class="left tipLeft">
+						为了完成域名绑定，您还需要在您的域名服务商处，将指定域名的CNAME指向我们为您生成的域名绑定专用地址。
+					</span>
+				</div>
+				<div class="comMsgBox">
+					<ul class="msgTit clearfix">
+						<li class="txt38 wid25">服务端口</li>
+						<li class="wid50">域名</li>
+						<li class="wid25">cname地址</li>
+					</ul>
+<!-- 					<ul class="comStorageBox">
+						<li class="storageMin clearfix" ng-repeat = 'data in serviceInformLIst'>
+							<div class="wid20 txt38 left">{{data.pod_name}}</div>
+							<div class="wid20 left">{{data.pod_port}}</div>
+							<div class="wid20 left">{{data.status}}</div>
+							<div class="wid20 left">{{data.pod_protocol}}</div>
+							<div class="wid20 left">{{data.pod_ip}}</div>
+						</li>
+					</ul> -->
+<!-- 					<form enctype="multipart/form-data">
+						<input type="file" name="upload_file" accept='*/*'>
+					</form>	 -->				
+					<table style="width: 100%"  border="0" cellspacing="0" cellpadding="0">
+						<tr>
+							<td class="wid25" style="vertical-align: middle;">
+								<div id="dropDown" class="dropFramePosition left wid3  mar38">
+									<div class="frame wid3 js_frame add" ng-click='dropDownFn($event)' id='js-port'>80</div>
+									<ul class="dropList js_dropList">
+										<li class="add" ng-click='appDropDataFn($event)'>80</li>
+										<li class="add" ng-click='appDropDataFn($event)'>443</li>
+									</ul>
+								</div>								
+							</td>
+							<td class="wid50">
+								<div class="addDomain">
+									<input type="text" name="" id='domain-Name'><i class="add" ng-click='addDomainFn()'></i>
+								</div>								
+								<div class="addDomain" ng-repeat = 'data in doaminInformLIst'>
+									<input ng-model='data.domain_name' type="text" name="" disabled="disabled"><i class="del" ng-click='delDomainFn(data)'></i>
+								</div>
+							</td>
+							<td class="wid25">{{basicInformLIst.service_name}}</td>
+						</tr>
+					</table>
+				</div>									
+			</div>
+			<div class="js_switch bgColor">
+				<div class="comMsgBox">
+					<ul class="msgTit clearfix">
+						<li class="txt38 wid20">名称</li>
+						<li class="wid20">IP地址</li>
+						<li class="wid20">状态</li>
+						<li class="wid20">协议</li>
+						<li class="wid20">容器端口</li>
+					</ul>
+					<ul class="comStorageBox">
+						<li class="storageMin clearfix" ng-repeat = 'data in serviceInformLIst'>
+							<div class="wid20 txt38 left">{{data.pod_name}}</div>
+							<div class="wid20 left">{{data.pod_ip}}</div>
+							<div class="wid20 left">{{data.status}}</div>
+							<div class="wid20 left">{{data.pod_protocol}}</div>
+							<div class="wid20 left">{{data.pod_port}}</div>
+						</li>
+					</ul>
+				</div>	
+			</div>
+			<div class="js_switch">
+				<div class="clearfix fourTopBox">
+					<span class="left">实例</span>
+					<div id="dropDown" class="dropFramePosition left wid4">
+						<div class="frame wid4 js_frame add" ng-click='dropDownFn($event)' id='js-mirrorExam'>{{serviceInformLIst[0].pod_name}}</div>
+						<ul class="dropList js_dropList">
+							<li class="add" ng-click='appMirrorDropDataFn($event)' ng-repeat = 'data in serviceInformLIst'>{{data.pod_name}}</li>
+						</ul>
+					</div>
+					<span class="left">时间</span>
+					<div id="dropDown" class="dropFramePosition left wid1">
+						<div class="frame wid1 js_frame add" id='js-cycle'  ng-click='dropDownFn($event)'>1天</div>
+						<ul class="dropList js_dropList">
+							<li class="add" ng-click='appMirrorDropDataFn($event)'>1天</li>
+							<li class="add" ng-click='appMirrorDropDataFn($event)'>1周</li>
+							<li class="add" ng-click='appMirrorDropDataFn($event)'>6小时</li>
+						</ul>
+					</div>						
+					<span class="left">统计指标</span>
+					<div id="dropDown" class="dropFramePosition left wid1">
+						<div class="frame wid1 js_frame add" id='js-indicator' ng-click='dropDownFn($event)'>平均值</div>
+						<ul class="dropList js_dropList">
+							<li class="add" ng-click='appMirrorDropDataFn($event)'>平均值</li>
+							<li class="add" ng-click='appMirrorDropDataFn($event)'>最大值</li>
+							<li class="add" ng-click='appMirrorDropDataFn($event)'>最小值</li>
+						</ul>
+					</div>												   
+				</div>
+				<div class="comChartsGroup">
+				    <div id="cpuChart" style="width: 100%px;height:450px;"></div>
+				</div>			
+				<div class="comChartsGroup">
+				    <div id="memChart" style="width: 100%px;height:450px;"></div>
+				</div>
+				<div class="comChartsGroup">
+				    <div id="intChart" style="width: 100%px;height:450px;"></div>
+				</div>												
+			</div>
+		</div>
+	</div>
+	<!-- 升级弹窗 -->
+	<div id="comPopupBox" class="js_upGrade">
+		<div class="Popup offset1 wid">
+			<div class="popTitle wid">
+				升级应用
+				<i ng-click='closeFn()'></i>
+			</div>
+			<div class="popContent">
+				<div class="comAddBox clearfix">
+					<p class="nameTitle left">名称</p>
+					<p class="name left">{{basicInformLIst.application_name}}</p>
+				</div>
+				<div class="comAddBox clearfix">
+					<p class="nameTitle left">版本</p>
+					<div id="dropDown" class="wid2 left">
+						<div class="frame wid2 js_frame" ng-click='dropDownFn($event)' id="js-verson">{{versionInformLIst[0]}}</div>
+						<ul class="dropList js_dropList">
+							<li ng-click='appDropDataFn($event)' ng-repeat = 'data in versionInformLIst'>{{data}}</li>
+						</ul>
+					</div>						
+				</div>
+				<div class="btnBox clearfix">
+					<button class="cancelBtn lt" ng-click='closeFn()'>取消</button>
+					<button class="sureBtn rt" ng-click='appUpGradeFn($event)'>确定</button>
+				</div>
+			</div>
+		</div>
+	</div>			
+	<!-- 升级弹窗结束 -->	
+	<!-- 日志弹窗 -->
+	<div id="comPopupBox" class="js_logModel">
+		<div class="Popup offset2 wid4">
+			<div class="popTitle wid4">
+				日志
+				<i ng-click='closeWebSocket()'></i>
+			</div>
+			<div class="popTerminal">
+				<div class="terminalDrop">
+					<div class="dropTop js_frame" ng-click='dropDownFn($event)' id='js-instance'>{{serviceInformLIst[0].pod_name}}</div>
+					<ul class="dropTab js_dropList">
+						<li ng-click='appLogDropDataFn($event)' ng-repeat = 'data in serviceInformLIst'>{{data.pod_name}}</li>
+					</ul>
+				</div>
+				<div class="fourlogs">
+					<div class="logsContent js_logsContent scrollDiv"></div>
+				</div>					
+			</div>
+		</div>
+	</div>				
+	<!-- 日志弹窗结束 -->	
+	<!-- 终端模板 -->
+	<div id="comPopupBox" class="js_terminal">
+		<div class="Popup offset2 wid4">
+			<div class="popTitle wid4">
+				登录终端
+				<i ng-click='termCloseFn()'></i>
+			</div>
+			<div class="popTerminal">
+				<div class="terminalDrop">
+					<div id='terminalDrop_enter' class="dropTop js_frame" ng-click='dropDownFn($event)' data-hostIp='{{serviceInformLIst[0].host_ip}}' data-containerId='{{serviceInformLIst[0].container_id}}'>{{serviceInformLIst[0].pod_name}}</div>
+					<ul class="dropTab js_dropList">
+						<li ng-click='termDropDataFn($event)' ng-repeat="item in serviceInformLIst" data-hostIp='{{item.host_ip}}' data-containerId='{{item.container_id}}'>{{item.pod_name}}</li>
+					</ul>
+				</div>
+				<div id="term"></div>				
+			</div>
+		</div>
+	</div>			
+	<!-- 终端模板结束 -->
+</div>

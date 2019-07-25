@@ -1,0 +1,301 @@
+<div id="subGroup"> 
+	<div class="subChangeBox clearfix">
+		<div class="unselected add left js_selected">集群管理</div>
+		<div class="unselected left js_selected">存储</div>
+	</div>
+	<div class="js_store">
+		<div id="searchButtons" class="clearfix">
+			<div class="searchBtnLeft mar15 lt">
+				<button class="btnCols btnSize lt" ng-click = "createModelFn()" ng-if='k8sClusterName.length==0'>
+					<i class="add"></i>
+					新建集群
+				</button>
+				<div class="colonyNameGroup lt" ng-if='k8sClusterName.length >0'>
+					<span class="colonyNameTiP lt">集群名称：</span>
+					<input disabled="disabled" class="js_k8sName colonyName lt" type="text" name="" size="3" ng-blur = 'sureChangeK8sNameFn($event)' ng-model='k8sClusterName'>
+					<i class="editor lt" ng-click= 'changeK8sNameFn($event)'></i>
+				</div>			
+			</div>
+			<div class="searchBtnRight mar15 lt">
+				<input class="rt searchBox searchNameK8s" type="text" name="" placeholder="请输入关键字搜索"
+				ng-model='k8sSearchName' ng-change='k8sSearchFn()'>
+			</div>
+		</div>
+		<div id="listData" style="height: 670px">
+			<div class="listDataGroup">
+				<ul class="listDGTitle">
+					<li class="wids">主机</li>
+					<li class="wids">主机角色</li>
+					<li class="wids">运行状态</li>
+					<li class="wids">添加时间</li>
+					<li class="wids">操作</li>
+				</ul>
+				<ul class="oneListDataGroup">
+					<li class="clearfix" ng-repeat='data in k8sLIst'>
+						<div class="wids onlyHost left">
+							<span class="idName">{{data.host_name}}</span>
+							<input type="text" name="" disabled="disabled" ng-model='data.host_alias' class="js_k9sAsisName">
+						</div>
+						<div class="wids left">{{data.host_role}}</div>
+						<div class="wids left">
+						    <div id="containerBar" ng-if='data.cls_status==4'>
+	    						<div class="warning"></div>
+							</div>
+							<div class="normal" ng-if='data.cls_status==6'>正常</div>
+							<div class="normal error" ng-if='data.cls_status==5'>异常</div>
+						</div>
+						<div class="wids left">{{data.create_at}}</div>
+						<div class="wids left color" ng-click='checkDetailsFn(data)'>查看详情</div>
+					</li>
+				</ul>			
+			</div>	
+			<div class="pagGroup clearfix">
+			    <div class="allTotals">共{{k8sTotalData}}条</div>
+			    <ul class="pagination" id="page2">
+			    </ul>
+			    <div class="pageJump">
+			        <span>跳转到</span>
+			        <input type="number" />
+			        <span>页</span>
+			    </div>
+			</div>			
+		</div>
+	</div>
+	<div class="js_store hidd">
+		<div id="searchButtons" class="clearfix">
+			<div class="searchBtnLeft mar15 lt">
+				<button class="btnCols btnSize lt" ng-click = "storeModelFn()" ng-if='storageClusterName.length==0'>
+					<i class="add"></i>
+					新建存储
+				</button>
+				<div class="colonyNameGroup lt" ng-if='storageClusterName.length !==0'>
+					<span class="colonyNameTiP lt">集群名称：</span>
+					<input disabled="disabled" class="colonyName js_storageName lt" type="text" name="" size="3"ng-model='storageClusterName' ng-blur="sureChangeStorageNameFn($event)">
+					<i class="editor lt" ng-click='changeK8sNameFn($event)'></i>
+				</div>			
+			</div>
+			<div class="searchBtnRight mar15 lt">
+				<input class="rt searchBox searchNameStorage" type="text" name="" placeholder="请输入关键字搜索" ng-model=storageSearch ng-change = storageSearchFn()>
+			</div>
+		</div>
+		<div id="listData" style="height: 670px">
+			<div class="listDataGroup">
+				<ul class="listDGTitle">
+					<li class="wids1">主机</li>
+					<li class="wids1">运行状态</li>
+					<li class="wids1">添加时间</li>
+					<li class="wids1">操作</li>
+				</ul>
+				<ul class="oneListDataGroup">
+					<li class="clearfix" ng-repeat='data in storageLIst'>
+						<div class="wids1 onlyHost left">
+							<span class="idName">{{data.host_name}}</span>
+							<input type="text" name="" disabled="disabled" ng-model='data.host_alias'>
+						</div>
+						<div class="wids1 left">
+						    <div id="containerBar" ng-if='data.cls_status==4'>
+	    						<div class="warning"></div>
+							</div>
+							<div class="normal" ng-if='data.cls_status==6'>正常</div>
+							<div class="normal error" ng-if='data.cls_status==5'>异常</div>
+						</div>
+						<div class="wids1 left">{{data.create_at}}</div>
+						<div class="wids1 left color" ng-click= 'checkDetailsFn(data)'>查看详情</div>
+					</li>
+				</ul>			
+			</div>
+			<div class="pagGroup clearfix">
+			    <div class="allTotals">共{{storageTotalData}}条</div>
+			    <ul class="pagination" id="page1">
+			    </ul>
+			    <div class="pageJump">
+			        <span>跳转到</span>
+			        <input type="number" />
+			        <span>页</span>
+			    </div>
+			</div>						
+		</div>
+	</div>	
+	<!-- 新建集群弹窗 -->
+	<div id="comPopupBox" class="js_newColony">
+		<div class="Popup offset wid4">
+			<div class="popTitle wid4">
+				新建集群
+				<i ng-click="closeSubGroupFn()"></i>
+			</div>
+			<div class="createColonyGroup">
+				<div class="comColonyModelContent clearfix">
+					<span class="clusterName left">集群名称</span>
+					<input class="InputBox left" type="text" name="" placeholder="请输入集群名称" ng-model='k8sGroupName'>
+				</div>
+				<div class="comColonyModelContent clearfix">
+					<span class="clusterName left">域名</span>
+					<input  class="InputBox left" type="text" name="" placeholder="请输入域名" ng-model = 'k8sAreaName'>
+				</div>
+				<div class="comColonyModelContent clearfix">
+					<span class="clusterName left">主节点</span>
+					<div class="nodeList left">
+						<div class="nodeTitle">节点列表</div>
+						<div class="nodeDataList">
+							<div class="NodeDataBox">
+								<div class="scrollDiv js_host">
+									<div class="oneNodeData js_hostNode clearfix" ng-repeat = 'data in nodeBox  track by $index' repeat-finish>
+										<span class="selects js_select1 left" ng-click='hostNodeFn($event)'></span>
+										<span class="nodeDataTxt left">{{data}}
+										</span>
+									</div>							
+								</div>
+							</div>
+						</div>
+					</div>				
+					<div class="nodeList mar12 left">
+						<div class="nodeTitle">节点列表</div>
+						<div class="nodeDataList">
+							<div class="NodeDataBox js_hostNodeList">
+							</div>
+							<div class="footerBox js_hostError">主节点1~3台</div>
+						</div>
+					</div>				
+					<div class="btnBox pads left clearfix">
+						<button class="cancelBtn lt" ng-click="closeSubGroupFn()">取消</button>
+						<button class="sureBtn rt" ng-click='nextModelFn()'>下一步</button>
+					</div>			
+				</div>				
+			</div>
+		</div>
+	</div>
+	<div id="comPopupBox" class="js_secColony">
+		<div class="Popup offset wid4">
+			<div class="popTitle wid4">
+				新建集群
+				<i ng-click="closeSubGroupFn()"></i>
+			</div>
+			<div class="createColonyGroup">
+				<div class="comColonyModelContent clearfix">
+					<span class="clusterName left">集群名称</span>
+					<input class="InputBox left" type="text" name="" placeholder="请输入集群名称" ng-model = 'k8sGroupName'>
+				</div>
+				<div class="comColonyModelContent clearfix">
+					<span class="clusterName left">域名</span>
+					<input  class="InputBox left" type="text" name="" placeholder="请输入域名"  ng-model = 'k8sAreaName'>
+				</div>
+				<div class="comColonyModelContent clearfix">
+					<span class="clusterName left">从节点</span>
+					<div class="nodeList left">
+						<div class="nodeTitle">节点列表</div>
+						<div class="nodeDataList">
+							<div class="NodeDataBox">
+								<div class="scrollDiv js_aslaveNode">
+									<div class="oneNodeData js_region clearfix" ng-repeat = 'data in arrData' repeat-finish>
+										<span class="selects left" ng-click = 'slaveNodeFn($event)'></span>
+										<span class="nodeDataTxt left">{{data}}</span>
+									</div>												
+								</div>
+							</div>
+						</div>
+					</div>				
+					<div class="nodeList mar12 left">
+						<div class="nodeTitle">节点列表</div>
+						<div class="nodeDataList">
+							<div class="NodeDataBox">
+								<div class="scrollDiv js_bslaveNode">
+								</div>
+							</div>
+							<div class="footerBox js_solveError">从节点至少一台</div>
+						</div>
+					</div>				
+					<div class="btnBox pads left clearfix">
+						<button class="cancelBtn lt" ng-click="closeSubGroupFn()">取消</button>
+						<button class="sureBtn rt" ng-click='sureModelFn()'>确定</button>
+					</div>			
+				</div>				
+			</div>
+		</div>
+	</div>
+	<div id="comPopupBox" class="js_sureColony">
+		<div class="Popup offset wid5">
+			<div class="popTitle wid5">
+				确认
+				<i ng-click="closeSubGroupFn()"></i>
+			</div>
+			<div class="createColonyGroup">
+				<div class="comColonyModelContent clearfix">
+					<div class="nodeList left">
+						<div class="nodeTitle">主节点</div>
+						<div class="nodeDataList">
+							<div class="NodeDataBox">
+								<div class="scrollDiv js_sureHost"></div>
+							</div>
+						</div>
+					</div>				
+					<div class="nodeList mar12 left">
+						<div class="nodeTitle">从节点</div>
+						<div class="nodeDataList">
+							<div class="NodeDataBox">
+								<div class="scrollDiv js_sureSolve"></div>		
+							</div>
+						</div>
+					</div>				
+					<div class="btnBox pads left clearfix">
+						<button class="cancelBtn lt" ng-click="backModelFn()">返回修改</button>
+						<button class="sureBtn rt" ng-click = 'sureCreateHostFn($event)'>确定</button>
+					</div>			
+				</div>				
+			</div>
+		</div>
+	</div>								
+	<!-- 新建集群弹窗结束 -->	
+	<!-- 新建存储 -->
+	<div id="comPopupBox" class="js_storeColony">
+		<div class="Popup offset wid5">
+			<div class="popTitle wid5">
+				新建存储集群
+				<i ng-click="closeSubGroupFn()"></i>
+			</div>
+			<div class="createColonyGroup">
+				<div class="comColonyModelContent clearfix">
+					<span class="clusterName left">集群名称</span>
+					<input class="InputBox left" type="text" name="" placeholder="请输入集群名称" ng-model='storageGroupName'>
+				</div>
+				<div class="comColonyModelContent clearfix">
+					<div class="nodeList marBot20 left">
+						<div class="nodeTitle">节点列表</div>
+						<div class="nodeDataList">
+							<div class="NodeDataBox">
+								<div class="scrollDiv js_storageNode">
+									<div class="oneNodeData js_storage clearfix" ng-repeat = 'data in nodeBox' repeat-finish>
+										<span class="selects left" ng-click='storageNodeFn($event)'></span>
+										<span class="nodeDataTxt left">{{data}}</span>
+									</div>				
+								</div>
+							</div>
+						</div>
+					</div>				
+					<div class="nodeList marBot20 mar12 left">
+						<div class="nodeTitle">节点列表</div>
+						<div class="nodeDataList">
+							<div class="NodeDataBox">
+								<div class="scrollDiv js_storageData"></div>
+							</div>
+							<div class="footerBox js_storageError">节点至少一台</div>				
+						</div>
+					</div>
+				<div class="comColonyModelContent clearfix">
+					<span class="clusterName left">选择网络</span>
+					<div id="dropDown" class="dropFramePosition wid2 left">
+						<div class="frame wid2 js_frame js_storageNet" ng-click='dropDownFn($event)'>{{netWorkBox[0]}}</div>
+						<ul class="dropList js_dropList">
+							<li ng-click='storageDropFn($event)' ng-repeat = 'data in netWorkBox'>{{data}}</li>
+						</ul>
+					</div>	
+				</div>		
+					<div class="btnBox pads left clearfix">
+						<button class="cancelBtn lt" ng-click="closeSubGroupFn()">取消</button>
+						<button class="sureBtn rt" ng-click='surestorageCreateFn($event)'>确定</button>
+					</div>			
+				</div>				
+			</div>
+		</div>
+	</div>	
+	<!-- 新建存储结束 -->
+</div>

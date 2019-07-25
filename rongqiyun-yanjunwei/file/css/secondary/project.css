@@ -1,0 +1,71 @@
+@charset "utf-8";
+#project{
+	width: 100%;
+	padding: 0  80px 0 30px ;
+	box-sizing: border-box;
+	min-width: 1099px;
+}
+#project .choseWids{
+	width: 10%;
+	position: relative;
+}
+#project .nameWids{
+	width: 20%;
+}
+#project .timeWids{
+	width: 20%;
+}
+#project .countWids{
+	width: 13%;
+}
+#project .operatWids{
+	width: 28%;
+}
+#project .operateBtns{
+	height: 100%;
+	background:none;
+	margin: 0 20px;
+}
+#project .offset{
+	transform: translate(-260px,-120px);
+	-ms-transform: translate(-260px,-120px);
+	-moz-transform: translate(-260px,-120px);
+	-webkit-transform: translate(-260px,-120px);
+	-o-transform: translate(-260px,-120px);
+}
+#project .offset1{
+	transform: translate(-260px,-96px);
+	-ms-transform: translate(-260px,-96px);
+	-moz-transform: translate(-260px,-96px);
+	-webkit-transform: translate(-260px,-96px);
+	-o-transform: translate(-260px,-96px);
+}
+#project .createProjectName span{
+	width: 88px;
+	height: 28px;
+	display: block;
+	float: left;
+	line-height: 28px;
+	color: #666666;
+	font-size: 18px;
+}
+#project .createProjectName input{
+	width: 298px;
+	height: 28px;
+	float: left;
+	border-radius: 3px;
+	border: solid 1px #666666;
+	outline: none;
+	text-indent: 10px;
+}
+#project .createProjectName input:focus{
+	border: solid 1px #6aaf4b;
+	color:#6aaf4b; 
+}
+#project .createProjectTip{
+	width: 390px;
+	color: #999999;
+	word-break:break-all;
+	margin-top: 10px;
+	font-size: 12px;
+}

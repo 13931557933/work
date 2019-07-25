@@ -1,0 +1,27 @@
+@charset "utf-8";
+#platformLog{
+	width: 100%;
+	padding: 0  80px 0 30px ;
+	box-sizing: border-box;
+	min-width: 1099px;
+}
+#platformLog #listData .Wids{
+	width: 24%;
+}
+#platformLog .viewLog{
+	width: 76px;
+	height: 40px;
+	display: block;
+	color: #666666;
+	font-size: 14px;
+	line-height: 40px;
+}
+#platformLog .sureBtn{
+	width: 78px;
+	height: 40px;
+	background-color: #3c3c3c;
+	box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.2);
+	border-radius: 5px;
+	font-size: 16px;
+	margin-left: 20px;	
+}

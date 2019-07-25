@@ -1,0 +1,199 @@
+<div id="member">
+	<div id="searchButtons" class="clearfix">
+		<div class="searchBtnLeft lt">
+			<button class="btnCols btnSize lt" ng-click = 'newCreateFn()'>
+				<i class="add"></i>
+				新建成员 
+			</button>
+			<button class="btnCols btnSize lt" ng-click='deleteFn()'>
+				<i class="delete"></i>
+				注销成员 
+			</button>
+			<button class="btnCols refreshSize lt" ng-click='refreshMemberFn()'></button>				
+		</div>
+		<div class="searchBtnRight lt">
+			<input class="rt searchBox" type="text" name="" ng-model='searchMember' placeholder="请输入关键字搜索" ng-change='searchMemberFn()'>
+		</div>
+	</div>
+	<div id="listData">
+		<div class="listDataGroup">
+			<ul class="listDGTitle">
+				<li class="choseWids"></li>
+				<li class="memberName">成员名称</li>
+				<li class="mail">邮箱</li>
+				<li class="phone">手机</li>
+				<li class="belong">所属项目</li>
+				<li class="status">状态</li>
+				<li class="operatWids">操作</li>
+			</ul>
+			<ul class="listDGDetail">
+				<li class="oneDataGroup" ng-repeat='data in memberLIst'>
+					<div class="choseWids">
+						<span class="choiceBox" ng-click='choiceFn($event,data)'></span>
+					</div>
+					<div class="memberName comClickColor" ng-click='revisionModelFn(data)'>{{data.username}}</div>
+					<div class="mail comTextColor">{{data.email}}</div>
+					<div class="phone comTextColor">{{data.phone}}</div>
+					<div class="belong comTextColor" ng-if='data.project_list.length==0'>无</div>
+					<div class="belong comTextColor" title="{{data.project_list}}" ng-if='data.project_list.length !==0'>{{data.project_list[0]}}</div>
+					<div class="status comTextColor">{{data.user_status | isFreeze}}</div>
+					<div class="operatWids">
+						<button class="comClickColor changeBtns" ng-click='revisionModelFn(data)'>修改信息</button>
+						<button class="comClickColor changeBtns"ng-if='data.user_status==0' ng-click='freezeModelFn(data)'>冻结成员</button>
+						<button class="comClickColor changeBtns" ng-if='data.user_status==1' ng-click='unFreezeModelFn(data)'>解冻成员</button>
+						<button class="comClickColor changeBtns" ng-click='deleteModelFn(data)'>注销成员</button>
+					</div>
+				</li>
+			</ul>
+		</div>
+		<div class="pagGroup clearfix">
+		    <div class="allTotals">共{{memberTotalData}}条</div>
+		    <ul class="pagination" id="page2">
+		    </ul>
+		    <div class="pageJump">
+		        <span>跳转到</span>
+		        <input type="number" />
+		        <span>页</span>
+		    </div>
+		</div>		
+	</div>
+	<!--修改信息 -->
+	<div id="comPopupBox" class="js_revision">
+		<div class="Popup offset wid">
+			<div class="popTitle wid">
+				修改信息
+				<i ng-click="closeFn()"></i>
+			</div>
+			<div class="popContent">
+				<p class="changeName clearfix">
+					<span class="sortName">用户名</span>
+					<input disabled="true" type="text" name="" ng-model='modiferTxt.username'>
+				</p>
+				<p class="changeName clearfix">
+					<span class="sortName">手机号</span>
+					<input disabled="true" type="text" name="" class="js_phone"  ng-model='modiferTxt.phone' ng-blur='checksFn($event,phone)'>
+					<i ng-click='changeMsgFn($event)'></i>
+				</p>
+				<p class="changeName clearfix">
+					<span class="sortName">邮箱</span>
+					<input disabled="true" type="text" name="" class="js_email" ng-model='modiferTxt.email' ng-blur='checksFn($event,Email)'>
+					<i ng-click='changeMsgFn($event)'></i>
+				</p>
+				<p class="changeName clearfix">
+					<span class="sortName">密码</span>
+					<input disabled="true" type="password" name="" class="js_pwd" placeholder="******" ng-model='pwdVal' ng-blur='checkspawFn($event,paw)'>
+					<i ng-click='changeMsgFn($event)'></i>
+					<span class="changeNameTips">
+						密码长度在5~10,字母开头,可包</br>含数字和下划线。
+					</span>
+				</p>											
+				<div class="btnBox clearfix">
+					<button class="cancelBtn lt" ng-click="closeFn()">取消</button>
+					<button class="sureBtn rt" ng-click='changeMemberMsgFn($event)'>确定</button>
+				</div>
+			</div>
+		</div>
+	</div>	
+	<!--修改信息结束 -->
+	<!--新增信息 -->
+	<div id="comPopupBox" class="js_newCreate">
+		<div class="Popup offset wid">
+			<div class="popTitle wid">
+				新增成员
+				<i ng-click="closeFn()"></i>
+			</div>
+			<div class="popContent">
+				<p class="changeName clearfix">
+					<span class="sortName">用户名</span>
+					<input placeholder="请输入用户名" class="addWids" type="text" name="" ng-model='newUserVal' ng-blur='newChecksFn($event,checMemberName)'>
+					<span class="changeNameTips">
+						以字母开头,并且只能输入4~15字母和数字。
+					</span>					
+				</p>
+				<p class="changeName clearfix">
+					<span class="sortName">手机号</span>
+					<input placeholder="请输入手机号" class="addWids" type="text" name="" ng-model='newPhoneVal' ng-blur='newChecksFn($event,phone)'>
+				</p>
+				<p class="changeName clearfix">
+					<span class="sortName">邮箱</span>
+					<input placeholder="请输入邮箱" class="addWids" type="text" name="" ng-model='newMailVal' ng-blur='newChecksFn($event,Email)'>
+				</p>
+				<p class="changeName clearfix">
+					<span class="sortName">密码</span>
+					<input class="addWids" type="password" name="" placeholder="请输入密码" ng-model='newPawVal' ng-blur='newChecksFn($event,paw)'>
+					<span class="changeNameTips">
+						密码长度在5~10,字母开头,可包含数字和下划线。
+					</span>
+				</p>
+				<p class="changeName clearfix">
+					<span class="sortName">确认密码</span>
+					<input class="addWids" type="password" name="" placeholder="请重复密码" ng-model='repNewPawVal' ng-blur='repPawFn(repNewPawVal,$event)'>
+				</p>
+
+				<div class="btnBox clearfix">
+					<button class="cancelBtn lt" ng-click="closeFn()">取消</button>
+					<button class="sureBtn rt" ng-click='newMemberFn($event)'>提交新增</button>
+				</div>
+			</div>
+		</div>
+	</div>	
+	<!--新增信息结束 -->
+	<!--注销成员 -->
+	<div id="comPopupBox" class="js_delete">
+		<div class="Popup offset1 wid">
+			<div class="popTitle wid">
+				注销成员
+				<i ng-click="closeFn()"></i>
+			</div>
+			<div class="popContent">
+				<p class="deleteProjectBox">
+					是否注销该用户,用户注销后无法恢复。
+				</p>
+				<div class="btnBox clearfix">
+					<button class="cancelBtn lt" ng-click="closeFn()">取消</button>
+					<button class="sureBtn rt" ng-click = 'memDelMemberFn($event)'>确定</button>
+				</div>
+			</div>
+		</div>
+	</div>	
+	<!--注销成员结束 -->
+	<!-- 冻结成员 -->
+	<div id="comPopupBox" class="js_freeze">
+		<div class="Popup offset1 wid">
+			<div class="popTitle wid">
+				冻结成员
+				<i ng-click="closeFn()"></i>
+			</div>
+			<div class="popContent">
+				<p class="deleteProjectBox">
+					是否冻结该用户,用户冻结后无法登录。
+				</p>
+				<div class="btnBox clearfix">
+					<button class="cancelBtn lt" ng-click="closeFn()">取消</button>
+					<button class="sureBtn rt" ng-click='sureFrostFn($event)'>确定</button>
+				</div>
+			</div>
+		</div>
+	</div>		
+	<!-- 冻结成员结束-->
+		<!-- 冻结成员 -->
+	<div id="comPopupBox" class="js_unfreeze">
+		<div class="Popup offset1 wid">
+			<div class="popTitle wid">
+				解冻成员
+				<i ng-click="closeFn()"></i>
+			</div>
+			<div class="popContent">
+				<p class="deleteProjectBox">
+					是否解冻该用户？
+				</p>
+				<div class="btnBox clearfix">
+					<button class="cancelBtn lt" ng-click="closeFn()">取消</button>
+					<button class="sureBtn rt" ng-click='sureUnFrostFn($event)'>确定</button>
+				</div>
+			</div>
+		</div>
+	</div>		
+	<!-- 冻结成员结束-->
+
+</div>

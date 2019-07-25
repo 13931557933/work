@@ -1,0 +1,34 @@
+﻿<!DOCTYPE html>
+<html ng-app='gearBox'>
+<head>
+	<title>gearBox</title>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<link rel="stylesheet" type="text/css" href="css/common.css">
+	<link rel="stylesheet" type="text/css" href="css/index.css">
+	<link rel="stylesheet" type="text/css" href="css/pager.css">
+	<link rel="stylesheet" type="text/css" href="css/dateRange.css">
+	<link rel="stylesheet" type="text/css" href="css/secondary/overView.css">
+</head>
+<body ng-controller='console'>
+	<div ng-include="'templates/header.html'"></div>
+	<div ng-include="'templates/leftNav.html'"></div>
+	<div class="consoleViews" ui-view></div>
+	<!-- 引入js文件 -->
+	<script src="js/lib/jquery.min.js"></script>
+	<script src="js/lib/angular.min.js"></script>
+	<script src="js/lib/angular-ui-router.min.js"></script>
+	<script src="js/lib/ocLazyLoad.min.js"></script>
+	<script src="js/config/app.config.js"></script>
+	<script src="js/services/apiService.js"></script>
+	<script src="js/config/route.config.js"></script>
+	<script src="js/lib/layer.js"></script>
+	<script src="js/lib/page.min.js"></script>
+	<script src="js/lib/echarts.js"></script>
+	<script src="js/lib/echarts-liquidfill.js"></script>
+	<script src="js/lib/sspaasSliderTool.js"></script>
+	<script src="js/lib/dateRange.js"></script>
+	<script src="js/lib/jquery.slimscroll.js"></script>
+	<script src="js/index.js"></script>
+</body>
+</html>

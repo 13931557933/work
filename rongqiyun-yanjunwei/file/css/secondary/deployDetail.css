@@ -1,0 +1,233 @@
+@charset "utf-8";
+#deployDetail{
+    width: 100%;
+    padding: 70px 80px 0 30px;
+    box-sizing: border-box;
+    min-width: 1099px;  
+}
+#deployDetailPage{
+    width: 100%;
+    background-color: #ffffff;
+    box-shadow: 0px 5px 15px 0px rgba(17, 25, 66, 0.1);
+    border-radius: 5px;
+    box-sizing: border-box;
+    padding: 0 70px;
+    overflow: hidden;	
+}
+#deployDetailPage .firstPart{
+	padding: 50px 0 0 40px;
+	box-sizing: border-box;
+}
+#deployDetailPage .detailImg{
+	width: 120px;
+	height: 120px;
+	display: block;
+	box-shadow: 0px 1px 10px 0px rgba(17, 25, 66, 0.2);
+	border-radius: 5px;
+	background: url('../../images/console/pub.png') 50% 50% #FFFFFF no-repeat; 
+}
+#deployDetailPage .detailName{
+	width: 740px;
+	height: 80px;
+	padding-left: 30px;
+	margin-top: 40px;
+}
+#deployDetailPage .topTier{
+	width:100%;
+	height: 40px;
+	line-height:55px;
+}
+#deployDetailPage .topTier.txt{
+    color: #666666;
+    font-size: 22px;
+}
+#deployDetailPage .bottomTier .bottomTierTxt{
+	width: 80px;
+	height: 40px;
+	display: block;
+	color: #666666;
+}
+#deployDetailPage .detailName #js_copyTxt{
+	border: none;
+	height: 0;
+}
+#deployDetailPage .bottomTier .bottomTierWay{
+	width: 432px;
+	height: 40px;
+	display: block;
+	color: #6aaf4b;
+  	overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+}
+#deployDetailPage .bottomTier .copyBtn{
+	width: 26px;
+	height: 26px;
+	border-radius: 3px;
+	border: solid 1px #999999;	
+	margin-top: 12px;
+	background: url('../../images/console/copy.png') 50% 50% no-repeat;
+}
+#deployDetailPage .bottomTier .copyBtn:hover{
+	border: solid 1px #6aaf4b;	
+	background: url('../../images/console/copy1.png') 50% 50% no-repeat;	
+}
+#deployDetailPage .bottomTier .downLoader{
+	width: 200px;
+	height: 40px;
+	display: block;
+	line-height: 60px;
+	padding-left: 60px;
+	box-sizing:border-box;
+	text-indent: 20px;
+	color: #666666;
+	background: url("../../images/console/downLoad1.png")60px 20px no-repeat;
+}
+#deployDetailPage .detailLittleMsg{
+	width: 360px;
+	height: 80px;
+	border-radius: 5px;
+	border: solid 1px #999999;
+	margin-top: 40px;
+	padding-left: 30px;
+	box-sizing: border-box;
+	color: #666666;	
+}
+#deployDetailPage .detailLittleMsg .wids{
+	width: 164px;
+	height: 40px;
+	line-height: 40px;
+	border-radius: 5px;
+}
+#deployDetailPage .detailLittleMsg .time{
+	width: 100%;
+	height: 40px;
+	line-height: 40px;
+	border-radius: 5px;
+}
+#deployDetailPage .menuBox{
+	width: 800px;
+	height: 40px;
+	background-color: #ffffff;
+	box-shadow: 0px 2px 10px 0px rgba(17, 25, 66, 0.2);
+	border-radius: 3px;
+	margin-top: 28px;	
+}
+#deployDetailPage .menuBox li{
+	width: 200px;
+	height: 40px;
+	line-height: 40px;
+	text-align: center;
+	color: #666666;
+	float: left;
+	cursor: pointer;
+}
+#deployDetailPage .menuBox li.add{
+	background-color: #6aaf4b;
+	border-radius: 3px;
+	color: #ffffff;	
+}
+#deployDetailPage .contentGroup{
+	width:100%;
+	height: 380px;
+	background-color: #f6f6f6;
+	overflow-y: auto;
+}
+#deployDetailPage .contentGroup textarea{
+	width: 100%;
+	padding: 30px 50px;
+	box-sizing: border-box;
+	border:none;
+	text-indent: 20px;
+	font-size: 14px;
+	color: #666666;
+	background: url('../../images/console/editor.png')50px 30px  no-repeat; 
+}
+#deployDetailPage .dockerfile{
+	display: none;
+}
+#deployDetailPage .contentGroup .serviceInterface{
+	width: 100%;
+	padding: 30px 40px;	
+	box-sizing: border-box;
+	display: none;
+}
+#deployDetailPage .contentGroup .version{
+	width: 100%;
+	padding: 30px 40px;	
+	box-sizing: border-box;
+	display: none;	
+}
+#deployDetailPage .contentGroup .version li{
+	width: 132px;
+	height: 30px;
+	float: left;
+	background: url('../../images/console/editor.png')0 50% no-repeat;
+	line-height: 30px;
+	text-indent: 20px;
+	color: #666666;
+}
+#deployDetailPage .contentGroup .serviceInterface p{
+	height: 20px;
+	font-size: 14px;
+	color: #666666;
+}
+#deployDetailPage .contentGroup .tableGroup{
+	width: 100%;
+	padding: 0 60px;
+	box-sizing: border-box;
+
+}
+#deployDetailPage .contentGroup .tableGroup table{
+	width: 100%;
+ 	border:1px solid #999999;
+ 	margin-top: 10px;
+}
+#deployDetailPage .contentGroup .tableGroup table th{
+	height: 40px;
+}
+#deployDetailPage .contentGroup .tableGroup table td{
+	height: 30px;
+}
+#deployDetailPage .contentGroup .tableGroup table th,td{
+ 	border:1px solid #999999;
+ 	text-indent: 30px;	
+}
+#deployDetailPage .btnBox{
+	width: 260px;
+	height: 70px;
+	padding-top:14px;
+	box-sizing: border-box;
+	margin: 0 auto; 
+}
+#deployDetailPage .btnBox button{
+	width: 110px;
+	height: 40px;
+	border-radius: 5px;
+	line-height: 40px;
+	text-align: left;	
+}
+#deployDetailPage .btnBox .btnL{
+	border: solid 1px #666666;	
+	color: #666666;
+	background: none;
+}
+#deployDetailPage .btnBox .btnR{
+	background-color: #3c3c3c;
+	color: #ffffff;
+}
+#deployDetailPage .btnBox .btnR:hover{
+	background-color: #6aaf4b;
+}
+#deployDetailPage .btnBox i{
+    width: 40px;
+    height: 38px;
+    display: block;
+    float: left;
+}
+#deployDetailPage .btnBox i.back{
+	background: url('../../images/console/back1.png') 50% 45% no-repeat;
+}
+#deployDetailPage .btnBox i.deploy{
+	background: url('../../images/console/deploy.png') 50% 45% no-repeat;
+}

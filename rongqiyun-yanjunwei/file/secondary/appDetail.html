@@ -1,0 +1,325 @@
+<div id="appDetail">
+	<div id="searchButtons" class="clearfix">
+		<div class="searchBtnLeft lt">
+			<button class="btnCols btnSize lt" ng-click = 'addAppFn()'>
+				<i class="add"></i>
+				创建应用 
+			</button>
+			<button class="btnCols refreshSize lt" ng-click= 'appResearchFn()'></button> 				
+		</div>
+		<div class="searchBtnRight lt">
+			<input class="rt searchBox searchName" type="text" name="" placeholder="请输入关键字搜索" ng-model='appSearchName' ng-change='appSearchFn()'>
+		</div>
+	</div> 
+	<div id="listData">
+		<div class="listDataGroup">
+			<ul class="listDGTitle">
+				<li class="appNameWid">应用名称</li>
+				<li class="cpuWid">CPU</li>
+				<li class="netWid">网络</li>
+				<li class="examWid">实例</li>
+				<li class="memWid">内存</li>
+				<li class="statuWid">状态</li>
+				<li class="opWid">操作</li>
+			</ul>
+			<ul class="listDGDetail">
+				<li class="oneDataGroup" ng-repeat = 'data in appLIst'>
+					<div class="appNameWid comClickColor"  style="cursor: not-allowed;" ng-if='data.status !==1 && data.status !==6 && data.status !==8 '>{{data.application_name}}</div>
+					<div class="appNameWid comClickColor" ng-if='data.status ==1 || data.status ==6 || data.status ==8'  ng-click="appDetailFn(data)">{{data.application_name}}</div>
+					<div class="cpuWid comTextColor">{{data.cpu_cores}}CPU</div>
+					<div class="netWid comTextColor">{{data.network_name}}</div>
+					<div class="examWid comTextColor">{{data.replications}}</div>
+					<div class="memWid comTextColor">{{data.memory_capacity}}</div>
+					<div class="statuWid comTextColor">{{data.status | statuFilter}}</div>
+					<div class="opWid comTextColor">
+						<button class="opBtn comClickColor" ng-click="appDetailFn(data)" ng-if='data.status ==1 || data.status ==6 || data.status ==8'>查看</button>						
+						<button style="cursor: not-allowed;" class="opBtn comClickColor" ng-if='data.status !==1 && data.status !==6 && data.status !==8'>查看</button>
+						<button style="cursor: not-allowed;" class="opBtn comClickColor" ng-if='data.status ==0 || data.status ==2 || data.status ==3'>删除</button>
+						<button class="opBtn comClickColor" ng-if='data.status !==0 && data.status !==2 && data.status !==3' ng-click= 'delAppFn(data)'>删除</button>
+					</div>
+				</li>
+			</ul>
+		</div>
+		<div class="pagGroup clearfix">
+		    <div class="allTotals">共{{appTotalRows}}条数据</div>
+		    <ul class="pagination" id="page1">
+		    </ul>
+		    <div class="pageJump">
+		        <span>跳转到</span>
+		        <input type="number" />
+		        <span>页</span>
+		    </div>
+		</div>
+	</div>	
+	<!-- 创建应用弹窗第一步 -->
+	<div id="comPopupBox" class="js_addApp">
+		<div class="Popup offset wid6">
+			<div class="popTitle wid6">
+				创建应用
+				<i ng-click="closeFn()"></i>
+			</div>
+			<div class="popContentBox padFirst">
+				<div class="stepBar pad clearfix">
+					<div class="comStep left">
+						<span class="left faceSerial serial">1</span>
+						<span class="left stepTxt faceTxt">选择镜像</span>
+						<span class="left stepDot faceTxt">······</span>
+					</div>
+					<div class="comStep left">
+						<span class="left serial">2</span>
+						<span class="left stepTxt">服务设置</span>
+						<span class="left stepDot">······</span>			
+					</div>
+					<div class="comStep left">
+						<span class="left serial">3</span>
+						<span class="left stepTxt">环境设置</span>
+					</div>
+				</div>
+				<input  class='searchBox imageQueryBox' type="text" name="" placeholder="请输入关键字搜索" ng-model='imageQuery' ng-change='imageQueryFn()'>
+				<div class="mirrorGroup clearfix">
+					<div class="scrollDiv">
+						<div class="mirrorBox left js_mirrorBox" ng-class='{"add":$index ==0}' ng-repeat='data in platDataList' ng-click='mirrorChFn($event)' repeat_finish>
+							<img class="imgBox" ng-if='!data.picture' src="images/console/personal.png">
+							<img class="imgBox" ng-if='!data.picture'ng-src={{data.picture}}>
+							<div class="mirrorName">{{data.name}}</div>
+						</div>
+					</div>
+				</div>	
+				<div class="pagGroup clearfix">
+				    <div class="allTotals">共{{platDataTotal}}条数据</div>
+				    <ul class="pagination" id="page2">
+				    </ul>
+				    <div class="pageJump">
+				        <span>跳转到</span>
+				        <input type="number"/>
+				        <span>页</span>
+				    </div>
+				</div>
+				<div class="mirrorModelBox">
+					<div class="btnBox clearfix">
+						<button class="cancelBtn lt" ng-click="closeFn()">取消</button>
+						<button class="sureBtn rt" ng-click= "addFirstFn()">部署</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>			
+	<!-- 创建应用第一步结束 -->	
+	<!-- 创建应用弹窗第二步 -->
+	<div id="comPopupBox" class="js_addAppSec">
+		<div class="Popup offset wid6">
+			<div class="popTitle wid6">
+				创建应用
+				<i ng-click="closeFn()"></i>
+			</div>
+			<div class="popContentBox padSec">
+				<div class="maxOverHeight">
+					<div class="stepBar pad1 clearfix">
+						<div class="comStep left">
+							<span class="left serial">1</span>
+							<span class="left stepTxt">选择镜像</span>
+							<span class="left stepDot">······</span>
+						</div>
+						<div class="comStep left">
+							<span class="left serial faceSerial">2</span>
+							<span class="left stepTxt faceTxt">服务设置</span>
+							<span class="left stepDot faceTxt">······</span>					
+						</div>
+						<div class="comStep left">
+							<span class="left serial">3</span>
+							<span class="left stepTxt">环境设置</span>
+						</div>
+					</div>
+					<div style="height: 360px">
+						<div class='scrollDiv'>
+							<div class="mirrorGroup clearfix">
+								<div class="deployBox clearfix">
+									<span class="left titBox lin">已选镜像</span>
+									<div class="left mirrorRight clearfix">
+										<img class="imgWid left" ng-src= {{imgSelected}}>
+										<span class="name left">{{mirrorSelected}}</span>
+									</div>
+								</div>
+								<div class="deployBox clearfix">
+									<span class="left titBox lin26">镜像版本</span>
+									<div id="dropDown" class="dropFramePosition wid4 left">
+										<div class="frame wid4 js_frame" ng-click='dropDownFn($event)' id="js-verson"></div>
+										<ul class="dropList js_dropList">
+											<li ng-click='appDropDataFn($event)' ng-repeat = 'data in versionList'>{{data}}</li>
+										</ul>
+									</div>	
+								</div>					
+								<div class="deployBox clearfix">
+									<span class="left titBox lin26">服务名称</span>
+									<input class="serverName" type="text" name="" id='js-serve'>
+								</div>
+								<div class="deployBox clearfix">
+									<span class="left titBox lin26">选择网络</span>
+									<div id="dropDown" class="wid3 left">
+										<div class="frame wid3 js_frame" ng-click='dropDownFn($event)' id='js-net'></div>
+										<ul class="dropList js_dropList">
+											<li ng-click='appDropDataFn($event)' ng-repeat = 'data in mirrorData.available_network_list'>{{data}}</li>
+										</ul>
+									</div>							
+								</div>				
+							</div>
+							<div class="expertBox clearfix">
+								<span class="expertTxt left">高级配置</span>
+								<span class="explainTxt left">在高级设置里，您可以修改环境变量配置，以及容器与主机端口的映射</span>
+								<button class="expertBtn rt" ng-click='expertFn()'></button>
+							</div>
+							<div class="mirrorGroup clearfix" ng-show='isShow'>
+								<div class="deployBox clearfix">
+									<span class="left titBox lin26">环境变量</span>
+									<div class="pumpTit left">
+										<div class="key left">键</div>
+										<div class="key mar8 left">值</div>
+										<div class="option mar20 left">操作</div>
+									</div>
+								</div> 						
+								<div class="deployBox clearfix">
+									<span class="left titBox lin26"></span>
+									<div class="pumpBox left" id='js-env'>
+										<div class="js_envBox compumpBox left" ng-repeat= 'data in envirList' repeat-finish>
+											<input class="left" type="text" name="" ng-model='data.name' disabled="true">
+											<input class="mar8 left" type="text" name="" ng-model='data.value'disabled='true'>
+											<button class="mar20 delBtn" ng-click='delEnvGroupFn($event)'></button>
+										</div>
+										<button class="mar10 addBtn left" ng-click='addEnvGroupFn($event)'></button>
+									</div>
+								</div>	
+								<div class="deployBox clearfix">
+									<span class="left titBox lin26">端口配置</span>
+									<div class="pumpTit left">
+										<div class="key left">容器端口</div>
+										<div class="key mar8 left">协议</div>
+										<div class="option mar20 left"></div>
+									</div>
+								</div>						
+								<div class="deployBox clearfix"> 
+									<span class="left titBox lin26"></span>
+									<div class="pumpBox left" id='js-port'>
+										<div class="js_envBox compumpBox left" ng-repeat = 'data in portList'>
+											<input class="left" type="text" name="" ng-model='data.containerPort'disabled='true'>
+											<input class="mar8 left" type="text" name="" ng-model='data.protocol' disabled='true'>
+											<button class="mar20 delBtn" ng-click='delEnvGroupFn($event)'></button>
+										</div>
+										<button class="mar10 addBtn left" ng-click='addEnvGroupFn($event)'></button>
+									</div>
+								</div>	
+								<div class="deployBox clearfix">
+									<span class="left titBox lin26">时区设置</span>
+									<div class="serverTxt lin26 left">
+										<span class="choiceBox left add" id='js-syn' data-attr='true' ng-click="timeZooeFn($event)"></span>
+										与节点同步
+									</div>
+								</div>
+								<div class="deployBox clearfix">
+									<span class="left titBox lin26">服务状态</span>
+									<div class="serverTxt lin26 left">
+										<span class="choiceBox left" ng-click='statuChcFn($event)'></span>
+										有服务
+									</div>
+								</div>			
+								<div class="deployBox clearfix" ng-if='hasServe'>
+									<span class="left titBox lin26"></span>
+									<div class="pumpBox left" ng-if = "volumeList.length>'0'" id='js-volume'>
+										<div class="compumpBox js_addService left">
+											<input class="left" type="text" name="">
+											<div class="keyWid left mar8">
+												<div id="dropDown" class="dropFramePosition wid1 left">
+													<div class="frame wid1 js_frame" data-attr= '{{volumeList[0].pvc_id}}' ng-click='accStorageFn($event)'>{{volumeList[0].pvc_name}}</div>
+													<ul class="dropList js_dropList">
+														<li ng-click='volumeDataFn(data,$event)' ng-repeat = 'data in volumeList'>{{data.pvc_name}}</li>
+													</ul>
+												</div>		
+											</div>
+											<button class="mar20 delBtn" ng-click="delServiceGroupFn($event)"></button>
+										</div>
+										<button class="mar10 addBtn left" ng-click="addServiceGroupFn($event)"></button>
+									</div>
+									<div class="volumeNo left" ng-click='createStorageFn()' ng-if = "volumeList.length=='0'">还没存储卷，先创一个吧？</div>						
+								</div>								
+							</div>
+						</div>	
+					</div>
+				</div>
+				<div class="mirrorModelBox">
+					<div class="btnBox clearfix">
+						<button class="cancelBtn lt" ng-click="lastStepFn()">上一步</button>
+						<button class="sureBtn rt" ng-click= "addSecFn()">环境配置</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>			
+	<!-- 创建应用第二步结束 -->
+	<!-- 创建第三步 -->
+	<div id="comPopupBox" class="js_addAppThr">
+		<div class="Popup offset wid6">
+			<div class="popTitle wid6">
+				创建应用
+				<i ng-click="closeFn()"></i>
+			</div>
+			<div class="popContentBox padThired">
+				<div class="stepBar pad clearfix">
+					<div class="comStep left">
+						<span class="left serial">1</span>
+						<span class="left stepTxt">选择镜像</span>
+						<span class="left stepDot">······</span>
+					</div>
+					<div class="comStep left">
+						<span class="left serial">2</span>
+						<span class="left stepTxt">服务设置</span>
+						<span class="left stepDot">······</span>					
+					</div>
+					<div class="comStep left">
+						<span class="left serial faceSerial">3</span>
+						<span class="left stepTxt faceTxt">环境设置</span>
+					</div>
+				</div>
+				<div class="mirrorGroup clearfix">
+					<div class="deployBox clearfix">
+						<span class="left titBox hei26">容器配置</span>
+						<div class="left dockerSize js_configBox" ng-repeat='data in configList' ng-click="selectConfigFn($event)">
+								<p class="color1" ng-class='{"add":$index ==0}'>{{$index+1}}X</p>
+								<p class="js-mem color2" ng-class='{"add":$index ==0}'>{{data.memory}}</p>
+								<p class="js-cpu color2" ng-class='{"add":$index ==0}'>{{data.cores}}CPU</p>
+						</div>
+					</div>
+					<div class="deployBox mar0 clearfix">
+						<span class="left titBox lin26">实例数量</span>
+						<input class="left number" id='js-exam' type="number" name="" ng-model="instanceNum" ng-change="instanceNumFn($event)">
+					</div>					
+				</div>
+				<div class="mirrorModelBox">
+					<div class="btnBox clearfix">
+						<button class="cancelBtn lt" ng-click="closeFn()">取消</button>
+						<button class="sureBtn rt" ng-click= "sureDeployFn($event)">部署</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>			
+	<!-- 创建第三步结束 -->
+	<!-- 删除角色 -->
+	<div id="comPopupBox" class="js_appDelete">
+		<div class="Popup offset2 wid">
+			<div class="popTitle wid">
+				删除应用
+				<i ng-click='closeFn()'></i>
+			</div>
+			<div class="popContent">
+				<p class="deleteProjectBox">
+					是否删除该应用？
+
+				</p>
+				<div class="btnBox clearfix">
+					<button class="cancelBtn lt" ng-click='closeFn()'>取消</button>
+					<button class="sureBtn rt" ng-click='appDelFn($event)'>确定</button>
+				</div>
+			</div>
+		</div>
+	</div>			
+	<!-- 删除角色结束 -->				
+</div>

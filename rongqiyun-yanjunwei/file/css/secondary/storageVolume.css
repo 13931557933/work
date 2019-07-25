@@ -1,0 +1,90 @@
+@charset "utf-8";
+#storageVolume{
+	width: 100%;
+	padding: 0  80px 0 30px ;
+	box-sizing: border-box;
+	min-width: 1099px;
+}
+#storageVolume .storageWid{
+	width: 15%;
+}
+#storageVolume .sizeWid{
+	width: 8%
+}
+#storageVolume .pointWid{
+	width: 15%
+}
+#storageVolume .serveWid{
+	width: 15%
+}
+#storageVolume .timeWid{
+	width: 15%
+}
+#storageVolume .opWid{
+	width: 15%
+}
+#storageVolume .opWid .color{
+	color: #6aaf4b
+}
+#storageVolume .opWid .cursor{
+	cursor: not-allowed;
+}
+#storageVolume .oneListDataGroup{
+	width: 100%;
+}
+#storageVolume .oneListDataGroup li{
+	width: 100%;
+	height: 70px;
+	background-color: #f6f6f6;
+	border-radius: 5px;
+	margin-bottom: 10px;	
+}
+#storageVolume .oneListDataGroup li>div{
+	height: 100%;
+	line-height: 70px;
+	text-align: center;
+    padding-right: 1%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap; 	
+}
+#storageVolume .oneListDataGroup .opWid button{
+	background: none;
+}
+#storageVolume .comStorageTxt{
+	width: 100%;
+	height:48px;
+}
+#storageVolume .comStorageTxt .comtitle{
+	width: 52px;
+	height: 28px;
+	color: #666666;
+	display: block;
+	line-height: 28px;
+	padding-right: 20px;
+	box-sizing: border-box;
+}
+#storageVolume .comStorageTxt .storageNameBox{
+	width: 334px;
+	height: 28px;
+	border: 1px solid #999999;
+	border-radius: 5px;
+	text-indent: 10px;
+}
+#storageVolume .size{
+	color: #666666;
+}
+#storageVolume .size .number{
+	width: 50px;
+	height: 21px;
+	line-height: 21px;
+	color: #666666;
+	border:none; 
+}
+#storageVolume  .offset1{
+	transform: translate(-260px,-131px);
+	-ms-transform: translate(-260px,-131px);
+	-moz-transform: translate(-260px,-131px);
+	-o-transform: translate(-260px,-131px);
+	-webkit-transform: translate(-260px,-131px);
+}

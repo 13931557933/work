@@ -1,0 +1,99 @@
+<div id="netWork">
+	<div id="searchButtons" class="clearfix">
+		<div class="searchBtnLeft lt">
+			<button class="btnCols btnSize lt" ng-click = 'addNetFn()'>
+				<i class="add"></i>
+				创建网络 
+			</button> 
+			<button class="btnCols refreshSize lt" ng-click= 'netResearchFn()'></button>				
+		</div>
+		<div class="searchBtnRight lt">
+			<input class="rt searchBox" type="text" name="" placeholder="请输入关键字搜索" ng-model='netSearchName' ng-change='netSearchFn()'>
+		</div>
+	</div>
+	<div id="listData">
+		<div class="listDataGroup">
+			<ul class="listDGTitle">
+				<li class="netName">网络名称</li>
+				<li class="netName">状态</li>
+				<li class="ipWid">IP地址段</li>
+				<li class="timeWid"> 时间</li>
+				<li class="opWid">操作</li>
+			</ul>
+			<ul class="oneListDataGroup">
+				<li class="clearfix" ng-repeat = 'data in netLIst'>
+					<div class="netName comClickColor left">{{data.network_name}}</div>
+					<div class="netName comClickColor left">{{data.status | netStatus}}</div>
+					<div class="ipWid comTextColor left">{{data.subnet}}</div>
+					<div class="timeWid comTextColor left">{{data.create_time}}</div>
+					<div class="opWid comClickColor left" ng-click='delNetFn(data)'>删除</div>
+				</li>
+			</ul>
+		</div>
+		<div class="pagGroup clearfix">
+		    <div class="allTotals">共{{netTotalData}}条</div>
+		    <ul class="pagination" id="page2">
+		    </ul>
+		    <div class="pageJump">
+		        <span>跳转到</span>
+		        <input type="number" />
+		        <span>页</span>
+		    </div>
+		</div>				
+	</div>
+	<!-- 创建网络弹窗 -->
+	<div id="comPopupBox" class="js_addNet">
+		<div class="Popup offset wid">
+			<div class="popTitle wid">
+				创建网络
+				<i ng-click="closeFn()"></i>
+			</div>
+			<div class="popContent ">
+				<div class="comCreateBox clearfix">
+					<span class="titName left">网络名称</span>
+					<input class="netNameTxt js_netName left" type="text" name="" maxlength="15">
+				</div>						
+				<div class="comCreateBox clearfix">
+					<span class="titName left">网络类型</span>
+					<span class="titName left">
+						<div class="checkBox add left"></div>默认
+					</span>
+				</div>						
+				<div class="comCreateBox clearfix">
+					<span class="titName left">地址段</span>
+					<div class="addressField left">
+						<input type="text" name="" class="js_firstVal" value="0"> .
+						<input type="text" name="" class="js_secVal" value="0"> .
+						<input type="text" name="" class="js_thirdVal" value="0"> .
+						<input type="text" name="" disabled="true" value="0"> /
+						<input type="text" name="" disabled="true" value="24">
+					</div>
+				</div>		
+				<div class="btnBox clearfix">
+					<button class="cancelBtn lt" ng-click="closeFn()">取消</button>
+					<button class="sureBtn rt" ng-click= "addSureNetFn($event)">确定</button>
+				</div>
+			</div>
+		</div>
+	</div>			
+	<!-- 创建网络弹窗 -->	
+	<!--删除网络 -->
+	<div id="comPopupBox" class="js_delNet">
+		<div class="Popup offset1 wid">
+			<div class="popTitle wid">
+				删除网络
+				<i ng-click="closeFn()"></i>
+			</div>
+			<div class="popContent ">
+				<div class="delNetTxt">
+					是否删除该网络?
+				</div>
+				<div class="btnBox clearfix">
+					<button class="cancelBtn lt" ng-click="closeFn()">取消</button>
+					<button class="sureBtn rt" ng-click= "delSureNetFn($event)">确定</button>
+				</div>
+			</div>
+		</div>
+	</div>					
+	<!--删除网络结束 -->			
+</div>

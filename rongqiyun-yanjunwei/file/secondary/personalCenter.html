@@ -1,0 +1,23 @@
+<div id="personalCenter">
+	<div class="centerBox">
+		<div class="heardersBox">
+			<div class="hearder"></div>
+			<div class="admin">{{userName}}</div> 
+		</div>
+		<div class="centerTxtGroup">
+			<div class="oneTxt clearfix">
+				<span class="category lt">密码</span>
+				<input class="txtMsg bords lt" type="password" name="" placeholder="******" disabled="true" ng-blur='sureModFn($event)'>
+				<i class="icon lt" ng-click='modPawFn($event)'></i>
+			</div>
+			<div class="oneTxt clearfix">
+				<span class="category lt">邮箱</span>
+				<div class="lt txtMsg">{{centerData.email}}</div>
+			</div>
+			<div class="oneTxt clearfix">
+				<span class="category lt">手机</span>
+				<div class="lt txtMsg">{{centerData.phone}}</div>			
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,154 @@
+<div id="hostDetails">
+	<div id="searchButtons" class="clearfix">
+		<button class="btnCols backSize lt" ng-click ='backGoFn()'>
+			<i class="back"></i> 
+			返回 
+		</button>		
+	</div>
+	<div class="hostDetailName">主机详情</div>
+	<div class="comBgs hostDetailTxt clearfix">
+		<div class="hostStatusGroup ok left" ng-if='hostDetailTxt.status==2'>
+			<div class="hostStatusSign ok">正常</div>
+		</div>		
+		<div class="hostStatusGroup unusual left" ng-if='hostDetailTxt.status==3'>
+			<div class="hostStatusSign unusual">异常</div>
+		</div>
+		<div class="hostStatusContent left">
+			<div class="comContentFa">
+				<span>主机名称&nbsp:&nbsp</span>
+				<p class="comFonts">{{hostDetailTxt.host_name}}</p>
+			</div>		
+			<div class="comContentFa">
+				<span>主机别名&nbsp:&nbsp</span>
+				<p class="comFonts hsotDetailsAlias">
+					<input type="text" name="" ng-model='hostDetailTxt.host_alias' disabled="true">
+				</p>
+			</div>			
+			<div class="comContentFa">
+				<span>主机角色&nbsp:&nbsp</span>
+				<p>{{hostDetailTxt.host_role}}</p>
+			</div>
+		</div>
+		<div class="hostStatusContent left">
+			<div class="comContentFa">
+				<span>操作系统&nbsp:&nbsp</span>
+				<p class="systemBox">{{hostDetailTxt.linux_distro}}</p>
+			</div>		
+			<div class="comContentFa">
+				<span>网络&nbsp:&nbsp</span>
+				<p class="left">{{hostDetailTxt.host_ip}}</p>
+				<button class="IpBtn left" ng-click='IPMOdelFn()'>全部IP</button>
+			</div>			
+			<div class="comContentFa">
+				<span>内存&nbsp:&nbsp</span>
+				<p>{{hostDetailTxt.mem_used}}/{{hostDetailTxt.mem_total}}</p>
+			</div>			
+			<div class="comContentFa">
+				<span>添加时间&nbsp:&nbsp</span>
+				<p>{{hostDetailTxt.create_at}}</p>
+			</div>
+		</div>		
+		<div class="left" id="fill"></div>
+	</div>
+	<div class="monitorTypeGroup clearfix">
+		<div class="monitorBtn add left" ng-click='monitorBoxFn($event)'>监控</div>
+		<div class="monitorBtn left" ng-click='monitorBoxFn($event)'>组件详情</div>
+	</div>
+	<div class="monitorListGroup">
+		<div class="monitorList js_monitorBox">
+			<div class="minitorTime clearfix">
+				<div class="left" style="width: 60%">
+					<div class="Times js_time color left" ng-click ="monitorMessageFn($event)" >实时</div>
+					<div class="Times js_time left" ng-click ="monitorMessageFn($event)">1小时</div>
+					<div class="Times js_time left" ng-click ="monitorMessageFn($event)">24小时</div>
+					<div class="Times js_time left" ng-click ="monitorMessageFn($event)">近7天</div>
+					<div class="Times js_time left" ng-click ="monitorMessageFn($event)">近30天</div>
+				</div>
+				<div class="ta_date mars100 right" id="div_date1">
+				<span class="date_title" id="date1"></span>
+				</div>
+			</div>
+			<div class="comChartsGroup">
+			    <div id="cpuChart" style="width: 100%px;height:450px;"></div>
+			</div>			
+			<div class="comChartsGroup">
+			    <div id="memChart" style="width: 100%px;height:450px;"></div>
+			</div>			
+			<div class="comChartsGroup" style="position: relative;">
+			    <div id="intChart" style="width: 100%px;height:450px;"></div>
+				<div id="dropDown" class="dropFramePosition wid">
+					<div class="frame wid js_frame" ng-click='dropDownFn($event)'>{{netCardTxt}}</div>
+					<ul class="dropList js_dropList">
+						<li ng-click='hostDetailDropDataFn(data,datas,$event)' ng-repeat = 'data in nWCard'>{{data}}</li>
+					</ul>
+				</div>		
+			</div>
+		</div>
+		<div class=" componentDetailsGroup js_monitorBox">
+			<div id="searchButtons" class="mar-40 clearfix">
+				<div class="searchBtnRight rt">
+					<input class="rt searchBox" type="text" name="" placeholder="请输入关键字搜索"
+					ng-model='moduleSearchData' ng-change='moduleSearchFn()'>
+				</div>
+			</div>
+			<div class="componentDetailsList clearfix">
+				<div class="usunualTipGroup left">
+					<p class="totalDetails">当前组件共：{{chipLIst.component_totles}}个</p>
+					<p class="unusualTotal error">异常：{{chipLIst.component_abnomal}}个</p>
+				</div>
+				<div class="componentDetailsListGroup left">
+					<div class="componentDetailsListTitleGroup left">
+						<div class="componentDetailsListTitle left">
+							<div class="wid60 left">组件名称</div>
+							<div class="wid40 left">组件状态</div>
+						</div>
+						<div class="componentDetailsListTitle  left" ng-if='chipLIst.compon_status.length>"1"'>
+							<div class="wid60 left">组件名称</div>
+							<div class="wid40 left">组件状态</div>
+						</div>					
+					</div>
+					<div class="onecomponentDetailGroup left" ng-repeat="data in  chipLIst.compon_status">
+						<div class="name wid60 left">{{data.Componentname}}</div>
+						<div ng-if='data.Componentstatus=="异常"' class="status wid40 error left">{{data.Componentstatus}}</div>
+						<div ng-if='data.Componentstatus=="正常"' class="status wid40 left">{{data.Componentstatus}}</div>
+					</div>
+				</div>
+				<div class="pagGroup clearfix">
+				    <div class="allTotals">共{{chipTotalData}}条</div>
+				    <ul class="pagination" id="page2">
+				    </ul>
+				    <div class="pageJump">
+				        <span>跳转到</span>
+				        <input type="number" />
+				        <span>页</span>
+				    </div>
+				</div>				
+			</div>
+		</div>
+	</div>
+	<!-- IP弹窗 -->
+	<div id="comPopupBox" class="js_allIp">
+		<div class="Popup offset wid3">
+			<div class="popTitle wid3">
+				全部IP
+				<i ng-click='closeFn()'></i>
+			</div>
+			<div class="popIPWork">
+				<div class="outNetWork clearfix">
+					<span class="comOutNet left">外网</span>
+					<span class="IPAddress left">{{hostDetailTxt.host_ip}}</span>
+				</div>
+				<div class="inNetWork clearfix">
+					<span class="comOutNet left">内网</span>
+					<div class="left">
+						<span class="IPAddress" ng-repeat='data in hostDetailTxt.network_ip'>{{data}}</span>
+					</div>
+				</div>				
+				<div class="btnBox clearfix">
+					<button class="cancelBtn rt" ng-click='closeFn()'>关闭</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- IP弹窗结束 -->
+</div>

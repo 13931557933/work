@@ -1,0 +1,140 @@
+@charset "utf-8";
+.login-group{
+	width: 100%;
+	height:100%; 
+	position:fixed;
+	background: url('../images/login.png') no-repeat;
+	background-size:100%;
+}
+.login-group .login-minGroup{
+	width: 520px;
+	height: 559px;
+	margin-left: 56.5%;
+	margin-top: 8%;
+	padding-left: 130px;
+	background: url('../images/loginbg.png') no-repeat;
+	box-sizing: border-box;
+}
+.login-group .login-minGroup .login_topLogo{
+	height: 108px;
+	background:url('../images/loginLogo.png') 50% 0 no-repeat;
+}
+.login-box{
+	width: 390px;
+	height: 334px;
+	background: url('../images/enterbgs.png') no-repeat;
+	border-radius: 5px;
+	padding:44px 30px;
+	box-sizing: border-box;
+}
+
+.login-box .enter-groups{
+	width: 100%;
+	height: 40px;
+	border-radius: 2px;
+	position: relative;
+	margin-top: 24px;
+}
+.enter-groups input{
+	width: 100%;
+	height: 40px;
+	border-radius: 2px;
+	background-color: #4a4b4c;
+	border:none; 
+	text-indent: 59px;
+	color: #ffffff;
+	font-size: 14px;
+}
+.enter-groups input.on{
+	border:1px solid #6aaf4b
+}
+.enter-groups i{
+	width:58px;
+	height:40px;
+	display: block;
+	border-radius: 2px;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+
+}
+.enter-groups .user-bg{
+	background: url("../images/user.png") no-repeat 50% 50%;
+}
+.enter-groups .pwd-bg{
+	background: url("../images/pwd.png")  no-repeat 50% 50%;
+}
+.login-box span{
+	width: 100%;
+	height: 31px;
+	display: block;
+   	overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;	
+}
+.login-box span.active{
+	background: url('../images/tipsIcon.png') 18.5px 50% no-repeat;
+	background-color: #fdfbee;
+	border-radius: 2px;
+ 	box-shadow: 0 0 0 1px #df6e26;
+	line-height: 31px;
+	color: #666666;
+	font-size: 14px;
+	text-indent: 58px;
+}
+.login-box button{
+	width: 100%;
+	height: 43px;
+	border-radius: 2px;
+	color: #2b2c2d;
+	line-height: 43px;
+	font-size: 16px;
+	margin-top: 39px;	
+	background-color: #ffffff;
+}
+.login-group button:hover{
+	background-color: #6aaf4b;
+	color: #ffffff;
+}
+/*弹出模态框*/
+.login-group .shades{
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	background-color: #ccc;
+	z-index: 1;
+	opacity: 0.8
+}
+.codePop{
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	padding: 0 78px;
+	transform: translate(-248.5px,-99.5px);
+	-ms-transform: translate(-248.5px,-99.5px);
+	-moz-transform: translate(-248.5px,-99.5px);
+	-webkit-transform: translate(-248.5px,-99.5px);
+	-o-transform: translate(-248.5px,-99.5px);
+	z-index: 2;
+}
+.codePop .modalTops{
+	width: 100%;
+	height:70px;
+	text-align: center;
+	line-height: 70px;
+	font-size: 16px;
+	color:#666666;
+
+}
+.codePop button{
+	width: 120px;
+	height: 40px;
+	background-color: #2c2c2c;
+	border-radius: 5px;
+	color: #FFFFFF;
+	font-size: 16px;
+	letter-spacing: 0.8px;
+	margin: 14px 110px;
+}
+
+	

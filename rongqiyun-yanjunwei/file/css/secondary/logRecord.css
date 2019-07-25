@@ -1,0 +1,147 @@
+@charset "utf-8";
+#logRecord{
+	width: 100%;
+	padding: 0  80px 0 30px ;
+	box-sizing: border-box;
+	min-width: 1099px;
+}
+#logRecord .viewLog{
+	width: 76px;
+	height: 40px;
+	display: block;
+	color: #666666;
+	font-size: 14px;
+	line-height: 40px;
+}
+#logRecord .dateBox{
+	width: 150px;
+	height: 40px;
+	padding-top: 7px;
+	box-sizing: border-box;
+}
+#logRecord .sureBtn{
+	width: 78px;
+	height: 40px;
+	background-color: #3c3c3c;
+	box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.2);
+	border-radius: 5px;
+	font-size: 16px;
+	margin-left: 20px;	
+}
+#logRecord .logRecordBox{
+	width: 100%;
+	background-color: #ffffff;
+	box-shadow: 0px 5px 15px 0px rgba(17, 25, 66, 0.1);
+	border-radius: 5px;
+	padding: 29px 40px;
+	box-sizing: border-box;	
+}
+#logRecord .logRecordBox .oneBox{
+	margin-bottom: 40px;
+}
+#logRecord .logRecordBox .oneBox .timeTitle{
+	width: 100%;
+	height: 52px;
+	background-color:#f5f9fa;
+	line-height: 52px;
+	color: #3c3c3c;
+	text-indent: 30px;
+}
+#logRecord .logRecordBox .oneBox .oneGroupData{
+	width: 95%;
+}
+#logRecord .logRecordBox .oneBox .oneGroupData .logStatu{
+	width: 100%;
+	height: 46px;
+	line-height: 46px;
+	font-size: 18px;
+}
+#logRecord .logRecordBox .oneBox .oneGroupData .logStatu.success{
+	color: #61c036
+}
+#logRecord .logRecordBox .oneBox .oneGroupData .logStatu.filed{
+	color: #f97451
+}
+#logRecord .logRecordBox .oneBox .oneGroupData .oneData{
+	width: 100%;
+	height: 90px;
+	background-color: #ffffff;
+	box-shadow: 0px 4px 9px 0px rgba(17, 25, 66, 0.05);
+	border-radius: 5px;
+	border: solid 1px #edf3f5;	
+}
+#logRecord .logRecordBox .oneBox .oneGroupData .oneData.filed{
+	border: solid 1px #f97451;		
+}
+#logRecord .logRecordBox .oneBox .oneData>div{
+	height: 100%;
+	line-height: 90px;
+}
+#logRecord .logRecordBox .oneBox .oneData .name{
+	width: 30%;
+	color: #3c3c3c;
+	text-align: center;
+}
+#logRecord .logRecordBox .oneBox .oneData .time{
+	width: 30%;
+	color: #999999;
+	background:url('../../images/console/time.png') 0 50% no-repeat;
+	text-indent: 20px;
+}
+#logRecord .logRecordBox .oneBox .oneData .long{
+	width: 25%;
+	color: #999999;	
+	background:url('../../images/console/longTime.png')0 50% no-repeat;
+	text-indent: 20px;	
+}
+#logRecord .logRecordBox .oneBox .oneData .logBtn button{
+	width: 104px;
+	height: 40px;
+	background-color: #3c3c3c;
+	box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.2);
+	border-radius: 5px;
+	color: #ffffff;
+	font-size: 16px;
+}
+#logRecord .logRecordBox .oneBox .dataBox .step{
+	width: 5%;
+	height:138px;
+	position: relative;
+}
+#logRecord .logRecordBox .oneBox .dataBox .step.first{
+	background: url('../../images/console/step1.png') 50% 18px no-repeat;
+}
+#logRecord .logRecordBox .oneBox .dataBox .bgsBox{
+	width: 100%;
+	height: 150px;
+	position: absolute;
+	top:-105px;
+	background: url('../../images/console/upStep.png') 50% -18px no-repeat;	
+}
+#logRecord .recordConnect{
+    width: 100%;
+    height: 406px;
+    padding: 26px 20px;
+    box-sizing: border-box;
+    border-top: 1px solid #555555;
+    border-radius:  0 0 5px 5px;
+    background: url('../../images/console/a.gif')#2d2d2d 50% 45px no-repeat;
+}
+#logRecord .recordMessage{
+    border-radius: 5px;
+    line-height: 40px;
+    color:#0faa13;     
+    box-shadow: 0px 3px 10px 0px rgba(17, 25, 66, 0.1);
+    border:1px solid #838383;
+    padding: 15px 35px;
+    box-sizing: border-box;
+    background-color: #121212;
+    opacity: 0.6;    
+}
+#logRecord .offset{
+    transform: translate(-406px,-243px);
+    -ms-transform: translate(-406px,-243px);
+    -moz-transform: translate(-406px,-243px);
+    -webkit-transform: translate(-406px,-243px);
+    -o-transform: translate(-406px,-243px);
+}

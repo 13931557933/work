@@ -1,0 +1,511 @@
+@charset "utf-8";
+body,tr,td,thead,tbody,ul,li,div,span,img,h1,h2,h3,h4,h5,h6,em,input,select,a,p,cite,header,aside,footer,section,article,figure,nav,menu,dl,dt,dd {
+	margin: 0;
+	padding: 0;
+}
+ul,li {
+	list-style: none;
+}
+a,a:hover {
+	text-decoration: none;
+}
+a {
+	color: #333;
+}
+h1,h2,h3,h4,h5,h6,em,cite {
+	font-style: normal;
+}
+a,input,li {
+	-webkit-tap-highlight-color: rgba(255,0,0,0);
+}
+header,aside,footer,section,article,figure,nav,menu {
+	display: block;
+}
+.clearfix:after {
+	clear: both;
+	content: ".";
+	display: block;
+	font-size: 0;
+	height: 0;
+	overflow: hidden;
+	visibility: hidden;
+}
+.clearfix {
+	*zoom: 1;
+}
+.lt,.left {
+	float: left;
+}
+.rt,.right {
+	float: right;
+}
+button{
+	border: none;
+	outline: none;
+	cursor: pointer;
+	text-align: center;
+}
+input,select,textarea {
+	outline: none;
+	resize: none;
+}
+input:focus::-webkit-input-placeholder{ /*WebKit browsers*/
+	color: #6aaf4b;
+}
+
+input:focus::-moz-input-placeholder{ /*Mozilla Firefox*/
+	color: #6aaf4b;
+}
+
+input:focus::-ms-input-placeholder{ /*Internet Explorer*/ 
+	color: #6aaf4b;
+}
+textarea:focus::-webkit-input-placeholder{ /*WebKit browsers*/
+	color: #6aaf4b;
+}
+
+textarea:focus::-moz-input-placeholder{ /*Mozilla Firefox*/
+	color: #6aaf4b;
+}
+
+textarea:focus::-ms-input-placeholder{ /*Internet Explorer*/ 
+	color: #6aaf4b;
+}
+	
+input::-webkit-input-placeholder{ /*WebKit browsers*/
+	color: #7b7b7c;
+}
+
+input::-moz-input-placeholder{ /*Mozilla Firefox*/
+	color: #7b7b7c;
+}
+
+input:-ms-input-placeholder{ /*Internet Explorer*/ 
+	color: #7b7b7c;
+}
+textarea::-webkit-input-placeholder{ /*WebKit browsers*/
+	color: #b9b9b9;
+	font-size: 14px;
+}
+
+textarea::-moz-input-placeholder{ /*Mozilla Firefox*/
+	color: #b9b9b9;
+	font-size: 14px;	
+}
+textarea:-ms-input-placeholder{ /*Internet Explorer*/ 
+	color: #b9b9b9;
+	font-size: 14px;	
+}
+input[disabled],input:disabled{ 
+	background-color:transparent;
+}
+/*searchButtons 样式*/
+#searchButtons{
+	width: 100%;
+	height: 70px;
+	box-sizing: border-box;
+}
+#searchButtons>div{
+	width: 50%;
+}
+#searchButtons .btnCols{
+	background-color: #3c3c3c;
+	box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.2);
+	border-radius: 5px;
+	color: #FFFFFF;
+	font-size: 16px;
+	margin-right: 10px;
+}
+#searchButtons .btnSize{
+	width: 110px;
+	height: 40px;
+	line-height: 40px;
+}
+#searchButtons .backSize{
+	width: 78px;
+	height: 40px;
+	line-height: 40px;
+}
+#searchButtons .refreshSize{
+	width: 40px;
+	height: 40px;
+	background: url('../images/console/refresh.png') #3c3c3c 50% 50% no-repeat;
+}
+#searchButtons .btnCols i{
+	width: 20px;
+	height: 38px;
+	display:block;
+	float: left;
+}
+#searchButtons .backSize i.back{
+	background:url('../images/console/back.png')100% 50% no-repeat;
+}#searchButtons .backSize i.back{
+	background:url('../images/console/back.png')100% 50% no-repeat;
+}
+#searchButtons .btnSize i.add{
+	background:url('../images/console/add.png')100% 50% no-repeat;
+}
+#searchButtons .btnSize i.add{
+	background:url('../images/console/enter.png')100% 50% no-repeat;
+}
+#searchButtons .btnSize i.delete{
+	background:url('../images/console/dustbin.png')100% 50% no-repeat;
+}
+#searchButtons .btnSize i.onlyUp{
+	background: url(../images/console/upLoad.png)100% 50% no-repeat;
+}
+#searchButtons .btnSize i.onlyDown{
+	background: url(../images/console/downLoad.png)100% 50% no-repeat;
+}
+#searchButtons .searchBtnRight input{
+	width: 200px;
+	height: 40px;
+	border-radius: 5px;
+	border: solid 1px #999999;
+	float: right;
+	text-indent: 10px;
+	color: #666666;
+	background: url("../images/console/search.png") 170px 50% no-repeat;
+}
+#searchButtons .searchBtnRight input:focus{
+	color:#6aaf4b;
+	background: url("../images/console/search1.png") 170px 50% no-repeat;
+	border: solid 1px #6aaf4b;
+}
+#searchButtons .btnCols:hover{
+	background-color: #6aaf4b;
+}
+/*searchButtons 样式结束*/
+/*listData公共样式*/
+#listData{
+	width: 100%;
+	height: 728px;
+	background-color: #ffffff;
+	box-shadow: 0px 5px 15px 0px rgba(17, 25, 66, 0.1);
+	border-radius: 5px;
+}
+#listData .listDataGroup{
+	padding: 0 40px;
+	box-sizing: border-box;
+}
+#listData .listDGTitle{
+	width: 100%;
+	height: 70px;
+}
+#listData .listDGTitle li{
+	color: #666666;
+	height:70px;
+	float: left;
+	line-height: 70px;
+	text-align: center;
+	padding-right: 1%;
+}
+#listData .listDGDetail{
+	width: 100%;
+	height: 576px;
+	background: url('../images/console/listDatabg.png') no-repeat;
+	background-size: 100% 100%;
+}
+
+#listData .oneDataGroup{
+	width: 100%;
+	height: 54px;
+	border-radius: 5px;
+	margin-bottom: 4px;
+}
+#listData .oneDataGroup>div{
+	height:54px;
+	float: left;
+	line-height: 54px;
+	text-align: center;
+	padding-right: 1%;
+	overflow: hidden;
+	text-overflow:ellipsis;
+	white-space: nowrap;
+}
+#listData .choiceBox{
+	width: 22px;
+	height: 22px;
+	display: block;
+	border-radius: 5px;
+	border: solid 2px #ffffff;
+	cursor: pointer;
+	position: absolute;
+	top: 14px;
+	left: 50%;
+}
+#listData .choiceBox.add{
+	background-color: #6aaf4b;
+}
+#listData .comClickColor{
+	 color: #6aaf4b;
+	 cursor: pointer;
+}
+#listData .comTextColor{
+	 color: #999999;
+}
+/*listData公共样式结束*/
+/*弹窗公共样式*/
+#comPopupBox{
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 99;
+	display: none;
+}
+#comPopupBox input.error{
+	border: solid 1px #cb3332 !important;
+}
+#comPopupBox .Popup{
+	position: fixed;
+	left: 50%;
+	box-shadow: 0px 5px 15px 0px rgba(17, 25, 66, 0.1);
+}
+#comPopupBox .Popup1{
+	position: fixed;
+	top: 0;
+	right: -900px;
+	height: 100%;
+	border-radius: 5px;
+	box-shadow: 0px 5px 15px 0px rgba(17, 25, 66, 0.1);
+}
+#comPopupBox .Popup.wid{
+	width: 520px;
+}
+#comPopupBox .Popup.wid1{
+	width: 660px;
+}
+#comPopupBox .Popup.wid3{
+	width: 349px;
+}
+#comPopupBox .Popup.wid4{
+	width: 813px;
+}
+#comPopupBox .Popup.wid5{
+	width: 724px;
+}
+#comPopupBox .Popup.wid6{
+	width: 900px;
+}
+
+#comPopupBox .popTitle{
+	height: 50px;
+	text-align: center;
+	line-height: 50px;
+	font-size: 18px;
+	background-color: #2c2c2c;
+	border-radius: 5px 5px 0px 0px;
+	color: #FFFFFF;
+	position: relative;
+}
+#comPopupBox .popTitle.wid{
+	width: 520px;
+}
+#comPopupBox .popTitle.wid1{
+	width: 660px;
+}
+#comPopupBox .popTitle.wid3{
+	width: 349px;
+}
+#comPopupBox .popTitle.wid4{
+	width: 813px;
+}
+#comPopupBox .popTitle.wid5{
+	width: 724px;
+}
+#comPopupBox .popTitle.wid6{
+	width: 900px;
+}
+#comPopupBox .popTitle i{
+	width: 20px;
+	height: 20px;
+	display: block;
+	background: url('../images/console/close.png') #FFFFFF 50% 50% no-repeat;
+	border-radius: 3px;
+	position: absolute;
+	right: 15px;
+	top: 15px;
+	cursor: pointer;
+}
+#comPopupBox .popContent{
+	padding: 30px 66px;
+	background-color: #FFFFFF;
+	border-radius: 0px 0px 5px 5px;
+	box-sizing: border-box;
+}
+#comPopupBox .deleteProjectBox{
+	text-align: center;
+	font-size: 18px;
+	color: #666666;
+}
+#comPopupBox .btnBox{
+	width: 100%;
+	padding:0 30px;
+	margin-top: 30px;
+	box-sizing: border-box;
+}
+#comPopupBox .btnBox button{
+	width: 100px;
+	height: 28px;
+	border-radius: 3px;
+}
+#comPopupBox .cancelBtn{
+	background: #FFFFFF;
+	border: solid 1px #999999;
+	color: #666666;
+}
+#comPopupBox .sureBtn{
+	background-color: #2c2c2c;
+	color: #FFFFFF;
+}
+#comPopupBox .sureBtn:hover{
+	background-color: #6aaf4b;
+}
+/*弹窗公共样式结束*/
+/*下拉框*/
+#dropDown{
+	height: 26px;
+	position: relative;
+	cursor: pointer;
+	text-align: left;
+	text-indent: 10px;
+	box-shadow: 0px 3px 10px 0px rgba(17, 25, 66, 0.1);
+}
+#dropDown.wid{
+	width: 100px;
+}
+#dropDown.wid1{
+	width: 200px;
+}
+#dropDown.wid2{
+	width: 280px;
+}
+#dropDown.wid3{
+	width: 148px;
+}
+#dropDown.wid4{
+	width: 410px;
+}
+#dropDown .frame.wid{
+/*	width: 70px;
+*/	background: url('../images/console/dropBlue.png') #FFFFFF 95% 50% no-repeat;	
+}
+#dropDown .frame.wid1{
+/*	width: 170px;
+*/	background: url('../images/console/dropBlue.png') #FFFFFF 95% 50% no-repeat;	
+}
+#dropDown .frame.wid2{
+/*	width: 250px;
+*/	background: url('../images/console/dropBlue.png') #FFFFFF 95% 50% no-repeat;	
+}
+#dropDown .frame.wid3{
+/*	width: 118px;
+*/	background: url('../images/console/dropBlue.png') #FFFFFF 95% 50% no-repeat;
+}
+#dropDown .frame.wid4{
+/*	width: 380px;*/
+	background: url('../images/console/dropBlue.png') #FFFFFF 95% 50% no-repeat;	
+}
+#dropDown .frame{
+	width: 100%;
+	height: 100%;
+	border-radius: 3px;
+	line-height: 26px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    padding-right:30px;
+    box-sizing: border-box;		
+}
+#dropDown .frame.add{
+	line-height: 45px;	
+}
+#dropDown .dropList{
+	width: 100%;
+	border-radius: 0 0 3px 3px;
+	position: absolute;
+	background-color: #ffffff;
+	box-shadow: 0px 3px 10px 0px rgba(17, 25, 66, 0.1);	
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    display: none;
+    max-height: 78px;
+    z-index: 1;
+    overflow-y: auto; 	
+}
+#dropDown .dropList li{
+	width: 100%;
+	height: 26px;
+	line-height: 26px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;		
+}
+#dropDown .dropList li.add{
+	height: 45px;
+	line-height: 45px;
+}
+#dropDown .dropList li:hover{
+	background-color: #6aaf4b;
+	color: #FFFFFF;
+}
+/*下拉框结束*/
+/*进度条样式*/
+#containerBar {
+  width: 145px;
+  height: 16px;
+  margin:27px auto;   
+}
+#containerBar .warning {
+	width: 100%;
+	height: 100%;
+}
+#containerBar .warning {
+  position: relative;
+  background-color: #67ca3b;
+  border-radius: 8px;
+  background-size: 2em 3em;
+  background-image: linear-gradient(45deg, transparent 0em, transparent 0.8em, #95da76 0.8em, #95da76 2.1em, transparent 2.1em, transparent 2.9em, #95da76 3em);
+  -webkit-animation: warning-animation 750ms infinite linear;
+  -moz-animation: warning-animation 750ms infinite linear;
+  animation: warning-animation 750ms infinite linear;
+}
+@-webkit-keyframes warning-animation {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 2em 0;
+  }
+}
+@-moz-keyframes warning-animation {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 2em 0;
+  }
+}
+@keyframes warning-animation {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 2em 0;
+  }
+}
+#containerBar .warning:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 100%;
+  border-radius: 8px;
+  background-image: linear-gradient(to bottom, #6DA807, rgba(171, 226, 77, 0.6) 15%, transparent 60%, #6DA807);
+}
+/*进度条样式结束*/

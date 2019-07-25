@@ -1,0 +1,126 @@
+<div id="continuousIntegration">
+	<div id="searchButtons" class="clearfix">
+		<div class="searchBtnLeft lt">
+			<button class="btnCols btnSize lt" ui-sref='sourceCode'>
+				<i class="add"></i>
+				关联码源
+			</button>
+			<button class="btnCols refreshSize lt" ng-click='conRefreshFn()'></button>				
+		</div>
+		<div class="searchBtnRight lt">
+			<input class="rt searchBox" type="text" name="" placeholder="请输入关键字搜索" ng-model='conSearchTxt' ng-change='conSearchFn()'>
+		</div>
+	</div>
+	<div id="listData">
+		<div class="listDataGroup">
+			<ul class="listDGTitle">
+				<li class="hostWid">项目名称</li>
+				<li class="hostWid">构建状态</li>
+				<li class="codeWid">代码源</li>
+				<li class="hostWid">分支信息</li>
+				<li class="hostWid">操作时间</li>
+				<li class="hostWid">操作</li>
+			</ul>
+			<ul class="oneListDataGroup">
+				<li class="js_oneListGroup clearfix" ng-repeat='data in continuList'>
+					<div class="hostWid comClickColor left" style="cursor: not-allowed;" ng-if='data.status =="构建中" || data.status =="未构建"'>
+						{{data.project_name}}
+					</div>
+					<div class="hostWid comClickColor left" ng-click='projectRecord(data)' ng-if='data.status =="失败" || data.status =="成功"'>
+						{{data.project_name}}
+					</div>
+					<div class="hostWid left">
+					    <div id="containerBar" ng-if="data.status=='构建中'">
+    						<div class="warning"></div>
+						</div>
+						<div class="normal" ng-if="data.status=='成功'">正常</div>
+						<div class="normal error" ng-if="data.status=='失败'">异常</div>
+						<div class="normal error" ng-if="data.status=='未构建'">未建</div>
+					</div>
+					<div class="codeWid comTextColor left"> 
+							{{data.address}}
+					</div>
+					<div class="hostWid comTextColor left" style="overflow: visible;">
+						<div id="dropDown" class="dropFramePosition wid">
+							<div class="frame wid js_frame" ng-click='continudropDownFn($event,data)'>{{data.branch[0]}}</div>
+							<ul class="dropList js_condropList" ng-class="{'off': data.project_name == menuData.project_name}">
+								<li ng-click='continuDropFn($event,data)' ng-repeat = 'list in data.branch track by $index'>{{list}}</li>
+							</ul>
+						</div>								
+					</div>
+					<div class="hostWid comTextColor left">
+						<span class="times">{{data.times}}</span>
+						<span class="times">
+							<button class="recent" ng-click = 'recentRecordFn(data)'  repeat-finish>最近执行记录</button>
+						</span>
+					</div>
+					<div class="hostWid comTextColor left" style="overflow:visible;">
+						<div class="operaBox clearfix">
+							<button class="lt comClickColor" ng-click='buildImmedFn($event,data)'>立即构建</button>
+							<i class="icon lt" ng-click= 'opeModelFn(data,$event)'></i>
+							<ul class="js_opList" ng-class="{'off': data.project_name == MenuData.project_name}">
+								<li ng-click='relieveContentFn($event,data)'>解除关联</li>
+								<li ng-click='webHookModelFn(data)'>webhook</li>
+							</ul>
+						</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+		<div class="pagGroup clearfix">
+		    <div class="allTotals">共{{continuCount}}条</div>
+		    <ul class="pagination" id="page2">
+		    </ul>
+		    <div class="pageJump">
+		        <span>跳转到</span>
+		        <input type="number"/>
+		        <span>页</span>
+		    </div>
+		</div>		
+	</div>
+	<!-- webHook弹窗 -->
+	<div id="comPopupBox" class="js_webhook">
+		<div class="Popup offset wid1">
+			<div class="popTitle wid1">
+				添加webhook
+				<i ng-click='closeFn()'></i>
+			</div>
+			<div class="popContent">
+				<p class="webhookTxt">
+					将以下url添加到gitlab、github webhooks中
+				</p>
+				<div class="copyContent" id='js_copy'>
+					{{webhookContent}}
+				</div>
+				<input type="text" id="js_copyTxt" name="">
+				<div class="btnBox clearfix">
+					<button class="sureBtn rt" ng-click='copyWebFn($event)'>复制</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- webHook弹窗结束 -->	
+	<!-- 执行记录 -->
+	<div id="comPopupBox" class="js_recordLog">
+		<div class="Popup offset wid4">
+			<div class="popTitle wid4" style="background-color: #2c2c2c">
+				执行记录
+				<i ng-click='closeFn()'></i>
+			</div>
+			<div class="recordConnect">
+				<div class="recordTitle clearfix">
+					<div class="nameWid left">{{recentRecordData.project}}</div>
+					<div class="statuWid left">{{recentRecordData.execution_status}}</div>
+					<div class="timeWid left">{{recentRecordData.start_time}}</div>
+					<div class="longWid left">{{recentRecordData.duration}}</div>
+					<div class="iconWid left" ng-click = 'retoteIconFn($event)'></div>
+				</div>
+				<div class="recordMessageBox">
+					<div class="recordMessage js_recordMessage scrollDiv">
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>		
+	<!-- 执行记录结束 -->				
+</div>

@@ -1,0 +1,159 @@
+<div id="role">
+	<div id="searchButtons" class="clearfix">
+		<div class="searchBtnLeft lt">
+			<button class="btnCols btnSize lt" ng-click="newRoleModelFn()">
+				<i class="add"></i>
+				新建角色 
+			</button>
+			<button class="btnCols btnSize lt" ng-click="deleteRoleFn()">
+				<i class="delete"></i>
+				删除角色
+			</button>
+			<button class="btnCols refreshSize lt" ng-click= 'roleRefresh()'></button>				
+		</div>
+		<div class="searchBtnRight lt">
+			<input class="rt searchBox" type="text" name="" placeholder="请输入关键字搜索" ng-model='roleSearch' ng-change='roleSearchFn()'>
+		</div>
+	</div>
+	<div id="listData">
+		<div class="listDataGroup">
+			<ul class="listDGTitle">
+				<li class="choseWids"></li>
+				<li class="nameWids">角色名</li>
+				<li class="stanceWids"></li>
+				<li class="operatWids">操作</li>
+			</ul>
+			<ul class="listDGDetail">
+				<li class="oneDataGroup" ng-repeat='data in roleDataList'>
+					<div class="choseWids">
+						<span class="choiceBox" ng-click="choiceFn($event,data)"></span>
+					</div>
+					<div class="nameWids comClickColor" ng-click='editorModelFn(data)'>{{data.rolename}}</div>
+					<div class="stanceWids"></div>
+					<div class="operatWids">
+						<button class="comClickColor editorBtns" ng-click='editorModelFn(data)'>编辑</button>
+						<button class="comClickColor editorBtns" ng-click='deleteModelFn(data)'>删除</button>
+					</div>
+				</li>
+			</ul>
+		</div>
+		<div class="pagGroup clearfix">
+		    <div class="allTotals">共{{roleTotalCount}}条</div>
+		    <ul class="pagination" id="page2">
+		    </ul>
+		    <div class="pageJump">
+		        <span>跳转到</span>
+		        <input type="number" />
+		        <span>页</span>
+		    </div>
+		</div>					
+	</div>
+	<!-- 新建角色 -->
+	<div id="comPopupBox" class="js_newRole">
+		<div class="Popup offset1 wid">
+			<div class="popTitle wid">
+				新建角色
+				<i ng-click='closeFn()'></i>
+			</div>
+			<div class="popContent">
+				<p class="newRoleName clearfix">
+					<span class="roleName lt">角色名:</span>
+					<input class="comInputStyle heis" type="text" name="" placeholder="请以准确的应用场景命名,2-15个字符" ng-model='newRoleUserVal' ng-blur='checkUserFn(newRoleUserVal,$event)'>
+				</p>
+				<p class="newRoleName clearfix">
+					<span class="roleName lt">描述:</span>
+					<textarea ng-model='decribeTxt' class="comInputStyle heis1" placeholder="为角色添加准确描述,最多15个字符。" maxlength="15"></textarea>
+				</p>				
+				<p class="newRoleName clearfix">
+					<span class="roleName lt">角色权限:</span>
+				</p>
+				<div class="choiseBags">
+					<div class="newRoleName clearfix js_createNewRole" ng-repeat='data in rolePermissionList'>
+						<span class="roleName js_newRoleName font lt" data-value = {{data.name}}>{{data.function_name}}</span>
+						<div class="optionBox js_writeStatu lt">					
+							<span class="currentStatus lt">
+								<button class="statusBtn " ng-click='radioBoxFn($event)' data-attr = '1'></button>只读
+							</span>
+							<span class="currentStatus lt">
+								<button class="statusBtn " ng-click='radioBoxFn($event)' data-attr = '2'></button>读写
+							</span>	
+							<span class="currentStatus rt">
+								<button class="statusBtn add" ng-click='radioBoxFn($event)' data-attr = '0'></button>&nbsp;无
+							</span>																
+						</div>
+					</div>	
+				</div>
+				<div class="btnBox clearfix">
+					<button class="cancelBtn lt" ng-click='closeFn()'>取消</button>
+					<button class="sureBtn rt" ng-click = 'roleCreateFn($event)'>确定</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- 新建角色结束 -->
+	<!-- 编辑角色 -->
+	<div id="comPopupBox" class="js_editor">
+		<div class="Popup offset1 wid">
+			<div class="popTitle wid">
+				编辑角色
+				<i ng-click='closeFn()'></i>
+			</div>
+			<div class="popContent">
+				<p class="newRoleName clearfix">
+					<span class="roleName lt">角色名:</span>
+					<input class="comInputStyle heis" type="text" name="" placeholder="请以准确的应用场景命名,2-15个字符" ng-model='editUserVal' ng-blur="checkUserFn(editUserVal,$event)">
+				</p>
+				<p class="newRoleName clearfix">
+					<span class="roleName lt">描述:</span>
+					<textarea class="comInputStyle heis1" placeholder="为角色添加准确描述" ng-model='describeTxt'></textarea>
+				</p>				
+				<p class="newRoleName clearfix">
+					<span class="roleName lt">角色权限:</span>
+				</p>
+				<div class="choiseBags">
+					<div class="newRoleName js_roleEditor clearfix" ng-repeat = "data in roleEditorList">
+						<span class="roleName font js_roleEditorName lt" data-value={{data.name}}>{{data.function_name}}</span>
+						<div class="optionBox js_roleEditorStatu lt">
+							<span class="currentStatus lt">
+								<button class="statusBtn" ng-if='data.function_name=="持续集成"' style="cursor: not-allowed;"></button>								
+								<button class="statusBtn" ng-if='data.function_name !=="持续集成"' ng-class="{'add':data.power==1}" ng-click='radioBoxFn($event)' data-attr = '1'></button>
+								只读
+							</span>
+							<span class="currentStatus lt">
+								<button class="statusBtn" ng-class="{'add':data.power==2}" ng-click='radioBoxFn($event)' data-attr = '2'></button>读写
+							</span>
+							<span class="currentStatus rt">
+								<button class="statusBtn" ng-class="{'add':data.power==0}" ng-click='radioBoxFn($event)' data-attr = '0'></button>&nbsp;无
+							</span>																	
+						</div>
+					</div>	
+				</div>
+				<div class="btnBox clearfix">
+					<button class="cancelBtn lt" ng-click='closeFn()'>取消</button>
+					<button class="sureBtn rt" ng-click='roleEditorFn($event)'>确定</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- 编辑角色结束 -->
+	<!-- 删除角色 -->
+	<div id="comPopupBox" class="js_delete">
+		<div class="Popup offset2 wid">
+			<div class="popTitle wid">
+				删除角色
+				<i ng-click='closeFn()'></i>
+			</div>
+			<div class="popContent">
+				<p class="deleteProjectBox">
+					是否删除该角色,角色删除后该角色所关联的人员将变为无角色(无权限)人员。
+
+				</p>
+				<div class="btnBox clearfix">
+					<button class="cancelBtn lt" ng-click='closeFn()'>取消</button>
+					<button class="sureBtn rt" ng-click='roleDelFn($event)'>确定</button>
+				</div>
+			</div>
+		</div>
+	</div>			
+	<!-- 删除角色结束 -->		
+</div>

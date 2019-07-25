@@ -1,0 +1,99 @@
+<div id="hostComputer">
+	<div id="searchButtons" class="clearfix">
+		<div class="searchBtnLeft lt">
+			<button class="btnCols btnSize lt" ng-click = 'addHostFn()'>
+				<i class="add"></i>
+				添加主机 
+			</button>
+			<button class="btnCols refreshSize lt" ng-click= 'hostResearchFn()'></button> 				
+		</div>
+		<div class="searchBtnRight lt">
+			<input class="rt searchBox" type="text" name="" placeholder="请输入关键字搜索" ng-model='hostSearchName' ng-change='hostSearchFn()'>
+		</div>
+	</div>
+	<div id="listData">
+		<div class="listDataGroup">
+			<ul class="listDGTitle">
+				<li class="hostWid">主机</li>
+				<li class="cpuWid">CPU</li>
+				<li class="memWid">内存</li>
+				<li class="ipWid">IP</li>
+				<li class="statuWid">状态</li>
+				<li class="timeWid">添加时间</li>
+				<li class="opWid">操作</li>
+			</ul>
+			<ul class="oneListDataGroup">
+				<li class="clearfix" ng-repeat='data in hostLIst'>
+					<div class="hostWid onlyHost left">
+						<span class="idName">{{data.host_name}}</span>
+						<input type="text" name="" placeholder="添加别名" disabled="disabled" ng-model='data.host_alias' ng-blur='changeAlisaNameFn($event,data)'>
+						<i ng-click='addAliasName($event)'></i>
+					</div>
+					<div class="cpuWid left">{{data.cpu}}%</div>
+					<div class="memWid left">{{data.mem_percent}}%</div>
+					<div class="ipWid left">{{data.host_ip}}</div>
+					<div class="statuWid left">
+					    <div id="containerBar" ng-if="data.status==1">
+    						<div class="warning"></div>
+						</div>
+						<div class="normal" ng-if="data.status==2">正常</div>
+						<div class="normal error" ng-if="data.status==3">异常</div>
+					</div>
+					<div class="timeWid left">{{data.create_at}}</div>
+					<div class="opWid left color" ng-if='data.status==2' ng-click= "hostSeeDetailFn(data)">查看详情</div>
+					<div class="opWid left color1" ng-if='data.status !==2'>查看详情</div>
+				</li>
+			</ul>
+		</div>
+		<div class="pagGroup clearfix">
+		    <div class="allTotals">共{{hostTotalData}}条</div>
+		    <ul class="pagination" id="page2">
+		    </ul>
+		    <div class="pageJump">
+		        <span>跳转到</span>
+		        <input type="number" />
+		        <span>页</span>
+		    </div>
+		</div>				
+	</div>
+	<!-- 添加主机弹窗 -->
+	<div id="comPopupBox" class="js_addHost">
+		<div class="Popup offset wid">
+			<div class="popTitle wid">
+				添加主机
+				<i ng-click="closeFn()"></i>
+			</div>
+			<div class="popContent ">
+				<div class="comAddHostContent clearfix">
+					<span class="leftTxt"></span>
+					<div class="rightTxt hintTxt">批量添加时，需要所有主机密码相同。</div>
+				</div>				
+				<div class="comAddHostContent mars18 clearfix"> 
+					<span class="leftTxt">主机IP</span>
+					<textarea class="rightTxt hostGroup js_hostIP" placeholder="输入多个IP时,以回车分隔。" ng-blur='changeIP()'></textarea>
+				</div>
+				<div class="comAddHostContent mars18 clearfix">
+					<span class="leftTxt">用户账户</span>
+					<input class="rightTxt comInputBox" type="text" name="" placeholder="请输入账户" ng-model='userAccount'>
+				</div>
+				<div class="comAddHostContent mars18 clearfix">
+					<span class="leftTxt">端口号</span>
+					<input class="rightTxt comInputBox" type="text" name="" placeholder="请输入端口号" ng-model='portNum'>
+				</div>
+				<div class="comAddHostContent  clearfix">
+					<span class="leftTxt">用户密码</span>
+					<input class="rightTxt comInputBox" type="text" name="" placeholder="请输入密码" ng-model='userPwd'>
+				</div>								
+				<div class="comAddHostContent clearfix">
+					<span class="leftTxt"></span>
+<!-- 					<div class="rightTxt hintTxt">密码长度在8~20,字母开头,可包含数字和下划线。</div>
+ -->				</div>				
+				<div class="btnBox clearfix">
+					<button class="cancelBtn lt" ng-click="closeFn()">取消</button>
+					<button class="sureBtn rt" ng-click= "addSureHostFn($event)">确定</button>
+				</div>
+			</div>
+		</div>
+	</div>			
+	<!-- 添加主机弹窗结束 -->	
+</div>

@@ -1,0 +1,226 @@
+@charset "utf-8";
+#subGroup{
+	width: 100%;
+    padding: 0 80px 0 30px;
+    box-sizing: border-box;
+    min-width: 1099px;
+}
+#subGroup .js_store.hidd{
+	display: none;
+}
+#subGroup .mar15{
+	margin-top: 15px;
+}
+#subGroup .subChangeBox .unselected{
+	width: 334px;
+	height: 40px;
+	color:#adadad;
+	line-height: 40px;
+	font-size: 20px;
+	border-bottom: 5px solid #adadad;
+	cursor: pointer;	
+}
+#subGroup .subChangeBox .unselected.add{
+	color: #6aaf4b;
+	border-bottom: 5px solid #6aaf4b;
+}
+
+#subGroup .wids{
+	width: 19%;
+}
+#subGroup .wids1{
+	width: 24%;
+}
+#subGroup .wids.color{
+	color: #3c3c3c;
+	cursor: pointer;
+}
+#subGroup .wids1.color{
+	color: #3c3c3c;
+	cursor: pointer;
+}
+#subGroup .oneListDataGroup{
+	width: 100%;
+}
+#subGroup .oneListDataGroup li{
+	width: 100%;
+	height: 70px;
+	background-color: #f6f6f6;
+	border-radius: 5px;
+	margin-bottom: 10px;	
+}
+#subGroup .oneListDataGroup li>div{
+	height: 100%;
+	line-height: 70px;
+	text-align: center;
+	color: #999999;
+    padding-right: 1%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;	
+}
+#subGroup .oneListDataGroup .normal{
+	width: 60px;
+	height: 17px;
+	line-height: 17px;
+	color: #61c036;
+	margin: 31.5px auto;
+	text-align: right;
+	background: url('../../images/console/ok.png')8px 0 no-repeat;
+}
+#subGroup .oneListDataGroup .normal.error{
+	background: url('../../images/console/unusual.png')8px 0 no-repeat;
+	color: #ec1f38;	
+}
+#subGroup .onlyHost .idName{
+	width: 100%;
+	height: 35px;
+	display: block;
+	line-height: 48px;
+	color: #6aaf4b;
+	float: left;
+}
+#subGroup .onlyHost input{
+	width: 50%;
+	height: 35px;
+	margin-left: 25%;
+	float: left;
+	text-align: center;
+	font-size: 17px;
+	border:none;
+	background: none;
+	color: #3c3c3c;
+}
+#subGroup i.editor{
+	width: 20px;
+	height: 35px;
+	display: block;
+	float: left;
+	background: url('../../images/console/editor1.png')0 50% no-repeat;
+	cursor: pointer;
+	background-size: 100%;
+	margin-left: 10px;
+}
+#subGroup .colonyNameGroup{
+	height: 40px;
+}
+#subGroup .colonyNameGroup .colonyNameTiP{
+	width:  80px;
+	height: 40px;
+	display: block;
+	line-height: 36px;
+}
+#subGroup .colonyNameGroup .colonyName{
+	height: 40px;
+	font-size: 16px;
+	border:none;
+	background-color: none;
+}
+#subGroup .offset{
+	transform:translate(-367px,-300px);
+	-ms-transform:translate(-367px,-300px);
+	-moz-transform:translate(-367px,-300px);
+	-webkit-transform:translate(-367px,-300px);
+	-o-transform:translate(-367px,-300px);
+}
+#subGroup .createColonyGroup{
+	padding: 50px 80px 30px 75px;
+    background-color: #FFFFFF;
+    border-radius: 0px 0px 5px 5px;
+    box-sizing: border-box;	
+}
+#subGroup .comColonyModelContent{
+	margin-bottom: 20px;
+}
+#subGroup .comColonyModelContent .clusterName{
+	width: 70px;
+    height: 28px;
+    display: block;
+    line-height: 28px;
+    text-align: right;
+    color: #666666;
+    padding-right: 20px;	
+}
+#subGroup .comColonyModelContent .InputBox{
+	width: 280px;
+	height: 28px;
+	border-radius: 5px;
+	border: solid 1px #999999;
+	text-indent: 10px;	
+}
+#subGroup .comColonyModelContent .nodeList{
+	width: 278px;
+	height: 174px;
+	box-shadow: 0px 3px 10px 0px rgba(17, 25, 66, 0.1);
+	border-radius: 3px;
+}
+#subGroup .comColonyModelContent .nodeList.marBot20{
+	margin-bottom: 20px;
+}
+#subGroup .comColonyModelContent .nodeList.mar12{
+	margin-left: 12px;
+}
+#subGroup .comColonyModelContent .nodeList .nodeTitle{
+	width: 100%;
+	height: 31px;
+	color: #999999;
+	font-size: 14px;
+	text-align: center;
+	line-height: 31px;
+}
+#subGroup .comColonyModelContent .nodeList .nodeDataList{
+	width: 100%;
+	height: 143px;
+	background-color: #f6f6f6;
+	box-shadow: 0px 3px 10px 0px rgba(17, 25, 66, 0.1);
+	border-radius: 3px;	
+	padding: 13px 15px 0 23px;
+	box-sizing: border-box;
+}
+#subGroup .comColonyModelContent .nodeList .nodeDataList .NodeDataBox{
+	width: 100%;
+	height: 100px;
+	overflow-y: auto;
+}
+#subGroup .comColonyModelContent .nodeList .NodeDataBox .oneNodeData{
+	width: 100%;
+	height: 20px;
+}
+#subGroup .comColonyModelContent .nodeList .NodeDataBox .oneNodeData .selects{
+	width: 12px;
+	height: 12px;
+	display: block;
+	border-radius: 3px;
+	border: 2px solid #ffffff;
+	cursor: pointer;
+	margin-top: 2px;
+}
+#subGroup .comColonyModelContent .nodeList .NodeDataBox .oneNodeData .selects.add{
+	background-color: #6aaf4b;
+}
+#subGroup .comColonyModelContent .nodeList .NodeDataBox .oneNodeData .nodeDataTxt{
+	width: 186px;
+	height: 20px;
+	display: block;
+	overflow: hidden;
+	text-overflow:ellipsis;
+	white-space: nowrap;
+	margin-left: 8px;
+	line-height: 20px;
+	color: #666666;
+	font-size: 14px
+}
+#subGroup .comColonyModelContent .nodeList .footerBox{
+	width: 100%;
+	height: 30px;
+	text-align: center;
+	line-height: 30px;
+	font-size: 14px;
+	color: #3c3c3c;
+}
+#subGroup .comColonyModelContent .nodeList .footerBox.error{
+	color: #cb3332; 
+}
+#subGroup .comColonyModelContent .btnBox.pads{
+	padding: 0 168px;
+}

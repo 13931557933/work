@@ -1,0 +1,64 @@
+<div id="deployDetail">
+	<div id="deployDetailPage">
+		<div class="firstPart clearfix">
+			<i class="detailImg left"></i>
+			<div class="detailName left">
+				<p class="topTier txt">
+					镜像名称：{{mirrorDetailData.name}}
+				</p>
+				<p class="topTier bottomTier clearfix">
+					<span class="bottomTierTxt left">下载镜像</span>
+					<span class="bottomTierWay left"  id='js_copy'>{{mirrorDetailList.path_pull}}</span> 
+					<button class="copyBtn left" ng-click='copyMirrorFn()'></button>
+					<span class="downLoader left">{{mirrorDetailList.pull_count}}</span>
+				</p>
+				<input type="text" name="" id="js_copyTxt">
+			</div>
+			<div class="detailLittleMsg left">
+				<div class="wids left">奉献者：{{mirrorDetailList.giver}}</div>
+				<div class="wids left">最新版本：{{mirrorDetailList.latestVersion}}</div>
+				<div class="time left">创建时间：{{mirrorDetailList.create_time}}</div>
+			</div>
+		</div>
+		<ul class="menuBox clearfix js_detailMenu">
+			<li class="add">基本信息</li>
+			<li>服务接口</li>
+			<li>dockerfile</li>
+			<li>版本</li>
+		</ul>
+		<div class="contentGroup js_detailContent">
+			<textarea disabled="disabled">您还不能编辑</textarea>
+			<div class="serviceInterface">
+				<p>容器端口：
+					<span ng-if='mirrorDetailList.port_protocol_list ==0'>None</span>
+					<span ng-if='mirrorDetailList.port_protocol_list >0' ng-repeat = 'data in mirrorDetailList.port_protocol_list'>{{data.containerPort}}/{{data.protocol}},</span>
+				</p>
+				<p>数据存储卷:
+					<span ng-if='mirrorDetailList.volume_list ==0'>None</span>		
+					<span ng-if='mirrorDetailList.volume_list >0' ng-repeat = 'data in mirrorDetailList.volume_list'>{{data}},</span>		
+				</p>
+				<p>所需环境变量：</p>
+				<div class="tableGroup">
+					<table cellspacing="0" cellpadding="0";>
+					  	<tr>
+    						<th align="left">变量名</th>
+    						<th align="left">默认值</th>
+						</tr>
+						<tr ng-repeat= 'data in mirrorDetailList.env_total_list'>
+    						<td>{{data.name}}</td>
+    						<td>{{data.value}}</td>
+						</tr>																	
+					</table>
+				</div>
+			</div>
+			<textarea disabled="disabled" class="dockerfile">您还不能编辑</textarea>
+			<ul class="version">
+				<li ng-repeat = 'data in mirrorDetailList.version'>{{data}}</li>
+			</ul>
+		</div>
+		<div class="btnBox clearfix">
+			<button class="btnL left" ui-sref='repositories'><i class="back"></i>返回</button>
+<!-- 			<button class="btnR right"><i class="deploy"></i>部署镜像</button> -->
+		</div>
+	</div>
+</div>

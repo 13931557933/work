@@ -1,0 +1,119 @@
+<div id="projectDetail">
+	<div id="searchButtons" class="clearfix">
+		<div class="searchBtnLeft lt">
+			<button class="btnCols backSize	 lt" ui-sref='project'>
+				<i class="back"></i> 
+				返回
+			</button>
+			<button class="btnCols btnSize lt" ng-click='addModelFn()'>
+				<i class="add"></i>
+				添加成员
+			</button>			
+			<button class="btnCols btnSize lt" ng-click='deleteFn()'>
+				<i class="delete"></i>
+				移除成员
+			</button>
+			<button class="btnCols refreshSize lt" ng-click= 'proRefresh()'></button>				
+		</div>
+		<div class="searchBtnRight lt">
+			<input class="rt searchBox" type="text" name="" placeholder="请输入关键字搜索" ng-change='proDetailSearchFn()'  ng-model='proSearch'>
+		</div>
+	</div>
+	<div id="listData">
+		<div class="listDataGroup">
+			<ul class="listDGTitle">
+				<li class="choseWids"></li>
+				<li class="userWids">用户名</li>
+				<li class="phoneWids">电话</li>
+				<li class="roleWids">角色</li>
+				<li class="operatWids">操作</li>
+			</ul>
+			<ul class="listDGDetail">
+				<li class="oneDataGroup" ng-repeat = 'data in proMemList'>
+					<div class="choseWids">
+						<span class="choiceBox" ng-click='choiceFn($event,data)' data-value = {{data.user_id}}></span>
+					</div>
+					<div class="userWids comClickColor" ng-click='changeUserFn()'>{{data.username}}</div>
+					<div class="phoneWids comTextColor">{{data.phone}}</div>
+					<div class="roleWids comTextColor" style="overflow: visible;">
+						<div id="dropDown" class="dropFramePosition wid">
+							<div class="frame wid js_frame" ng-click='dropDownFn($event)'>{{data.role[0].role_name}}</div>
+							<ul class="dropList js_dropList">
+								<li ng-click='roleDropDataFn(data,datas,$event)' ng-repeat = 'datas in data.role'>{{datas.role_name}}</li>
+							</ul>
+						</div>					
+					</div>
+					<div class="operatWids">
+						<button class="comClickColor deleteBtns" ng-click='deleteModelFn(data)'>移除</button>
+					</div>
+				</li>
+			</ul>
+		</div>
+		<div class="pagGroup clearfix">
+		    <div class="allTotals">共{{proMemTotalData}}条</div>
+		    <ul class="pagination" id="page2">
+		    </ul>
+		    <div class="pageJump">
+		        <span>跳转到</span>
+		        <input type="number" />
+		        <span>页</span>
+		    </div>
+		</div>			
+	</div>
+	<!-- 添加成员 -->
+	<div id="comPopupBox" class="js_addMember">
+		<div class="Popup offset wid">
+			<div class="popTitle wid">
+				添加成员
+				<i ng-click='closeFn()'></i>
+			</div>
+			<div class="popContent">
+				<p class="addMember clearfix">
+					<input type="text" name="" placeholder="请输入成员名称关键字搜索" ng-model='searchMember' ng-change='searchMemberFn()'>
+				</p>
+				<ul class="addListTit clearfix">
+					<li class="choiceGroup">
+						<i class="bdColor js_checkBox"></i>
+					</li>
+					<li class="memberName">成员名称</li>
+					<li class="join">参与项目</li>
+					<li class="status">状态</li>
+				</ul>
+				<ul class="addListTit js_dataBox choiseBags clearfix">
+					<li class="addListDataLi" ng-repeat='data in pDMemberList'>
+						<div class="choiceGroup lt">
+							<i class="bdColor1" ng-click='memberCheckBoxFn($event,data)' data-value = {{data.user_id}}></i>
+						</div>
+						<div class="js_memName memberName lt">{{data.username}}</div>
+						<div class="js_joinNum join lt">{{data.itmes_number}}</div>
+						<div class="status lt">{{data.status | isFreeze}}</div>
+					</li>																			
+				</ul>
+				<div class="btnBox clearfix">
+					<button class="cancelBtn lt" ng-click='closeFn()'>取消</button>
+					<button class="sureBtn rt" ng-click='addMemberFn($event)'>确定</button>
+				</div>
+			</div>
+		</div>
+	</div>	
+	<!-- 添加成员结束 -->
+	<!-- 移除成员 -->
+	<div id="comPopupBox" class="js_deleteMember">
+		<div class="Popup offset1 wid">
+			<div class="popTitle wid">
+				移除成员
+				<i ng-click='closeFn()'></i>
+			</div>
+			<div class="popContent">
+				<p class="deleteProjectBox">
+					是否移除该成员?
+				</p>
+				<div class="btnBox clearfix">
+					<button class="cancelBtn lt" ng-click='closeFn()'>取消</button>
+					<button class="sureBtn rt" ng-click= 'delMemberFn($event)'>确定</button>
+				</div>
+			</div>
+		</div>
+	</div>			
+	<!-- 移除成员结束 -->		
+</div>

@@ -1,0 +1,97 @@
+@charset "utf-8"; 
+#netWork{
+	width: 100%;
+	padding: 0  80px 0 30px ;
+	box-sizing: border-box;
+	min-width: 1099px;
+}
+#netWork .netName{
+	width: 19%;
+}
+#netWork .ipWid{
+	width: 19%;
+}
+#netWork .timeWid{
+	width: 19%;
+}
+#netWork .opWid{
+	width: 19%;
+}
+#netWork .oneListDataGroup{
+	width: 100%;
+}
+#netWork .oneListDataGroup li{
+	width: 100%;
+	height: 70px;
+	background-color: #f6f6f6;
+	border-radius: 5px;
+	margin-bottom: 10px;	
+}
+#netWork .oneListDataGroup li>div{
+	height: 100%;
+	line-height: 70px;
+	text-align: center;
+    padding-right: 1%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap; 	
+}
+#netWork .comCreateBox{
+	width: 100%;
+	height: 48px;
+	padding:0 0 20px 0;
+	box-sizing: border-box; 
+}
+#netWork .comCreateBox .titName{
+	width: 84px;
+	height: 28px;
+	display: block;
+	color: #666666;
+	padding-right: 20px;
+	line-height: 28px;
+	box-sizing: border-box;
+	text-align: right;
+}
+#netWork .comCreateBox .netNameTxt{
+	width: 300px;
+	height: 26px;
+	border-radius: 5px;
+	border: solid 1px #999999;
+	text-indent: 10px;	
+}
+#netWork .comCreateBox .addressField input{
+	width: 40px;
+	height: 26px;
+	border-radius: 5px;
+	border: solid 1px #999999;
+	text-indent: 10px;	
+}
+#netWork .comCreateBox .checkBox{
+	width:16px;
+	height:16px;
+	margin-top:4px;
+	border-radius: 3px;
+	border: solid 2px #eeeeee;
+}
+#netWork .comCreateBox .checkBox.add{
+	background-color: #6aaf4b;
+}
+#netWork .delNetTxt{
+	color: #3c3c3c;
+	font-size: 18px;
+	text-align: center;
+}
+#netWork .offset{
+	transform: translate(-260px,-156px);
+	-ms-transform: translate(-260px,-156px);
+	-moz-transform: translate(-260px,-156px);
+	-webkit-transform: translate(-260px,-156px);
+	-o-transform: translate(-260px,-156px);
+}
+#netWork .offset1{
+	transform: translate(-260px,-96px);
+	-ms-transform: translate(-260px,-96px);
+	-moz-transform: translate(-260px,-96px);
+	-webkit-transform: translate(-260px,-96px);
+	-o-transform: translate(-260px,-96px);
+}

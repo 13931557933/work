@@ -1,0 +1,130 @@
+<div id="storageVolume">
+	<div id="searchButtons" class="clearfix">
+		<div class="searchBtnLeft lt">
+			<button class="btnCols btnSize lt" ng-click = 'addStorageFn()'>
+				<i class="add"></i>
+				创建存储
+			</button>
+			<button class="btnCols refreshSize lt" ng-click= 'volumeResearchFn()'></button>				
+		</div>
+		<div class="searchBtnRight lt">
+			<input class="rt searchBox" type="text" name="" placeholder="请输入关键字搜索" ng-model='volumeSearchName' ng-change='volumeSearchFn()'>
+		</div>
+	</div>
+	<div id="listData">
+		<div class="listDataGroup">
+			<ul class="listDGTitle">
+				<li class="storageWid">存储名称</li>
+				<li class="sizeWid">大小</li>
+				<li class="sizeWid">状态</li>
+				<li class="pointWid">挂载点</li>
+				<li class="serveWid">绑定服务</li>
+				<li class="timeWid">操作时间</li>
+				<li class="opWid">操作</li>
+			</ul>
+			<ul class="oneListDataGroup">
+				<li class="clearfix" ng-repeat='data in volumeLIst'>
+					<div class="storageWid comClickColor left">{{data.pvc_name}}</div>
+					<div class="sizeWid comTextColor left">{{data.pvc_capacity}}</div>
+					<div class="sizeWid comTextColor left">{{data.status | storageStatu}}</div>
+					<div class="pointWid comTextColor left" ng-if='data.mount_point==null'>无</div>
+					<div class="pointWid comTextColor left" ng-if='data.mount_point !==null'>{{data.mount_point}}</div>
+					<div class="serveWid comTextColor left" ng-if='data.binding_application==null'>无</div>					
+					<div class="serveWid comTextColor left" ng-if='data.binding_application !==null'>{{data.binding_application}}</div>
+					<div class="timeWid comTextColor left">{{data.operation_time}}</div>
+					<div class="opWid comTextColor left">
+						<button class="color cursor" ng-if='data.status==0||data.status==1||data.status==4'>扩容</button>
+						<button class="color"ng-if='data.status==2||data.status==3||data.status==5' ng-click='volumeModel(data)'>扩容</button>
+						<button class="color cursor" ng-if='data.status==0 ||data.status==1'>删除</button>						
+						<button class="color" ng-if='data.status !==0&&data.status !==1' ng-click='delVolumeModel(data)'>删除</button>
+					</div>
+				</li>
+			</ul>
+		</div>
+		<div class="pagGroup clearfix">
+		    <div class="allTotals">共{{volumeTotalData}}条</div>
+		    <ul class="pagination" id="page2">
+		    </ul>
+		    <div class="pageJump">
+		        <span>跳转到</span>
+		        <input type="number" />
+		        <span>页</span>
+		    </div>
+		</div>				
+	</div>
+	<!-- 创建存储 -->
+	<div id="comPopupBox" class="js_addStorage">
+		<div class="Popup offset1 wid">
+			<div class="popTitle wid">
+				创建存储
+				<i ng-click="closeFn()"></i>
+			</div>
+			<div class="popContent ">
+				<div class="comStorageTxt clearfix">
+					<span  class="comtitle left">名称</span>
+					<input class="js_volumeName storageNameBox left" type="text" name="" maxlength="15">
+				</div>
+				<div class="size clearfix" id="rangeslider">
+					<p class="left">大小</p>
+		            <span class="unit right">G</span>
+		            <input type="tel" value="" class="right number js_number">
+					<div id="js-change-value2" class="left" style="width:100%;margin-top: 12px;">
+		                <input type="range" min="1" value="1" max="10" data-rangeslider>
+		            </div>
+				</div>							
+				<div class="btnBox clearfix">
+					<button class="cancelBtn lt" ng-click="closeFn()">取消</button>
+					<button class="sureBtn rt" ng-click= "addSureStorageFn($event)">确定</button>
+				</div>
+			</div>
+		</div>
+	</div>			
+	<!-- 创建存储结束 -->
+	<!--删除存储 -->
+	<div id="comPopupBox" class="js_delStorage">
+		<div class="Popup offset1 wid">
+			<div class="popTitle wid">
+				删除存储
+				<i ng-click="closeFn()"></i>
+			</div>
+			<div class="popContent ">
+				<div class="delNetTxt">
+					是否删除该存储?
+				</div>
+				<div class="btnBox clearfix">
+					<button class="cancelBtn lt" ng-click="closeFn()">取消</button>
+					<button class="sureBtn rt" ng-click= "delSureVolumeFn($event)">确定</button>
+				</div>
+			</div>
+		</div>
+	</div>					
+	<!--删除存储结束 -->
+	<!--扩容存储 -->
+	<div id="comPopupBox" class="js_expendStorage">
+		<div class="Popup offset1 wid">
+			<div class="popTitle wid">
+				扩容存储
+				<i ng-click="closeFn()"></i>
+			</div>
+			<div class="popContent ">
+				<div class="comStorageTxt clearfix">
+					<span  class="comtitle left">名称</span>
+					<input class="storageNameBox left" type="text" name="" maxlength="15" ng-model='exVolumeData.pvc_name' disabled="true">
+				</div>
+				<div class="size clearfix" id="rangeslider">
+					<p class="left">大小</p>
+		            <span class="unit right">G</span>
+		            <input type="tel" value="" class="right number js_exNumber">
+					<div id="js-change-value2" class="left" style="width:100%;margin-top: 12px;">
+		                <input class="js_exrangeslider" type="range" min="1" value="1" max="10" data-exrangeslider>
+		            </div>
+				</div>							
+				<div class="btnBox clearfix">
+					<button class="cancelBtn lt" ng-click="closeFn()">取消</button>
+					<button class="sureBtn rt" ng-click= "volumeSureVolumeFn($event)">确定</button>
+				</div>
+			</div>
+		</div>
+	</div>			
+	<!-- 扩容存储结束 -->					
+</div>

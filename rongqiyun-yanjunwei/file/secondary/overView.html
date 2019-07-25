@@ -1,0 +1,85 @@
+<div class="overView clearfix">
+	<div class="chartGroup lt">   
+		<div class="applyGroup pads comMars lt">
+			<div id="apply" class="canvasGroup"></div>
+			<div class="canvasDataGroup">
+				<p class="dataName">应用</p>
+				<p class="dataState">操作中:</p>
+				<p class="dataState">{{applyOperation}}个</p>
+				<p class="dataState">运行中:</p>
+				<p class="dataState">{{applyRun}}个</p>
+			</div>
+		</div>          
+		<div class="applyGroup pads comMars lt">
+			<div id="storage" class="canvasGroup"></div>
+			<div class="canvasDataGroup">
+				<p class="dataName">存储</p>
+				<p class="dataState">可用配额:</p>
+				<p class="dataState">{{storageUsable}}G</p>
+				<p class="dataState">已用配额:</p>
+				<p class="dataState">{{storageUsed}}G</p>
+			</div>
+		</div> 
+	  	<div class="applyGroup heis comMars lt">
+	  		<div class="operateStatTit">24小时访问量</div>
+		    <div id="staticChart"></div>
+	  	</div>
+		<div class="applyGroup heis comMars lt">
+	  		<div class="operateStatTit">镜像仓库</div>
+	  		<div class="storeList wids">
+	  			<div class="scrollDiv">
+	  				<div class="storeBgs">
+		  			<div class="storeListDataGroup" ng-repeat='data in mirrorWarehouse track by $index' repeat-finish>
+		  				<i class="storeListLogo lt"></i>
+		  				<p class="storeListTextGroup lt">
+		  					<span class="storeListText">{{data}}</span>
+		  				</p>
+		  			</div>
+	  				</div>
+	  			</div>
+	  		</div>
+		</div>	
+	</div>
+	<div class="middleGroup lt">
+		<div class="buildStatuGroup pads comMars">
+			<div class="buildStatuTit">CI/CD</div>
+			<div class="buildStatu success">
+				<p class="buildStatuText littleFont">构建成功:</p>
+				<p class="buildStatuText bigFont">{{buildStatus.succeed}}个</p>
+			</div>
+			<div class="buildStatu individualMars building">
+				<p class="buildStatuText littleFont">正在构建:</p>
+				<p class="buildStatuText bigFont">{{buildStatus.wait}}个</p>
+			</div>
+			<div class="buildStatu fail">
+				<p class="buildStatuText littleFont">构建失败:</p>
+				<p class="buildStatuText bigFont">{{buildStatus.failure}}个</p>
+			</div> 			
+		</div>
+		<div class="buildStatuGroup heis comMars">
+			<div class="operateStatTit">告警</div>
+			<div class="storeList widsLit">
+				<div class="scrollDiv">
+					<div class="warnText" ng-repeat='data in alarmDataList' repeat-finish>
+						<div>{{data.component}}</div>
+						<div>{{data.current_time}}</div>
+					</div>
+				</div>								
+			</div>
+		</div>
+	</div>
+	<div class="rightGroup lt">
+		<div class="operateStatTit">日志服务</div>
+		<div class="storeList logWids">
+			<div class="scrollDiv">
+			<div class="logGroup clearfix" ng-repeat='data in logRecord' repeat-finish>
+				<div class="logsLeftGroup lt">
+					<p class="logsState" title="{{data.record}}">{{data.record}}</p>
+					<p class="logTimes" title="{{data.create_time}}">{{data.create_time}}</p>
+				</div>
+				<div class="logsRightGroup lt"></div>
+			</div>
+			</div>																	
+		</div>
+	</div>
+</div> 

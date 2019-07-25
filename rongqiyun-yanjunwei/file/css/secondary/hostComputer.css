@@ -1,0 +1,159 @@
+@charset "utf-8"; 
+#hostComputer{
+	width: 100%;
+    padding: 0 80px 0 30px;
+    box-sizing: border-box;
+    min-width: 1099px;
+}
+#hostComputer .listDataGroup .hostWid{
+	width: 17%;
+}
+#hostComputer .listDataGroup .cpuWid{
+	width: 10%;
+}
+#hostComputer .listDataGroup .memWid{
+	width: 10%;
+}
+#hostComputer .listDataGroup .ipWid{
+	width: 15%;
+}
+#hostComputer .listDataGroup .statuWid{
+	width: 15%;
+}
+#hostComputer .listDataGroup .timeWid{
+	width: 16%;
+}
+#hostComputer .listDataGroup .opWid{
+	width: 10%;
+}
+#hostComputer .listDataGroup .opWid.color{
+	width: 10%;
+	color: #3c3c3c;
+	cursor: pointer;
+}
+#hostComputer .listDataGroup .opWid.color1{
+	width: 10%;
+	color: #3c3c3c;
+	cursor: not-allowed;
+}
+#hostComputer .oneListDataGroup{
+	width: 100%;
+}
+#hostComputer .oneListDataGroup li{
+	width: 100%;
+	height: 70px;
+	background-color: #f6f6f6;
+	border-radius: 5px;
+	margin-bottom: 10px;	
+}
+#hostComputer .oneListDataGroup li>div{
+	height: 100%;
+	line-height: 70px;
+	text-align: center;
+	color: #999999;
+    padding-right: 1%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap; 	
+}
+#hostComputer .onlyHost .idName{
+	width: 100%;
+	height: 35px;
+	display: block;
+	line-height: 48px;
+	color: #6aaf4b;
+	float: left;
+}
+#hostComputer .onlyHost input{
+	width: 50%;
+	height: 35px;
+	margin-left: 25%;
+	float: left;
+	text-align: center;
+	font-size: 17px;
+	border:none;
+	background: none;
+	color: #3c3c3c;
+}
+#hostComputer .onlyHost i{
+	width: 20px;
+	height: 35px;
+	display: block;
+	float: left;
+	background: url('../../images/console/editor1.png')0 50% no-repeat;
+	cursor: pointer;
+	background-size: 100%;
+	margin-left: 10px;
+}
+#hostComputer .oneListDataGroup .normal{
+	width: 60px;
+	height: 17px;
+	line-height: 17px;
+	color: #61c036;
+	margin: 31.5px auto;
+	text-align: right;
+	background: url('../../images/console/ok.png')8px 0 no-repeat;
+}
+#hostComputer .oneListDataGroup .normal.error{
+	background: url('../../images/console/unusual.png')8px 0 no-repeat;
+	color: #ec1f38;	
+}
+#hostComputer .offset{
+	transform:translate(-260px,-230px);
+	-ms-transform:translate(-260px,-230px);
+	-moz-transform:translate(-260px,-230px);
+	-webkit-transform:translate(-260px,-230px);
+	-o-transform:translate(-260px,-230px);
+
+}
+#hostComputer .comAddHostContent .leftTxt{
+	width: 106px;
+	height: 28px;
+	display: block;
+	float: left;
+	color: #666666;
+	padding-right: 20px;
+	text-align: right;
+	box-sizing: border-box;
+}
+#hostComputer .comAddHostContent .rightTxt{
+	width: 280px;
+	float: left;
+}
+#hostComputer .comAddHostContent .rightTxt.hintTxt{
+	height: 28px;
+	line-height: 28px;	
+	color: #b9b9b9;
+	font-size: 12px;
+}
+#hostComputer .comAddHostContent .rightTxt.hostGroup{
+	height: 90px;
+	border-radius: 5px;
+	padding-left: 10px;
+	box-sizing: border-box;	
+	color: #666666;
+	line-height:20px;
+	font-size: 14px;
+}
+#hostComputer .comAddHostContent .rightTxt.hostGroup:focus{
+	border: 1px solid #6aaf4b;
+	color:#6aaf4b;	
+}
+#hostComputer .comAddHostContent .rightTxt.comInputBox{
+	height: 28px;
+	border-radius: 5px;
+	border: solid 1px #999999;
+	text-indent: 10px;
+	font-size: 14px;
+	color:#666666;			
+}
+#hostComputer .comAddHostContent.mars18{
+	margin-bottom: 18px;
+}
+#hostComputer .comAddHostContent .rightTxt.comInputBox:focus{
+	border: 1px solid #6aaf4b;
+	color:#6aaf4b;
+}
+#hostComputer .comAddHostContent input.error,textarea.error {
+    border: solid 1px #cb3332 !important;
+}

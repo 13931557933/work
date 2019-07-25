@@ -1,0 +1,15 @@
+﻿<div class="headers">
+	<div class="right">
+		<div class="items-group left">
+			<div class="dropDownGroup js_frame" ng-click='dropDownFn($event)'>{{currentProject.project_name}}</div>
+			<ul class="dropList js_dropList">
+				<li ng-repeat="data in projectList"  ng-click='dropDataFn(data,$event)'>{{data.project_name}}</li>
+			</ul>
+		</div>
+		<div class="user-group left">
+			<img class="head left" src="images/console/heads.png">
+			<div class="users left">{{userName}}</div>
+		</div>
+		<div class="offBtns left" ng-click= 'logOutFn()'>退出登录</div>	
+	</div>
+</div>

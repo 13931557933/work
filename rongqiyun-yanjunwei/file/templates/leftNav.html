@@ -1,0 +1,18 @@
+﻿<div class="leftNav">
+	<div class="leftNav-logo"></div>
+	<div class="menuListBox">
+		<ul class="menuList scrollBar">
+			<li class="menuListFirs js_Menus" ng-repeat = "data in navList" repeat_finish>
+				<div class="navListTitle" ng-click='listActiveFn($index,data.url)'>
+					<img class="navListLogo" ng-src="{{data.image}}">
+					<img ng-show= "data.show" class="navListLogo" ng-src="{{data.images}}">
+					<img ng-show= "data.isIcon" class="navListDownSign" ng-src="{{data.img}}">
+					{{data.function_name}}
+				</div>
+				<ul ng-show= "data.show" class="navListDown">
+					<li ng-class={true:"on"}[secMenu.on] ng-click='urlFn(secMenu.url,$event)' class="navListDownSecs js_secMenus" ng-repeat ='secMenu in data.children'>{{secMenu.name}}</li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+</div>

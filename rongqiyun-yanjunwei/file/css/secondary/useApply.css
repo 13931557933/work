@@ -1,0 +1,345 @@
+@charset "utf-8";
+#useApply{
+	width: 100%;
+	padding: 0  80px 0 30px ;
+	box-sizing: border-box;
+	min-width: 1099px;
+}
+#useApply .offset1{
+	transform: translate(-260px,-112px);
+	-ms-transform: translate(-260px,-112px);
+	-moz-transform: translate(-260px,-112px);
+	-webkit-transform: translate(-260px,-112px);
+	-o-transform: translate(-260px,-112px);
+}#useApply .offset2{
+	transform: translate(-450px,-275px);
+	-ms-transform: translate(-450px,-275px);
+	-moz-transform: translate(-450px,-275px);
+	-webkit-transform: translate(-450px,-275px);
+	-o-transform: translate(-450px,-275px);
+
+}
+#useApply .popTerminal{
+    width: 100%;
+    padding: 26px 20px;
+    box-sizing: border-box;
+    border-top: 1px solid #555555;
+    border-radius:  0 0 5px 5px;
+    background: url('../../images/console/a.gif')#2d2d2d 50% 50% no-repeat;
+}
+#useApply .popTerminal .terminalDrop{
+	position: relative;
+	line-height: 42px;
+	color: #ffffff;
+	text-indent: 38px;	
+}
+#useApply .popTerminal .terminalDrop .dropTop{
+	width: 100%;
+	height: 42px;
+	box-shadow: 0px 3px 10px 0px rgba(17, 25, 66, 0.1);
+	border-radius: 5px;
+	border: solid 2px #838383;
+	background: url('../../images/console/downSign.png')#121212 95%  50% no-repeat;
+	cursor: pointer;	
+	opacity: 0.7;	
+}
+#useApply .popTerminal .terminalDrop .dropTab{
+	position: absolute;
+	width: 100%;
+	z-index: 1;
+}
+#useApply .popTerminal .terminalDrop .dropTab li{
+	width: 100%;
+	height: 42px;
+	margin-left: 2px;
+	cursor: pointer;
+	background-color:#121212;
+}
+#useApply .popTerminal #term{
+	width: 100%;
+	box-shadow: 0px 3px 10px 0px rgba(17, 25, 66, 0.1);
+	border-radius: 5px;
+	border: solid 2px #838383;
+	margin-top: 5px;
+	background-color:#121212;
+	padding:10px 38px;
+	box-sizing: border-box;	
+	opacity: 0.7;	
+}
+#useApply .comAddBox .nameTitle{
+    width: 106px;
+    height: 28px;
+    display: block;
+    float: left;
+    color: #666666;
+    padding-right: 20px;
+    text-align: right;
+    box-sizing: border-box;
+}
+#useApply .appDetailGroup{
+	width:100%;
+	background-color: #ffffff;
+	box-shadow: 0px 5px 15px 0px rgba(17, 25, 66, 0.1);
+	border-radius: 5px;
+	padding: 40px 80px;
+	box-sizing: border-box;
+}
+#useApply .appDetailGroup .firstGroup .leftLogo{
+	width: 120px;
+	height: 120px;
+	box-shadow: 0px 1px 10px 0px rgba(17, 25, 66, 0.2);
+	border-radius: 5px;
+	background:url('../../images/console/pub.png') #ffffff 50% no-repeat;
+	margin-right: 40px;
+}
+#useApply .appDetailGroup .firstGroup .rightGroup .comTitBox{
+	height: 30px;
+}
+#useApply .appDetailGroup .firstGroup .rightGroup .comTitBox .upGrade{
+	width: 75px;
+	height: 28px;
+	border-radius: 3px;
+	color: #ffffff;
+	background-color: #3c3c3c;
+	line-height: 28px;
+}
+#useApply .appDetailGroup .firstGroup .rightGroup .comTitBox .upGrade .icon{
+	width: 20%;
+	height: 26px;
+	display: block;
+	float: left;
+}
+#useApply .upGrade .icon.up{
+	background: url('../../images/console/upGrade.png') 50% 50% no-repeat;
+}
+#useApply .upGrade .icon.log{
+	background: url('../../images/console/applog.png') 50% 50% no-repeat;
+}
+#useApply .appDetailGroup .firstGroup .rightGroup .comTitBox .tit{
+	height: 100%;
+	display: block;
+	line-height: 30px;
+	padding-right: 20px;
+	color: #666666;
+}
+#useApply .appDetailGroup .firstGroup .rightGroup .comTitBox #js_copyTxt{
+    height: 0;
+    border: none;
+}
+#useApply .appDetailGroup .firstGroup .rightGroup .comTitBox .lins{
+	height: 100%;
+	display: block;
+	line-height: 30px;
+	font-size: 18px;	
+}
+#useApply .appDetailGroup .firstGroup .rightGroup .comTitBox .lins.cols{
+	color: #6aaf4b
+}
+#useApply .appDetailGroup .firstGroup .rightGroup .comTitBox .copy{
+	width: 28px;
+	height: 28px;
+	border-radius: 3px;
+	border: solid 1px #999999;
+	background: url('../../images/console/copy.png') 50% 50% no-repeat;	
+	margin-left: 8px;
+}
+#useApply .appDetailGroup .firstGroup .rightGroup .comTitBox .copy:hover{
+	border: solid 1px #6aaf4b;
+	background: url('../../images/console/copy1.png') 50% 50% no-repeat;		
+}
+#useApply .appDetailGroup .switchGroup{
+	width: 100%;
+	height: 40px;
+	background-color: #ffffff;
+	box-shadow: 0px 2px 10px 0px rgba(17, 25, 66, 0.2);
+	border-radius: 3px;
+	margin-top: 40px;
+}
+#useApply .appDetailGroup .switchGroup li{
+	width: 20%;
+	height: 40px;
+	border-radius: 3px;
+	text-align: center;
+	line-height: 40px;
+	color: #666666;
+	cursor: pointer;
+}
+#useApply .appDetailGroup .switchGroup li.add{
+	background-color: #6aaf4b;
+	color: #ffffff;
+}
+#useApply .appDetailGroup .switchBox .bgColor{
+	border-radius: 5px;
+	background-color: #f6f6f6;
+	padding: 28px 30px;
+}
+#useApply .appDetailGroup .switchBox .js_switch{
+	display: none
+}
+#useApply .appDetailGroup .switchBox .js_switch.on{
+	display:block;
+}
+#useApply .appDetailGroup .switchBox .comMsgBox{
+	margin-bottom: 20px;
+}	
+#useApply .appDetailGroup .switchBox .comMsgBox .msg{
+	font-size: 18px;
+	color: #666666;
+}
+#useApply .appDetailGroup .comMsgBox .msgTit{
+	width: 100%;
+	height: 36px;
+}
+#useApply .appDetailGroup .comMsgBox .msgTit li{
+	height: 100%;
+	line-height: 36px;
+	color: #666666;
+	float: left
+}
+#useApply .appDetailGroup .comMsgBox .txt38{
+	text-indent: 38px;
+}
+#useApply .appDetailGroup .comMsgBox .mar38{
+	margin-left: 38px;
+}
+#useApply .appDetailGroup .comMsgBox .msgContent{
+	width:100%;
+	height: 74px;
+	background-color: #ffffff;
+	box-shadow: 0px 3px 7px 0px rgba(0, 0, 0, 0.16);
+	border-radius: 5px;
+}
+#useApply .appDetailGroup .comMsgBox .msgContent li{
+	height: 100%;
+	line-height: 74px;
+	color: #000000;
+	float: left;
+	padding-right: 20px;
+	box-sizing: border-box;
+	overflow: hidden;
+  	text-overflow:ellipsis;
+    white-space:nowrap	
+}
+#useApply .appDetailGroup .comMsgBox .msgContent li.statu{
+	background:url('../../images/console/ok.png') 0 50% no-repeat;
+	text-indent: 30px;
+	color: #6aaf4b
+}
+#useApply .appDetailGroup .comMsgBox .comStorageBox{
+	background-color: #ffffff;
+	box-shadow: 0px 3px 7px 0px rgba(0, 0, 0, 0.16);
+	border-radius: 5px;	
+}
+#useApply .appDetailGroup .comMsgBox .comStorageBox .storageMin{
+	width:100%;
+	height: 74px;	
+}
+#useApply .appDetailGroup .comMsgBox .comStorageBox .storageMin>div{
+	height: 100%;
+	line-height: 74px;
+	overflow: hidden;
+  	text-overflow:ellipsis;
+    white-space:nowrap;
+    padding-right: 20px;
+    box-sizing: border-box;			
+}
+#useApply .appDetailGroup .comMsgBox .wid25{
+	width: 25%;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+#useApply .appDetailGroup .comMsgBox .wid20{
+	width: 20%;
+}
+#useApply .appDetailGroup .comMsgBox .wid50{
+	width: 50%;
+}
+#useApply .appDetailGroup .comMsgBox .col{
+	color: #5b5b5b;
+}
+#useApply .appDetailGroup .comMsgBox .addDomain{
+	width: 80%;
+	height: 28px;
+	position: relative;
+	margin-top: 25px;
+}
+#useApply .appDetailGroup .comMsgBox .addDomain input{
+	width: 100%;
+	height: 26px;
+	text-indent: 10px;
+	border-radius: 5px;
+	border:1px solid #3c3c3c;
+
+}
+#useApply .appDetailGroup .comMsgBox .addDomain i{
+	width: 28px;
+	height: 28px;
+	display: block;
+	position: absolute;
+	top: 0;
+	right: -1px;
+	border-radius: 0 5px 5px 0;
+}
+#useApply .appDetailGroup .comMsgBox .addDomain i.add{
+	background:url('../../images/console/add.png') #3c3c3c 50% 50% no-repeat; 
+}
+#useApply .appDetailGroup .comMsgBox .addDomain i.del{
+	background:url('../../images/console/dustbin.png') #3c3c3c 50% 50% no-repeat; 
+}
+#useApply .appDetailGroup .thirdTips span{
+	height: 25px;
+	display: block;
+	line-height: 25px;
+}
+#useApply .appDetailGroup .thirdTips .tipLeft{
+	color: #adadad;
+}
+#useApply .appDetailGroup .fourTopBox{
+	width: 100%;
+	height:45px;
+	padding:30px 0;
+}
+#useApply .appDetailGroup .fourTopBox>span{
+	height: 45px;
+	display: block;
+	padding-right: 15px;
+	color: #666666;
+	line-height: 45px;
+}
+#useApply .appDetailGroup .dropFramePosition{
+	height: 45px;
+	margin-right: 30px;
+	line-height: 45px;
+}
+#useApply .js_logModel .fourlogs{
+	width:100%;
+	height:400px;
+	border-radius: 5px;
+	padding: 42px 0 0 0;
+	background:url('../../images/console/a.gif') #2d2d2d 50% 50% no-repeat; 
+	box-sizing: border-box;	
+}
+#useApply .js_logModel .fourlogs .logsContent{
+	width:100%;
+	height:100%;
+	box-shadow: 0px 3px 10px 0px rgba(17, 25, 66, 0.1);
+	border-radius: 5px;
+	background-color: #141414;
+	opacity: 0.7;
+	color: #6aaf4b;
+	padding: 50px;
+	box-sizing: border-box;
+}
+#useApply .appDetailGroup  .comChartsGroup{
+	width:100%;
+	height: 483px;
+	background-color: #ffffff;
+	box-shadow: 0px 5px 15px 0px rgba(17, 25, 66, 0.1);
+	border-radius: 5px;
+	margin-bottom: 27px;	
+}
+#useApply .logText{
+	width: 100%;
+	height: 45px;
+}

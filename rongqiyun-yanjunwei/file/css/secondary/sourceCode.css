@@ -1,0 +1,123 @@
+@charset "utf-8";
+#sourceCode{
+    width: 100%;
+    padding: 0 80px 0 30px;
+    box-sizing: border-box;
+    min-width: 1099px;
+}
+#sourceCode .githubLabGroup{
+	width: 100%;
+	background-color: #ffffff;
+	box-shadow: 0px 5px 15px 0px rgba(17, 25, 66, 0.1);
+	border-radius: 5px;
+	padding: 40px 66px 48px 66px;
+	box-sizing: border-box;
+}
+#sourceCode .githubLabGroup .githubLabBox{
+	width: 100%;
+	height: 139px;
+	margin-bottom: 20px;
+}
+#sourceCode .githubLabGroup .githubLabBox div{
+	width: 139px;
+	height: 139px;
+	box-shadow: 0px 5px 15px 0px rgba(17, 25, 66, 0.1);
+	border-radius: 5px;	
+	cursor: pointer;
+	position: relative;
+}
+#sourceCode .githubLabGroup .githubLabBox .githubBtn{
+	background: url('../../images/console/github.png')  #ffffff 50% 50% no-repeat;
+}
+#sourceCode .githubLabGroup .githubLabBox .gitlabBtn{
+	margin-left: 30px;
+	background: url('../../images/console/gitlab.png')  #ffffff 50% 50% no-repeat;
+}
+#sourceCode .githubLabGroup .githubLabBox p{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	border-radius: 5px;		
+}
+#sourceCode .githubLabGroup .githubLabBox p.hidd{
+	background: #c2c2c2;
+	opacity: 0.5;
+}
+#sourceCode .githubLabGroup .codeBaseGroup{
+	width: 100%;
+	height: 700px;
+	background-color: #ffffff;
+	box-shadow: 0px 5px 15px 0px rgba(17, 25, 66, 0.1);
+	border-radius: 5px;
+	padding: 0 20px;
+	box-sizing: border-box;
+}
+#sourceCode .githubLabGroup .codeBaseGroup .codeBaseTitle li{
+	height: 70px;
+	color: #666666;
+	float: left;
+	line-height: 70px;
+}
+#sourceCode .githubLabGroup .codeBaseGroup .nameWid{
+	width: 45%;
+	text-indent: 5%
+}
+#sourceCode .githubLabGroup .codeBaseGroup .branchWid{
+	width: 35%;
+}
+#sourceCode .githubLabGroup .codeBaseGroup .operatWid{
+	width: 20%;
+}
+#sourceCode .githubLabGroup .codeBaseGroup .codeBaseTxt .oneDataTxt{
+	height: 70px;
+	line-height: 70px;
+	border-radius: 5px;
+	margin-bottom: 10px;	
+}
+#sourceCode .githubLabGroup .codeBaseGroup .codeBaseTxt .oneDataTxt.active{
+	background:#f6f6f6;
+}
+#sourceCode .githubLabGroup .codeBaseGroup .nameWid.activeOff{
+	background: url('../../images/console/activity.png') #f6f6f6 no-repeat;
+}
+#sourceCode .githubLabGroup .codeBaseGroup .nameWid.color{
+	color: #999999;
+}
+#sourceCode .githubLabGroup .codeBaseGroup .operatWid.color{
+	color: #6baf4c;
+	cursor: pointer;
+}
+#sourceCode .githubLabGroup .codeBaseGroup  .dropFramePosition{
+	margin-top: 22px;
+}
+#sourceCode .createProjectName.mars{
+	margin-top: 20px;
+}
+#sourceCode .createProjectName span {
+    width: 130px;
+    height: 28px;
+    display: block;
+    float: left;
+    line-height: 28px;
+    color: #666666;
+    font-size: 18px;
+    text-align: right;
+    padding-right: 10px;
+    box-sizing: border-box;
+}    
+#sourceCode .createProjectName input {
+    width: 250px;
+    height: 28px;
+    float: left;
+    border-radius: 3px;
+    border: solid 1px #999999;
+    outline: none;
+    text-indent: 10px;
+}
+#sourceCode .offset{
+	transform: translate(-260px,-124px);
+	-ms-transform: translate(-260px,-124px);
+	-moz-transform: translate(-260px,-124px);
+	-webkit-transform: translate(-260px,-124px);
+	-o-transform: translate(-260px,-124px);
+}

@@ -1,0 +1,124 @@
+@charset "utf-8";
+#member{
+	width: 100%;
+	padding: 0  80px 0 30px ;
+	box-sizing: border-box;
+	min-width: 1099px;
+}
+#member .choseWids{
+	width: 10%;
+	position: relative;
+}
+#member .memberName{
+	width: 8%;
+}
+#member .mail{
+	width:15%
+}
+#member .phone{
+	width: 14%
+}
+#member .belong{
+	width: 14%
+}
+#member .status{
+	width: 5%
+}
+#member .operatWids{
+	width: 23%;
+}
+#member .changeBtns{
+	height: 100%;
+	background:none;
+}
+#member .offset{
+	transform: translate(-260px,-225px);
+	-ms-transform: translate(-260px,-225px);
+	-moz-transform: translate(-260px,-225px);
+	-webkit-transform: translate(-260px,-225px);
+	-o-transform: translate(-260px,-225px);
+}
+#member .offset1{
+	transform: translate(-260px,-96px);
+	-ms-transform: translate(-260px,-96px);
+	-moz-transform: translate(-260px,-96px);
+	-webkit-transform: translate(-260px,-96px);
+	-o-transform: translate(-260px,-96px);
+}
+#member .changeName{
+	width: 100%;
+	margin-bottom: 30px;
+}
+#member .changeName .sortName{
+	width: 70px;
+	height: 28px;
+	display: block;
+	float: left;
+	line-height: 28px;
+	text-align: right;
+	color: #666666;
+	padding-right: 20px;
+}
+#member .changeName input{
+	height: 26px;
+	border-radius: 5px;
+	border: solid 1px #999999;
+	text-indent: 10px;
+	color: #666666;
+	float: left;
+}
+#member .changeName input.chengeWids{
+	width: 246px;
+}
+#member .changeName input.addWids{
+	width: 280px;
+}
+#member .changeName i{
+	width: 30px;
+	height: 28px;
+	display: block;
+	float: left;
+	background: url('../../images/console/noedit.png') 0 50% no-repeat;
+	cursor: pointer;
+	margin-left: 20px;
+}
+#member .changeName i:hover{
+	background: url('../../images/console/edit.png') 0 50% no-repeat;
+}
+#member .changeName i.add{
+	background: url('../../images/console/edit.png') 0 50% no-repeat;
+}
+#member .changeName input:focus{
+	border: solid 1px #6aaf4b;
+	color: #6aaf4b;
+}
+#member .changeName .changeNameTips{
+	width:298px;
+	display: block;
+	float: right;
+	color: #b9b9b9;
+	font-size: 12px;
+	margin-top: 5px;
+	word-break: break-all;
+}
+#member .currentStatus{
+	margin-right: 30px;
+	font-size: 14px;
+	color: #999999;
+	height: 28px;
+	display: block;
+	line-height: 28px;
+	padding:1px 0;
+	box-sizing: border-box;
+}
+#member .statusBtn{
+	width: 20px;
+	height: 20px;
+	border-radius: 3px;
+	background: none;
+	border: solid 3px #eeeeee;
+	margin-right: 10px;
+}
+#member .statusBtn.add{
+	background: #6aaf4b;
+}

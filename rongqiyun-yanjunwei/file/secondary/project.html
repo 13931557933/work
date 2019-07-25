@@ -1,0 +1,116 @@
+<div id="project"> 
+	<div id="searchButtons" class="clearfix">
+		<div class="searchBtnLeft lt">
+			<button class="btnCols btnSize lt" ng-click = "createFn()">
+				<i class="add"></i>
+				新建项目
+			</button>
+			<button class="btnCols btnSize lt" ng-click = "deleteFn()">
+				<i class="delete"></i>
+				删除项目
+			</button>
+			<button class="btnCols refreshSize lt" ng-click = "refreshFn()"></button>				
+		</div>
+		<div class="searchBtnRight lt">
+			<input class="rt searchBox" type="text" name="" placeholder="请输入关键字搜索" ng-model='searchName' ng-change = 'searchListFn()'>
+		</div>
+	</div>
+	<div id="listData">
+		<div class="listDataGroup">
+			<ul class="listDGTitle">
+				<li class="choseWids"></li>
+				<li class="nameWids">项目名</li>
+				<li class="timeWids">创建时间</li>
+				<li class="countWids">项目人数</li>
+				<li class="operatWids">操作</li>
+			</ul>
+			<ul class="listDGDetail">
+				<li class="oneDataGroup" ng-repeat = 'data in projectTxt'>
+					<div class="choseWids">
+						<span class="choiceBox" ng-click = "choiceFn($event,data)"></span>
+					</div>
+					<div class="nameWids comClickColor" ng-click = 'srefFn(data)'>{{data.project_name}}</div>
+					<div class="timeWids comTextColor">{{data.create_time}}</div>
+					<div class="countWids comTextColor">{{data.user_number}}</div>
+					<div class="operatWids">
+						<button class="comClickColor operateBtns" ng-click = 'srefFn(data)'>详情</button>
+						<button class="comClickColor operateBtns" ng-click = 'changeFn(data)'>修改</button>
+						<button class="comClickColor operateBtns" ng-click='showDeleteMOdelFn(data)'>删除</button>
+					</div>
+				</li>
+			</ul>
+		</div>
+		<div class="pagGroup clearfix">
+		    <div class="allTotals">共{{totalCount}}条</div>
+		    <ul class="pagination" id="page2">
+		    </ul>
+		    <div class="pageJump">
+		        <span>跳转到</span>
+		        <input type="number"/>
+		        <span>页</span>
+		    </div>
+		</div>
+	</div>
+	<!-- 新建弹窗 -->
+	<div id="comPopupBox" class="js_create">
+		<div class="Popup offset wid">
+			<div class="popTitle wid">
+				新建项目
+				<i ng-click='closeFn()'></i>
+			</div>
+			<div class="popContent">
+				<p class="createProjectName clearfix">
+					<span>项目名称:</span>
+					<input type="text" name="" ng-model='newProjectName'>
+				</p>
+				<p class="createProjectTip">
+				项目与项目之间默认网络隔离,且资源不能在项目间转移。
+				</p>
+				<div class="btnBox clearfix">
+					<button class="cancelBtn lt" ng-click='closeFn()'>取消</button>
+					<button class="sureBtn rt" ng-click = "newProjectFn($event)">确定</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- 新建弹窗结束 -->
+	<!-- 修改弹窗 -->
+	<div id="comPopupBox" class="js_change">
+		<div class="Popup offset wid">
+			<div class="popTitle wid">
+				修改项目
+				<i ng-click='closeFn()'></i>
+			</div>
+			<div class="popContent">
+				<p class="createProjectName clearfix">
+					<span>项目名称:</span>
+					<input type="text" name="" class="js_visionName">
+				</p>
+				<div class="btnBox clearfix">
+					<button class="cancelBtn lt" ng-click='closeFn()'>取消</button>
+					<button class="sureBtn rt" ng-click = 'revisionProjectNameFn($event)'>确定</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- 修改弹窗结束 -->
+	<!-- 删除弹窗 -->
+	<div id="comPopupBox" class="js_delete">
+		<div class="Popup offset1 wid">
+			<div class="popTitle wid">
+				删除项目
+				<i ng-click='closeFn()'></i>
+			</div>
+			<div class="popContent">
+				<p class="deleteProjectBox">
+					是否删除该项目?
+				</p>
+				<div class="btnBox clearfix">
+					<button class="cancelBtn lt" ng-click='closeFn()'>取消</button>
+					<button class="sureBtn rt" ng-click='sureDelFn($event)'>确定</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- 删除弹窗结束 -->		
+</div>

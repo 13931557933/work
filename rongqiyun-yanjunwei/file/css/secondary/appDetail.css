@@ -1,0 +1,396 @@
+@charset "utf-8";
+#appDetail{
+	width: 100%;
+	padding: 0  80px 0 30px ;
+	box-sizing: border-box;
+	min-width: 1099px; 
+}
+#appDetail .appNameWid{
+	width: 20%;
+}
+#appDetail .cpuWid{
+	width:10%
+}
+#appDetail .netWid{
+	width:10%
+}
+#appDetail .examWid{
+	width: 17%
+}
+#appDetail .memWid{
+	width: 10%
+}
+#appDetail .statuWid{
+	width: 10%
+}
+#appDetail .opWid{
+	width: 15%
+}
+#appDetail .opWid .opBtn{
+	background: none
+}
+#appDetail .offset{
+	transform:translate(-450px,-300px);
+	-ms-transform:translate(-450px,-300px); 	/* IE 9 */
+	-moz-transform:translate(-450px,-300px); 	/* Firefox */
+	-webkit-transform:translate(-450px,-300px); /* Safari 和 Chrome */
+	-o-transform:translate(-450px,-300px); 	/* Opera */
+}
+#appDetail .offset2{
+	transform:translate(-260px,-96px);
+	-ms-transform:translate(-260px,-96px); 	/* IE 9 */
+	-moz-transform:translate(-260px,-96px); 	/* Firefox */
+	-webkit-transform:translate(-260px,-96px); /* Safari 和 Chrome */
+	-o-transform:translate(-260px,-96px); 	/* Opera */	
+}
+#appDetail .popContentBox{
+    background-color: #FFFFFF;
+    border-radius: 0px 0px 5px 5px;
+    box-sizing: border-box;
+}
+#appDetail .popContentBox.padFirst{
+	padding: 30px 150px;
+}
+#appDetail .popContentBox.padThired{
+	padding: 30px 90px;
+}
+#appDetail .popContentBox.padSec{
+	padding: 30px 90px;
+}
+#appDetail .popContentBox.padSec .maxOverHeight{
+    max-height: 600px;
+    overflow-y: auto;
+    padding-right: 20px;
+}
+#appDetail .popContentBox .stepBar{
+	width: 100%;
+	box-sizing: border-box;
+}
+#appDetail .popContentBox .stepBar.pad{
+	padding: 0 35px;
+}
+#appDetail .popContentBox .stepBar.pad1{
+	padding: 0 65px;
+}
+#appDetail .comStep .serial{
+	width: 28px;
+	height: 28px;
+	display: block;
+	border: solid 1px #e9e9e9;
+	border-radius: 50%;
+	text-align: center;
+	line-height: 28px;
+	color: #8a93a3;
+}
+#appDetail .comStep .stepTxt{
+	height: 28px;
+	padding: 0 0 0 16px;
+	display: block;
+	line-height: 28px;
+	color: #8a93a3;
+}
+#appDetail .comStep .stepDot{
+	height: 28px;
+	padding: 0 38px;
+	display: block;
+	line-height: 28px;
+	color: #8a93a3;
+}
+#appDetail .comStep .serial.faceSerial{
+	box-shadow: 0px 2px 10px 0px rgba(106, 175, 75, 0.2);
+	border: solid 1px #6aaf4b;
+	color: #6aaf4b;
+}
+#appDetail .comStep .faceTxt{
+	color: #6aaf4b;	
+}
+#appDetail .popContentBox .searchBox{
+	width:540px;
+	height: 40px;
+	border-radius: 5px;
+	border: solid 1px #999999;
+	text-indent: 10px;
+	color: #666666;
+	margin:30px;
+	box-sizing: border-box;
+	background: url("../../images/console/search.png") 500px 50% no-repeat;
+}
+#appDetail .popContentBox .searchBox:focus{
+	color:#6aaf4b;
+	background: url("../../images/console/search1.png") 500px 50% no-repeat;
+	border: solid 1px #6aaf4b;
+}
+#appDetail .popContentBox .mirrorBox{
+	width: 134px;
+	height: 159px;
+	border-radius: 5px;
+	margin:0 20px 20px 0;
+	cursor: pointer;
+	background-color: #e5e5e5;
+	box-shadow: 0px 5px 15px 0px rgba(17, 25, 66, 0.1);
+	overflow: hidden; 
+}
+#appDetail .popContentBox .mirrorBox:nth-child(4n+4){
+	margin:0; 	
+}
+#appDetail .popContentBox .mirrorBox .imgBox{
+	display: block;
+	margin:22px auto;
+}
+#appDetail .popContentBox .mirrorBox .mirrorName{
+	width: 100%;
+	height: 30px;
+	font-size: 14px;
+	color: #3c3c3c;
+	line-height: 30px;
+	padding:0 20px;
+	margin-top: 30px;
+	box-sizing: border-box;
+	text-align: center;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+#appDetail .popContentBox .mirrorBox.add{
+	box-shadow: 0px 5px 15px 0px rgba(106, 175, 75, 0.2);
+	background-color: #FFFFFF	
+}
+#appDetail .mirrorModelBox{
+	width: 100%;
+	padding: 0 80px;
+	box-sizing: border-box;
+}
+#appDetail .mirrorGroup{
+	width: 102%;
+	height: 300px;
+	padding: 30px 0 0 0px;
+	box-sizing: border-box;
+}
+#appDetail .mirrorGroup .deployBox{
+	width: 100%;
+	padding: 0 36px;
+	box-sizing: border-box;
+	margin-bottom: 20px;
+}
+#appDetail .mirrorGroup .deployBox .titBox{
+	width: 75px;
+	display: block;
+	color: #666666;
+}
+#appDetail .mirrorGroup .deployBox .titBox.lin{
+	height: 54px;
+	line-height: 54px;
+}
+#appDetail .mirrorGroup .deployBox .titBox.hei26{
+	height: 26px;
+}
+#appDetail .mirrorGroup .deployBox .titBox.lin26{
+	height: 26px;
+	line-height: 26px;
+}
+#appDetail .mirrorGroup .deployBox .mirrorRight{
+	width: 410px;
+	height: 52px;
+	border-radius: 5px;
+	border: solid 1px #e9e9e9;
+}
+#appDetail .mirrorGroup .deployBox .mirrorRight .imgWid{
+	width: 39px;
+	height: 39px;
+	margin-top: 5.5px;
+	margin-left: 26px;
+}
+#appDetail .mirrorGroup .deployBox .mirrorRight .name{
+	height: 54px;
+	display: block;
+	line-height: 52px;
+	text-indent: 60px;
+}
+#appDetail .dropFramePosition{
+	border-radius: 5px;
+	border: solid 1px #999999;
+}
+#appDetail .mirrorGroup .deployBox .serverName{
+	width: 410px;
+	height: 26px;
+	border-radius: 5px;
+	border: solid 1px #999999;
+	text-indent: 10px;
+}
+#appDetail .mirrorGroup .deployBox .choiceBox{
+	width: 16px;
+	height: 16px;
+	display: block;
+	border: 2px solid #eeeeee;
+	margin-top: 3px;
+	margin-right: 10px;
+	cursor: pointer;
+	border-radius: 3px;
+}
+#appDetail .mirrorGroup .deployBox .choiceBox.add{
+	background-color: #6aaf4b;
+}
+#appDetail .mirrorGroup .deployBox .serverTxt{
+	height: 26px;
+	line-height: 26px;
+	color: #333333;
+}
+#appDetail .mirrorGroup .deployBox .storageBox{
+	width: 341px;
+	height: 120px;
+	border-radius: 3px;	
+	background-color: #f6f6f6;
+	padding: 14px 0 0 26px;
+}
+
+#appDetail .mirrorGroup .deployBox .storageBox .serveDataBox{
+	height: 15px;
+	line-height: 15px;
+	font-size: 14px;
+	color: #666666;
+	margin-bottom: 10px;
+}
+#appDetail .mirrorGroup .deployBox .storageBox .serveDataBox .cho{
+	width: 11px;
+	height: 11px;
+	display: block;
+	border-radius: 3px;
+	border: solid 2px #c7c7c7;	
+	margin-right: 10px;
+	cursor: pointer;
+}
+#appDetail .mirrorGroup .deployBox .storageBox .serveDataBox .cho.add{
+	background-color: #6aaf4b	
+}
+#appDetail .expertBox{
+	width: 100%;
+	height: 20px;
+	margin-top:18px;
+}
+#appDetail .expertBox .expertTxt{
+	width: 111px;
+	height: 20px;
+	display: block;
+	font-size: 18px;
+	line-height: 20px;
+	color: #666666;
+}
+#appDetail .expertBox .explainTxt{
+	height: 20px;
+	display: block;
+	font-size: 14px;
+	line-height: 20px;
+	color: #666666;
+}
+#appDetail .expertBox .expertBtn{
+	width: 40px;
+	height: 23px;
+	display: block;
+	background-color: #ffffff;
+	box-shadow: 0px 3px 10px 0px rgba(17, 25, 66, 0.1);
+	border-radius: 3px;
+	background: url('../../images/console/dropBlue.png')50% 50% no-repeat;
+}
+#appDetail .mirrorGroup .deployBox .pumpTit{
+	width: 495px;
+	height: 20px;
+}
+#appDetail .mirrorGroup .deployBox .volumeNo{
+	width: 341px;
+	height: 120px;
+	background-color: #f6f6f6;
+	border-radius: 3px;
+	text-align: center;
+	line-height: 120px;
+	color: #6aaf4b;
+	cursor: pointer;	
+}
+#appDetail .mirrorGroup .deployBox .pumpTit .key{
+	width: 201px;
+	height: 100%;
+	text-align: center;
+	line-height: 20px;
+}
+#appDetail .mirrorGroup .deployBox .pumpTit>div{
+	font-size: 14px;
+	color: #666666;	
+}
+#appDetail .mirrorGroup .deployBox .mar8{
+	margin-left: 8px
+}
+#appDetail .mirrorGroup .deployBox .mar20{
+	margin-left: 20px
+}
+#appDetail .mirrorGroup .deployBox .mar10{
+	margin-left: 10px
+}
+#appDetail .mirrorGroup .deployBox .pumpBox{
+	width: 516px;
+}
+#appDetail .mirrorGroup .deployBox .pumpBox input{
+	width: 198px;
+	height: 28px;
+	border-radius: 5px;
+	border: solid 1px #999999;
+	text-indent: 10px;
+	color: #666666;
+}
+#appDetail .mirrorGroup .deployBox .pumpBox button{
+	width: 26px;
+	height: 26px;
+	border-radius: 5px;
+	border: solid 1px #999999;	
+}
+#appDetail .mirrorGroup .deployBox .compumpBox{
+	margin-bottom: 10px;
+}
+#appDetail .mirrorGroup .deployBox .compumpBox .delBtn{
+	background: url('../../images/console/del.png')50% 50% no-repeat;
+}
+#appDetail .mirrorGroup .deployBox .pumpBox .addBtn{
+	background: url('../../images/console/add2.png')50% 50% no-repeat;
+}
+#appDetail .mirrorGroup .deployBox .pumpBox .addBtn:hover{
+	border: solid 1px #6aaf4b;	
+	background: url('../../images/console/add1.png')50% 50% no-repeat;
+}
+#appDetail .mirrorGroup .deployBox .dockerSize{
+	width: 101px;
+	height: 90px;
+	border-radius: 5px;
+	border: solid 1px #b9b9b9;
+	margin-right: 10px;
+	text-align: center;
+	cursor: pointer;
+}
+#appDetail .mirrorGroup .deployBox .dockerSize .color1{
+	width:100%;
+	height: 26px;
+	color: #ffffff;
+	background-color: #b9b9b9;
+	border-radius: 5px 5px 0 0 ;
+}
+#appDetail .mirrorGroup .deployBox .dockerSize .color1.add{
+	color: #ffffff;
+	background-color: #6aaf4b;
+}
+#appDetail .mirrorGroup .deployBox .dockerSize .color2{
+	color: #666666;
+	font-size: 14px;
+	height: 27px;
+	line-height: 27px;
+}
+#appDetail .mirrorGroup .deployBox .dockerSize .color2.add{
+	color: #6aaf4b;
+	font-size: 14px;
+}
+#appDetail .mirrorGroup .deployBox .number{
+	width: 342px;
+	height: 28px;
+	border-radius: 5px;
+	border: solid 1px #999999;
+	text-indent: 10px;
+}
+#appDetail .mirrorGroup .deployBox.mar0{
+	margin-bottom: 0px
+}

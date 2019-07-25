@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html ng-app='gearBox'>
+<head>
+	<title>login</title>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<link rel="stylesheet" type="text/css" href="../css/common.css">
+	<link rel="stylesheet" type="text/css" href="css/login.css">
+</head>
+<body ng-controller="loginCtrl">
+	<div class="login-group">
+		<div class="login-minGroup">
+			<div class="login_topLogo"></div>
+			<div class="login-box">
+				<span ng-class={"active":isError} ng-bind = 'tipsError'></span>
+				<div class="enter-groups">
+					<i class="user-bg"></i>
+					<input ng-focus='getGroup($event)' ng-model="userName" ng-blur='outGroup($event)' type="text" name="" placeholder="请输入用户名">
+				</div>
+				<div class="enter-groups">
+					<i class="pwd-bg"></i>
+					<input ng-focus='getGroup($event)' ng-model="pwd"  ng-blur='outGroup($event)' type="password" name="" placeholder="请输入密码">
+				</div>
+				<button class="enter-buttons" ng-click='logIn($event)'>登录</button>
+			</div>
+		</div>
+		<!-- 激活码弹窗-->
+		<!-- <div class="shades"></div>
+		<div class="codePop comModal">
+			<i></i>
+			<div class="modalTops">请获取激活码</div>
+			<div>
+				<input placeholder="请输入激活码" type="" name="">
+			</div>
+			<button>确定</button>
+		</div> -->
+		<!-- 激活码弹窗结束 -->
+	</div>
+	<script src="../js/lib/jquery.min.js"></script>
+	<script src="../js/lib/angular.min.js"></script>
+	<script src="../js/lib/angular-ui-router.min.js"></script>
+	<script src="../js/lib/ocLazyLoad.min.js"></script>
+	<script src="../js/config/app.config.js"></script>
+	<script src="../js/lib/sspaasSliderTool.js"></script>	
+	<script src="../js/lib/jsencrypt.js"></script>	
+	<script src="../js/lib/jquery.base64.js"></script>	
+	<script src="../js/services/apiService.js"></script>	
+	<script src="js/entry.js"></script>
+</body>
+</html>

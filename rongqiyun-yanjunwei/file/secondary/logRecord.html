@@ -1,0 +1,63 @@
+<div id="logRecord">
+	<div id="searchButtons" class="clearfix">
+		<button class="btnCols backSize lt" ui-sref="continuousIntegration">
+			<i class="back"></i> 
+			返回
+		</button>
+		<div class="searchBtnLeft lt">
+			<span class="viewLog lt">查看日志</span>
+			<div class="ta_date lt" id="div_date1">
+				<span class="date_title" id="date1"></span>
+			</div>
+<!-- 			<button class="sureBtn btnCols lt" ng-click='timeSearchFn()'> 确定</button>	 -->
+		</div>
+	</div>
+	<div class="logRecordBox">
+		<div class="oneBox" ng-repeat = 'data in recordsData' repeat-finish>
+			<div class="timeTitle">{{data.log_time}}</div>
+			<div class="dataBox clearfix" ng-repeat = 'list in data.data  track by $index'>
+				<div class="step first left" ng-if='$index ==0'>
+				</div>				
+				<div class="step left"ng-if='$index !==0'>
+					<div class="bgsBox"></div>
+				</div>
+				<div class="oneGroupData left" ng-if='list.execution_status =="成功"'>
+					<div class="logStatu success">{{list.execution_status}}</div>
+					<div class="oneData clearfix">
+						<div class="name left">{{list.project}}</div>
+					<div class="time left">{{list.start_time}}</div>
+						<div class="long left">{{list.duration}}</div>
+						<div class="logBtn left">
+							<button ng-click='logRecordShow(list)'>执行记录</button>
+						</div>
+					</div>
+				</div>				
+				<div class="oneGroupData left" ng-if='list.execution_status !=="成功"'>
+					<div class="logStatu filed">{{list.execution_status}}</div>
+					<div class="oneData filed clearfix">
+						<div class="name left">{{list.project}}</div>
+					<div class="time left">{{list.start_time}}</div>
+						<div class="long left">{{list.duration}}</div>
+						<div class="logBtn left">
+							<button ng-click='logRecordShow(list)'>执行记录</button>
+						</div>
+					</div>
+				</div>
+			</div> 			
+		</div>
+	</div>
+	<!-- 执行记录 -->	
+	<div id="comPopupBox" class="js_log">
+		<div class="Popup offset wid4">
+			<div class="popTitle wid4" style="background-color: #2c2c2c">
+				执行记录
+				<i ng-click='closeFn()'></i>
+			</div>
+			<div class="recordConnect">
+				<div class="scrollDiv recordMessage js_rMessage">
+				</div>
+			</div>
+		</div>
+	</div>	
+<!-- 执行记录结束 -->				
+</div>

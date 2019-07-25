@@ -1,0 +1,101 @@
+<div id="sourceCode">
+	<div id="searchButtons" class="clearfix">
+		<button class="btnCols backSize lt" ui-sref="continuousIntegration">
+			<i class="back"></i> 
+			返回
+		</button>		
+	</div>
+	<div class="githubLabGroup">
+		<div class="githubLabBox clearfix">
+			<div class="githubBtn left js_pFather">
+				<p ng-click = 'hubLabFn($event)'></p>
+			</div>
+			<div class="gitlabBtn left js_pFather">
+				<p class="hidd" ng-click = 'hubLabFn($event)'></p>
+			</div>
+		</div>
+		<div id="searchButtons" class=" js_btnsGroup clearfix">
+			<div class="searchBtnLeft lt">
+				<button class="btnCols btnSize lt" ng-click = 'addGithubFn()' ng-if='ishubTrue'>
+					<i class="add"></i>
+					添加码库
+				</button>
+				<button class="btnCols btnSize lt" data-attr='github' ng-click = "delGitFn($event)" ng-if='ishub'>
+					<i class="delete"></i>
+					注销
+				</button>				
+				<button class="btnCols refreshSize lt" data-attr='github' ng-click= 'gitRefreshFn($event)' ng-if='ishub'></button>				
+			</div>	
+		</div>
+		<div id="searchButtons" class="js_btnsGroup clearfix" style="display: none">
+			<div class="searchBtnLeft lt">
+				<button class="btnCols btnSize lt" ng-click = 'addSourceCodeModelFn()' ng-if='islabTrue'>
+					<i class="add"></i>
+					添加码库
+				</button>
+				<button class="btnCols btnSize lt" data-attr='gitlab' ng-click = "delGitFn($event)" ng-if='islab'>
+					<i class="delete"></i>
+					注销
+				</button>				
+				<button class="btnCols refreshSize lt" data-attr='gitlab' ng-if='islab' ng-click= 'gitRefreshFn($event)'></button>				
+			</div>	
+		</div>
+		<div class="codeBaseGroup">
+			<ul class="codeBaseTitle clearfix">
+				<li class="nameWid">项目名称</li>
+				<li class="branchWid">分支</li>
+				<li class="operatWid">操作</li>
+			</ul>
+			<ul class="codeBaseTxt">
+				<li class="oneDataTxt active clearfix" ng-repeat = 'data in sourceCodeData'>
+					<div class="nameWid color left" ng-if="data.is_activation==false">{{data.project_name}}</div>
+					<div class="nameWid activeOff color left" ng-if="data.is_activation==true">{{data.project_name}}</div>
+					<div class="branchWid left">
+						<div id="dropDown" class="dropFramePosition wid3">
+							<div class="frame wid3 js_frame" ng-click='dropDownFn($event)'>{{data.branch[0]}}</div>
+							<ul class="dropList js_dropList">
+								<li ng-click='gitDropDataFn($event)' ng-repeat = 'datas in data.branch  track by $index'>{{datas}}</li>
+							</ul>
+						</div>	
+					</div>
+					<div class="operatWid color left" ng-if="data.is_activation==false" ng-click= 'codeActivationFn($event,data,"1")'>激活</div>
+					<div class="operatWid color left" ng-if="data.is_activation==true" ng-click= 'codeActivationFn($event,data,"0")'>解除激活</div>					
+				</li>				
+			</ul>
+			<div class="pagGroup clearfix">
+			    <div class="allTotals">共{{sourceCodeTotalData}}条</div>
+			    <ul class="pagination" id="page2">
+			    </ul>
+			    <div class="pageJump">
+			        <span>跳转到</span>
+			        <input type="number" />
+			        <span>页</span>
+			    </div>
+			</div>						
+		</div>					
+	</div>
+	<!--添加成员 -->
+	<div id="comPopupBox" class="js_sourceCode">
+		<div class="Popup offset wid">
+			<div class="popTitle wid">
+				添加Gitlab代码仓库
+				<i ng-click="closeFn()"></i>
+			</div>
+			<div class="popContent">
+				<p class="createProjectName clearfix">
+					<span>仓库地址</span>
+					<input type="text" name="" placeholder="http(s)://***" id='gitlabUrl'>
+				</p>				
+				<p class="createProjectName mars clearfix">
+					<span>private token</span>
+					<input type="text" name="" placeholder="private token" id='gitlabToken'>
+				</p>
+				<div class="btnBox clearfix">
+					<button class="cancelBtn lt" ng-click="closeFn()">取消</button>
+					<button class="sureBtn rt" ng-click = 'extendFn($event)'>确定</button>
+				</div>
+			</div>
+		</div>
+	</div>	
+	<!--添加成员结束 -->	   
+</div>   

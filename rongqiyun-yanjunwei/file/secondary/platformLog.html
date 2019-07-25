@@ -1,0 +1,42 @@
+<div id="platformLog"> 
+	<div id="searchButtons" class="clearfix">
+		<div class="searchBtnLeft lt">
+			<span class="viewLog lt">查看日志</span>
+			<div class="ta_date lt" id="div_date1">
+				<span class="date_title" id="date1"></span>
+			</div>
+			<div class="lt"></div>
+		</div>
+		<div class="searchBtnRight lt">
+			<input class="rt searchBox" ng-model='platFormSearch' ng-change='platSearchFn()' type="text" name="" placeholder="请输入关键字搜索">
+		</div>
+	</div>
+	<div id="listData">
+		<div class="listDataGroup">
+			<ul class="listDGTitle">
+				<li class="Wids">操作者</li>
+				<li class="Wids">类型</li>
+				<li class="Wids">操作日期</li>
+				<li class="Wids">操作记录</li>
+			</ul>
+			<ul class="listDGDetail">
+				<li class="oneDataGroup" ng-repeat = 'data in platLogList'>
+					<div class="Wids comClickColor">{{data.handlers}}</div>
+					<div class="Wids comTextColor">{{data.types | types}}</div>
+					<div class="Wids comTextColor">{{data.create_time}}</div>
+					<div class="Wids comTextColor" title="{{data.record}}">{{data.record}}</div>
+				</li>
+			</ul>
+		</div>
+		<div class="pagGroup clearfix">
+		    <div class="allTotals">共{{platLogCount}}条数据</div>
+		    <ul class="pagination" id="page2">
+		    </ul>
+		    <div class="pageJump">
+		        <span>跳转到</span>
+		        <input type="number" />
+		        <span>页</span>
+		    </div>
+		</div>
+	</div>		
+</div>

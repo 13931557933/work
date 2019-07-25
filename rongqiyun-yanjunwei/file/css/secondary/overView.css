@@ -1,0 +1,325 @@
+@charset "utf-8";
+.overView{
+	height: 100%;
+}
+.overView .chartGroup{
+	width: 960px;
+}
+.overView .comMars{
+	margin:0 40px 40px 0;
+}
+.overView .applyGroup{
+	width: 440px;
+	background-color: #ffffff;
+	border-radius: 5px;	
+	box-sizing: border-box;
+    box-shadow: 0px 6px 30px 0px rgba(202, 203, 212, 0.2)
+}
+.overView .applyGroup.pads{
+	padding: 50px;
+	height: 330px;
+}
+.overView .applyGroup.heis{
+	height: 408px;
+}
+.overView .applyGroup #staticChart{
+	width: 100%;
+	height: 300px;
+}
+.overView .canvasGroup{
+	width: 220px;
+	height:220px;
+	float: left;
+}
+.overView .canvasDataGroup{
+	width: 120px;
+	float: left;
+}
+.overView .canvasDataGroup p{
+	text-align: center;
+}
+.overView .dataName{
+	height: 60px;
+	font-size: 30px;
+	color: #666666;
+	line-height: 60px;
+}
+.overView .dataState{
+	height: 36px;
+	line-height: 36px;
+	font-size: 18px;
+	color: #666666;
+}
+.overView .operateStatTit{
+	height: 85px;
+	line-height: 85px;
+	text-align: center;
+	font-size: 30px;
+	color: #666666;
+}
+.overView.{}
+.overView .storeList{
+	border-radius: 5px;
+	box-sizing: border-box;
+	margin-left: 20px;
+	overflow-y: auto;
+}
+.overView .storeList.wids{
+	width:405px;
+	height:303px;
+}
+.overView .storeBgs{
+	width: 384px;
+	border-radius: 5px;
+	background-color: #f6f6f6;
+}
+.overView .storeList.widsLit{
+	width: 233px;
+	height: 302px;
+}
+.overView .storeList.logWids{
+	width: 320px;
+	height: 672px;
+}
+.overView .storeListDataGroup{
+	height: 50px;
+}
+.overView .storeListLogo{
+	width: 70px;
+	height: 45px;
+	display: block;
+	background: url("../../images/console/unfire.png")83% 50% no-repeat;
+}
+.overView .storeListTextGroup{
+	width: 246px;
+	height: 24px;
+	overflow: hidden;
+	text-overflow:ellipsis;
+    white-space:nowrap;
+	margin-top: 20px;
+	color: #92d236;
+}
+.overView .storeListText{
+	height: 20px;
+	font-size:18px;
+	line-height: 20px;
+	border-bottom: 2px solid #92d236;
+}
+.overView .middleGroup{
+	width: 310px;
+}
+.overView .buildStatuGroup{
+	width: 270px;
+	background-color: #ffffff;
+	border-radius: 5px;	
+	box-sizing: border-box;
+    box-shadow: 0px 6px 30px 0px rgba(202, 203, 212, 0.2);
+}
+.overView .buildStatuGroup.pads{
+	padding: 45px;	
+	height: 330px;
+}
+.overView .buildStatuGroup.heis{
+	height: 408px;
+}
+.overView .buildStatuTit{
+	height: 90px;
+	font-size: 30px;
+	color: #666666;
+	text-align: center;
+	line-height: 90px;
+}
+.overView .buildStatu{
+	width: 100%;
+	height: 46px;
+	box-shadow: 0px 4px 8px 0px rgba(17, 35, 54, 0.2), inset 0px 1px 0px 0px rgba(255, 255, 255, 0.54);
+	border-radius: 5px;
+	color: #FFFFFF;
+}
+.overView .buildStatu.individualMars{
+	margin: 10px 0;
+}
+.overView .buildStatu.success{
+	background-image: linear-gradient(#97e859, #97e859), linear-gradient(#5fbf4c, #5fbf4c); 
+}
+.overView .buildStatu.building{
+	background-image: linear-gradient(#f6f141, #f6f141), linear-gradient(#f9e74b, #f9e74b);
+}
+.overView .buildStatu.fail{
+	background-image: linear-gradient(#ffcb3e, #ffcb3e), linear-gradient(#ffb949, #ffb949);
+}
+.overView .buildStatuText{
+	height: 46px;
+	float: left;
+	text-align: center;
+	line-height:46px; 
+}
+.overView .buildStatuText.littleFont{
+	width: 55%;
+	font-size: 18px;
+}
+.overView .buildStatuText.bigFont{
+	width: 45%;
+	font-size: 24px;
+}
+.overView .warnText{
+	width: 213px;
+	background-color:#f6f6f6;
+	word-break: break-all;
+	border-radius: 5px;
+	padding: 10px;
+	box-sizing: border-box;
+	font-size: 14px;
+	color: #c74343;
+	margin-bottom: 4px;
+}
+.overView .rightGroup{
+	width: 360px;
+    height: 778px;
+    background-color: #ffffff;
+    border-radius: 5px;
+    box-sizing: border-box;
+    box-shadow: 0px 6px 30px 0px rgba(202, 203, 212, 0.2);
+}
+.overView .logGroup{
+	width: 304px;
+	height: 93px;
+	border-radius: 5px;
+	background-color: #f6f6f6;
+	margin-bottom: 4px;
+	padding: 27px 0 17px 30px;
+	box-sizing: border-box;
+}
+.overView .logsLeftGroup{
+	width: 70%;
+	height: 100%;
+}
+.overView .logsState{
+	height: 50%;
+	font-size: 18px;
+	color: #666666;
+	line-height: 17.5px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+.overView .logTimes{
+	height: 50%;
+	font-size: 16px;
+	text-indent: 27px;
+	color: #92d236;
+	line-height: 28.5px;
+	overflow: hidden;
+	text-overflow:ellipsis;
+    white-space:nowrap;	
+	background: url('../../images/console/loc.png')3px 4px no-repeat;
+}
+.overView .logsRightGroup{
+	width: 30%;
+	height: 100%;
+	background: url("../../images/console/rightSign.png")40% 40% no-repeat;
+}
+@media screen and (min-width:1366px)  and (max-width: 1919px){
+	.overView .chartGroup{
+		width: 684px;
+	}
+	.overView .applyGroup{
+		width: 314px;
+	}
+	.overView .applyGroup.pads{
+		padding: 36px;
+		height: 236px;
+	}
+	.overView .comMars{
+		margin: 0 28px 28px 0 ;
+	}	
+	.overView .canvasGroup{
+		width: 156px;
+		height: 156px;
+	}
+	.overView .canvasDataGroup{
+		width: 80px;
+	}
+	.overView .dataName{
+		font-size: 21px;
+		height: 40px;
+		line-height: 40px;
+	}
+	.overView .middleGroup{
+		width: 221px;
+	}
+	.overView .buildStatuGroup{
+		width: 193px;
+	}
+	.overView .buildStatuGroup.pads{
+		padding: 32px;
+		height: 235px;
+	}
+	.overView .buildStatuTit{
+		height: 46px;
+		font-size: 21px;
+		line-height: 46px;
+	}
+	.overView .buildStatu{
+		height: 33px;
+	}
+	.overView .buildStatuText{
+		height: 33px;
+		line-height: 33px
+	}
+	.overView .buildStatuText.littleFont{
+		font-size: 13px;
+	}
+	.overView .buildStatuText.bigFont{
+		font-size: 17px
+	}
+	.overView .rightGroup{
+		width: 257px
+	}
+	.overView .storeList.logWids{
+		width: 220px;
+	}
+	.overView .applyGroup.heis{
+		height: 300px;
+	}
+	.overView .operateStatTit{
+		height: 65px;
+		line-height: 65px;
+		font-size: 21px;
+	}
+	.overView .applyGroup #staticChart{
+		height: 235px;
+	}
+	.overView .buildStatuGroup.heis{
+		height: 300px;
+	}
+	.overView .rightGroup{
+		height: 563px;
+	}
+	.overView .storeList.logWids{
+		height: 457px;
+	}
+	.overView .storeList.wids{
+		width: 279px;
+		height: 220px
+	}
+	.overView .storeBgs{
+		width: 260px;
+	}
+	.overView .storeList.widsLit{
+		width: 165px;
+		height: 226px;
+	}
+	.overView .warnText{
+		width: 152px;
+	}
+	.overView .logGroup{
+		width: 205px;
+	}
+	.overView .dataState{
+		font-size: 13px;
+	}
+	.overView .storeListTextGroup{
+		width: 160px;
+	}
+}

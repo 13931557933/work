@@ -1,0 +1,427 @@
+@charset "utf-8";
+#repositories{
+    width: 100%;
+    padding: 0 80px 0 30px;
+    box-sizing: border-box; 
+    min-width: 1099px;	
+}
+#mirrorSiteList{
+    width: 100%;
+    height: 728px;
+    background-color: #ffffff;
+    box-shadow: 0px 5px 15px 0px rgba(17, 25, 66, 0.1);
+    border-radius: 5px;
+    box-sizing: border-box;	
+    padding: 0 70px;
+    overflow: hidden;
+}
+#mirrorSiteList .mirrorGroup{
+	width: 200px;
+	height: 40px;
+	margin: 30px auto;
+	border-radius:5px
+}
+#mirrorSiteList .mirrorGroup button{
+	width: 100px;
+	height: 40px;
+	box-shadow: 0px 5px 15px 0px rgba(17, 25, 66, 0.1);		
+}
+#mirrorSiteList .mirrorGroup button.add{
+	background-color: #3c3c3c;
+	color: #FFFFFF;
+}
+#mirrorSiteList .publicBtn{
+	border-radius: 5px 0 0 5px;
+	background-color: #ffffff;
+	color: #2c2c2c;	
+}
+#mirrorSiteList .privateBtn{
+	background-color: #ffffff;
+	color: #2c2c2c;
+	border-radius: 0px 5px 5px 0px;	
+}
+#repositories .oneMirrorSite{
+	width: 23.95%;
+	background-color: #f6f6f6;
+	border-radius: 3px;
+	margin-right: 1.4%;
+	margin-bottom: 1.4%;
+	padding: 23px 40px;
+	box-sizing: border-box;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+}
+#repositories .oneMirrorSite:nth-child(4n+4){
+	margin-right:0 !important;
+}
+#repositories .oneMirrorSite .mirrorImg{
+	width: 23%;
+}
+#repositories .oneMirrorSite .mirrorImg img{
+	width: 100%;
+}
+#repositories .oneMirrorSiteTxt{
+	width: 72%;
+	margin-left: 4.5%;
+	color:#6aaf4b;
+}
+#repositories .oneMirrorSiteTxt .locks{
+	width: 14px;
+	height: 22px;
+	cursor: pointer;
+	background: url("../../images/console/lock.png") 100% 50% no-repeat; 
+}
+#repositories .oneMirrorSiteTxt .locks.add{
+	background: url("../../images/console/openLock.png") 100% 50% no-repeat; 	
+}
+#repositories .mirrorName{
+	max-width: 80%;
+	display: block;
+	border-bottom: 1px solid #6aaf4b;
+ 	overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+	cursor: pointer;
+}
+#repositories .mirrorBtn{
+	width: 100%;
+	height: 28px;
+	margin-top: 15px;
+}
+#repositories .mirrorBtn button{
+	width: 44%;
+	height: 28px;
+	min-width: 41px;	
+}
+#repositories .deleteBtn{
+	background-color: #ffffff;
+	border-radius: 3px;
+	border: solid 1px #999999;
+}
+#repositories .deplyBtn{
+	background-color: #3c3c3c;
+	border-radius: 3px;	
+	color: #FFFFFF;	
+}
+#repositories .offset{
+	transform: translate(-330px,-229px);
+	-ms-transform: translate(-330px,-229px);
+	-moz-transform: translate(-330px,-229px);
+	-webkit-transform: translate(-330px,-229px);
+	-o-transform: translate(-330px,-229px);
+}
+#repositories .offset1{
+	transform: translate(-260px,-96px);
+	-ms-transform: translate(-260px,-96px);
+	-moz-transform: translate(-260px,-96px);
+	-webkit-transform: translate(-260px,-96px);
+	-o-transform: translate(-260px,-96px);
+}
+#repositories .offset2{
+	transform: translate(-450px,-295px);
+	-ms-transform: translate(-450px,-295px);
+	-moz-transform: translate(-450px,-295px);
+	-webkit-transform: translate(-450px,-295px);
+	-o-transform: translate(-450px,-295px);
+}
+#repositories .operatStepBox{
+	margin-bottom: 25px;
+}
+#repositories .operatStepTxt{
+	font-size: 14px;
+}
+#repositories .operatStepOrder{
+	color: #6aaf4b;
+	font-size: 16px;
+	word-break: break-all;
+}
+/*部署镜像模板内容样式*/
+#repositories .popContent .stepBar{
+	width: 100%;
+	box-sizing: border-box;
+}
+#repositories .popContent .stepBar.pad{
+	padding: 0 35px;
+}
+#repositories .popContent .stepBar.pad1{
+	padding: 0 118px;
+}
+#repositories .comStep .serial{
+	width: 28px;
+	height: 28px;
+	display: block;
+	border: solid 1px #e9e9e9;
+	border-radius: 50%;
+	text-align: center;
+	line-height: 28px;
+	color: #8a93a3;
+}
+#repositories .comStep .stepTxt{
+	height: 28px;
+	padding: 0 0 0 16px;
+	display: block;
+	line-height: 28px;
+	color: #8a93a3;
+}
+#repositories .comStep .stepDot{
+	height: 28px;
+	padding: 0 38px;
+	display: block;
+	line-height: 28px;
+	color: #8a93a3;
+}
+#repositories .comStep .serial.faceSerial{
+	box-shadow: 0px 2px 10px 0px rgba(106, 175, 75, 0.2);
+	border: solid 1px #6aaf4b;
+	color: #6aaf4b;
+}
+#repositories .comStep .faceTxt{
+	color: #6aaf4b;	
+}
+
+#repositories .deployContentBox{
+	height:350px;
+}
+#repositories .deployContentBox .firstPart{
+	padding: 50px 0 0 80px;
+	box-sizing: border-box;
+}
+#repositories .deployContentBox .comDeployTxt{
+	width: 100%;
+	color: #666666;
+}
+#repositories .deployContentBox .comDeployTxt.mar{
+	margin-bottom: 32px;
+}
+#repositories .deployContentBox .comDeployTxt.mar1{
+	margin-bottom: 36px;
+}
+#repositories .deployContentBox .comDeployTxt.mar2{
+	margin-bottom: 20px;
+}
+#repositories .deployContentBox .comDeployTxt span{
+	width: 85px;
+	height: 28px;
+	display: block;
+	text-align: center;
+	line-height: 28px;
+}
+#repositories .deployContentBox .comDeployTxt .comDeployInput{
+	height: 26px;
+	border-radius: 5px;
+	text-indent: 10px;
+	border: solid 1px #999999;
+	color: #666666;
+}
+#repositories .deployContentBox .comDeployTxt .comDeployInput.wid{
+	width: 240px;
+}
+#repositories .deployContentBox .comDeployTxt .comDeployInput.wid1{
+	width: 320px;
+}
+#repositories .deployContentBox .comDeployTxt .comDeployInput.wid2{
+	width: 410px;
+}
+#repositories .deployContentBox .comDeployTxt .checkAddress{
+	width: 80px;
+	height: 28px;
+	background-color: #3c3c3c;
+	border-radius: 5px;
+	text-align: center;
+	line-height: 28px;
+	margin-left: 10px;
+	color: #FFFFFF;	
+}
+#repositories .deployContentBox .comDeployTxt .checkAddress:hover{
+	background-color: #6aaf4b;	
+}
+#repositories .deployContentBox .profileBannerGroup{
+	color: #666666;
+	margin-top: 40px;
+	line-height: 40px;
+}
+#repositories .deployContentBox .profileBannerGroup .basic{
+	width: 165px;
+	height: 40px;
+	display: block;
+	font-size: 18px;
+	text-indent: 65px;
+}
+#repositories .deployContentBox .profileBannerGroup .details{
+	height: 40px;
+	display: block;
+	font-size: 14px;
+}
+#repositories .deployContentBox .cantainerGroup{
+	width: 100px;
+	height: 90px;
+	border-radius: 5px;
+	border: solid 1px #b9b9b9;
+	margin-right: 12px;
+	cursor: pointer;
+}
+#repositories .deployContentBox .cantainerGroup .sizeCantainer{
+	width: 100%;
+	height: 26px;
+	background-color: #b9b9b9;
+	border-radius: 5px 5px 0px 0px;	
+	text-align: center;
+	line-height: 26px;
+	color: #FFFFFF;
+}
+#repositories .deployContentBox .cantainerGroup .cpuCantainer{
+	width: 100%;
+	height: 64px;
+	font-size: 14px;
+	color: #666666;
+}
+#repositories .deployContentBox .cantainerGroup .cpuCantainer p{
+	width: 100%;
+	height: 32px;
+	text-align: center;
+	line-height: 32px;
+}
+#repositories .deployContentBox .cantainerGroup.add{
+	border: solid 1px #6aaf4b;
+}
+#repositories .deployContentBox .cantainerGroup .sizeCantainer.add{
+	background-color: #6aaf4b;
+}
+v.cantainerGroup .cpuCantainer.add{
+	color: #6aaf4b;
+}  
+#repositories .deployContentBox .secondPart{
+	padding: 20px 0 0 80px;
+	box-sizing: border-box;
+}
+#repositories .deployContentBox .comDeployTxt .countNumber{
+	width: 100px;
+	height: 26px;
+	border: none;
+	background-color: #f6f6f6;
+	border-radius: 3px;
+	text-indent: 10px;
+	color: #666666;
+}
+#repositories .deployContentBox .advanceBtn{
+	width: 40px;
+	height: 22px;
+	background-color: #ffffff;
+	box-shadow: 0px 3px 10px 0px rgba(17, 25, 66, 0.1);
+	border-radius: 3px;
+	margin-left: 60px;
+	margin-top: 9px;
+	background: url('../../images/console/dropBlue.png')50% 50% no-repeat;
+			
+}
+#repositories .deployContentBox .thirdPart{
+	padding: 20px 0 0 80px;
+	box-sizing: border-box;
+}
+#repositories .deployContentBox .thirdPart textarea{
+	width: 456px;
+	height: 70px;
+	border-radius: 5px;
+	border: solid 1px #999999;
+	text-indent: 14px;
+	font-size: 14px;
+	color: #666666;
+}
+#repositories .deployContentBox .keyValueGroup{
+	font-size: 14px;
+	color: #666666;
+}
+#repositories .deployContentBox .keyValueGroup li{
+	height: 28px;
+	float: left;
+	text-align: center;
+	line-height: 28px;
+}
+#repositories .deployContentBox .keyValueGroup .keyWid{
+	width: 200px;
+	margin-right: 8px;
+}
+#repositories .deployContentBox .keyValueGroup .keyWid.mar{
+	margin:0 9px 0 1px; 
+}
+#repositories .deployContentBox .keyValueGroup .addDeleteWid{
+	width: 28px;
+	margin-left: 12px;
+}
+#repositories .deployContentBox .inputGroupBox{
+	width: 512px;
+}
+#repositories .deployContentBox .inputGroupBox .deleteBtn{
+	width: 28px;
+	height: 28px;
+	border-radius: 5px;
+	border: solid 1px #999999;
+	margin-left: 14px;
+}
+#repositories .deployContentBox .inputGroupBox .deleteBtn.del{
+	background: url("../../images/console/del.png") 50% 50%	no-repeat;	
+}
+#repositories .deployContentBox .inputGroupBox .deleteBtn.add{
+	background: url("../../images/console/add2.png") 50% 50% no-repeat;	
+}
+#repositories .deployContentBox .inputGroupBox .deleteBtn.add:hover{
+	background: url("../../images/console/add1.png") 50% 50% no-repeat;	
+	border: solid 1px #6aaf4b;
+}
+#repositories .deployContentBox .inputGroupBox input{
+	height: 28px;
+	border-radius: 5px;
+	border: solid 1px #999999;
+	text-indent: 10px;
+	color:#666666;  
+}
+#repositories .deployContentBox .inputGroupBox .inputBox{
+	margin-bottom: 10px;
+}
+#repositories .deployContentBox .comDeployTxt .choiceBtn{
+    width: 16px;
+    height: 16px;
+    border-radius: 5px;
+    border: solid 3px #eeeeee;
+    cursor: pointer;
+    margin-top: 4px;	
+}
+#repositories .deployContentBox .comDeployTxt .choiceBtn.add{
+	background-color: #6aaf4b;
+}
+#repositories .deployContentBox .comDeployTxt .timeTxt{
+	width: 90px;
+	height: 28px;
+	color: #666666;	
+	font-size: 14px;
+	line-height: 28px;
+	text-align: center;	
+}
+#repositories .dMFooterBox{
+	height: 100px;
+	padding: 36px 250px;
+	box-sizing: border-box;
+}
+#repositories .dMFooterBox button{
+	width: 100px;
+	height: 26px;
+	border-radius: 3px;	
+}
+#repositories .dMFooterBox .dMFooterLeft{
+	background: none;
+	border:1px solid #666666;
+}
+#repositories .dMFooterBox .dMFooterRight{
+	background-color: #3c3c3c;
+	color: #FFFFFF;
+}
+#repositories .dMFooterBox .dMFooterRight:hover{
+	background-color: #6aaf4b;	
+}
+#repositories #deployModelContent input:focus{
+	border: 1px solid #6aaf4b;
+	color: #6aaf4b;
+}
+/*部署镜像模板内容样式结束*/
