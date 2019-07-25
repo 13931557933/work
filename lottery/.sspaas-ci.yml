@@ -1,0 +1,5 @@
+script:
+  - mkdir file
+  - cnpm install && cnpm run build
+  - cp -prf dist/* ./file
+image: yanjunwei/lottery:v1.0.0.04
